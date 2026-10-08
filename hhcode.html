@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extended codes · RetroGenY</title>
+<meta name="description" content="GBA, GB and GBC emulator for Android">
+<link rel="alternate" hreflang="zh-Hans" href="zh/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link play</a><a href="hhcode.html" aria-current=page>Extended codes</a><a href="memory.html">Memory tools</a><a href="guide.html">Guide</a></nav>
+  <a class="lang" href="zh/hhcode.html" hreflang="zh-Hans">中文</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html" aria-current=page>Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Extended codes</h1>
+<p class="lead">RetroGenY's own cheat format. An ordinary code writes one value to one address. An extended code is a short program: it can follow pointers, loop, check conditions and do the arithmetic a game uses to hide its numbers.</p>
+
+<h2>Why ordinary codes fall short</h2>
+<p>GameShark, Action Replay and CodeBreaker were designed for cartridges in the early 2000s. They are good at "always write 99 here", and that's about it. Many games don't keep their data in one place:</p>
+<ul>
+  <li><b>Data that moves.</b> Pokémon and many RPGs keep the bag, the party and the money behind a pointer, and the address changes with every save or even every time you open a menu. A fixed-address code works today and silently stops working tomorrow.</li>
+  <li><b>Encrypted values.</b> FireRed and LeafGreen store your money XOR'd with a key that differs per save. Writing 999999 directly gives you a random number; you have to read the key first.</li>
+  <li><b>Whole lists.</b> Setting every item in a 42-slot bag to 99 takes 42 separate codes, and they break the moment you pick something up.</li>
+  <li><b>Conditions.</b> "Only when I hold L+R", "only on empty slots", "only during battle" are mostly out of reach.</li>
+</ul>
+<p>Extended codes were made for exactly these cases.</p>
+
+<h2>What they can do</h2>
+<ul>
+  <li><b>Follow pointers</b> the same way the game does, so a code keeps working in any save.</li>
+  <li><b>Loop</b> over a bag, a party or a PC box, with <code>repeat 42 … end</code>.</li>
+  <li><b>Check conditions</b>: compare memory, test bits, skip empty slots, and add an <code>else</code>.</li>
+  <li><b>React to buttons</b>: run only while a button combination is held, for "press L+R to heal".</li>
+  <li><b>Calculate</b> with eight registers: add, subtract, multiply, AND, OR, XOR and shifts, enough to encode a value the way the game expects.</li>
+  <li><b>Copy</b> one value or a whole run of slots from somewhere else.</li>
+  <li><b>Patch the game</b> with <code>rom</code> lines, for changes that values alone can't make (a shop that charges 1, walking through walls).</li>
+  <li><b>Offer choices.</b> An <code>option</code> line turns a value into a drop-down in the cheat list, so players pick "×2 / ×5 / ×10" without touching the code.</li>
+</ul>
+
+<div class="fig pair"><a href="img/en/m-hhcode-edit.webp" target="_blank"><img src="img/en/m-hhcode-edit.webp" alt="Adding an extended code" loading="lazy"></a><a href="img/en/m-hhcode-option.webp" target="_blank"><img src="img/en/m-hhcode-option.webp" alt="Choosing an option in the cheat list" loading="lazy"></a></div>
+<p class="cap">Left: the editor checks the code as you type. Right: codes with options get a drop-down right in the list.</p>
+
+<h2>A real example</h2>
+<p>Money 999999 in FireRed (English v1.0). The money sits behind a pointer and is encrypted with the save's key, which no ordinary code can handle:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # save block 1: money and items live here
+r1 = [0x0300500C]        # save block 2: the key lives here
+r2 = [r1 + 0xF20]        # read the key
+r2 = r2 ^ 999999         # encode 999999 with it
+[r0 + 0x290].32 = r2     # write the money</code></pre>
+<p>Every item in the bag to 99, skipping empty slots:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # counts are encrypted too
+r0 = r0 + 0x310          # the bag: 42 slots
+repeat 42
+  if [r0].16 != 0        # skip empty slots
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # next slot
+end</code></pre>
+<p>Hold L+R to refill HP (address for illustration):</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>A choice the player can change from the cheat list:</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>How to use them</h2>
+<ol>
+  <li>In a game, open the cheat panel and go to "My Cheats". Tap <b>+</b>.</li>
+  <li>Give it a name, then type or paste the code. The first line must be <code>hhcode</code> (or <code>hhcode 1</code>).</li>
+  <li>The editor checks every line as you type. A mistake is shown with its line number; a valid code says "syntax valid".</li>
+  <li>Not sure what a code does, for example one somebody sent you? Tap <b>"Explain this code"</b> and it is read back to you in plain language.</li>
+  <li>Don't want to start from scratch? Open <b>"Extended-code templates"</b>: lock a value, pointer chain, consecutive slots, copy a value, walk a table, conditional write, else branch, button trigger, bit switch and more. Pick one and change the address and value.</li>
+  <li>Tap Add and switch it on. Like every cheat, it runs every frame.</li>
+</ol>
+<p class="aside">You often don't need to write one at all: <a href="memory.html">Memory tools</a> can find a value and write a pointer-based extended code for you.</p>
+
+<h2>Syntax at a glance</h2>
+<table>
+  <tr><th>Code</th><th>What it does</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>Write (32-bit by default)</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>Write with an explicit width: .8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>Write a run of bytes</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>Write 30 slots, 4 bytes apart</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>Copy a value</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>Read, change, write back: += -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>Read memory into a register (start of a pointer chain)</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>Follow the pointer one more level</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>Write relative to a register</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>Arithmetic: + - * &amp; | ^ &lt;&lt; &gt;&gt; and ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>Loop a fixed number of times</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>Condition: == != &lt; &gt; &lt;= &gt;=, unsigned &lt;u &gt;u, bit test &amp; and !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>Only while those buttons are held</td></tr>
+  <tr><td><code>… else … end</code></td><td>Otherwise</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>Patch the game itself (reopen the game to undo)</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>A choice shown in the cheat list; use it as <code>$name</code></td></tr>
+  <tr><td><code># text</code></td><td>Comment</td></tr>
+</table>
+<p>The full reference, with every rule, is in the app: cheat panel › "Guide" › RetroGenY extended codes.</p>
+
+<h2>Built to be safe</h2>
+<ul>
+  <li><b>It can't freeze the game.</b> Each pass is capped at 200,000 instructions, so a loop written wrong just stops.</li>
+  <li><b>Widths are forgiving.</b> If a value doesn't fit the width you wrote, it is widened and you're told, instead of being cut off silently.</li>
+  <li><b>It warns about likely mistakes</b>, such as an address that looks like an offset from another format.</li>
+  <li><b>Values are values.</b> Decimal and hex mean the same thing, and you write the number, not its byte order.</li>
+</ul>
+
+<h2>The whole library speaks it</h2>
+<p>The built-in library's 9,000+ cheats for more than 1,700 games have been converted to extended codes, and each one was checked byte for byte against the original. Some games got hand-written extended codes that the old formats couldn't express, like encrypted money and full bags in FireRed. GameShark, Action Replay and CodeBreaker codes still work exactly as before.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY doesn't include or distribute any games. Game Boy, Game Boy Color and Game Boy Advance are trademarks of Nintendo; this project is not affiliated with Nintendo.</span><a href="privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>

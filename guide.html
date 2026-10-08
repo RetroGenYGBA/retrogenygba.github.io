@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started · RetroGenY</title>
+<meta name="description" content="GBA, GB and GBC emulator for Android">
+<link rel="alternate" hreflang="zh-Hans" href="zh/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link play</a><a href="hhcode.html">Extended codes</a><a href="memory.html">Memory tools</a><a href="guide.html" aria-current=page>Guide</a></nav>
+  <a class="lang" href="zh/guide.html" hreflang="zh-Hans">中文</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Getting started</h1>
+<p class="lead">From picking a folder to your first save, it takes a few minutes.</p>
+
+<h2>Get your game files ready</h2>
+<p>RetroGenY does not include or download any games. Use backups of cartridges you own. Supported files:</p>
+<ul>
+  <li><code>.gba</code>: Game Boy Advance</li>
+  <li><code>.gb</code>, <code>.gbc</code>: Game Boy, Game Boy Color</li>
+</ul>
+<p>Put them in any folder on your phone. Subfolders by series or system are fine.</p>
+
+<h2>Choose your games folder</h2>
+<ol>
+  <li>The first time you open the app, it asks you to choose a games folder.</li>
+  <li>In the system file picker, open your games folder, tap "Use this folder" and allow access.</li>
+  <li>Back in the app, your games are listed. Subfolders show up as folders you can open.</li>
+</ol>
+<p class="aside">The app only reads and writes the folder you chose. To use a different folder later, choose it again in Settings.</p>
+
+<div class="fig phone"><a href="img/en/library.webp" target="_blank"><img src="img/en/library.webp" alt="The game list. The last game you played sits at the top with a Continue button." loading="lazy"></a></div>
+<p class="cap">The game list. The last game you played sits at the top with a Continue button.</p>
+
+<h2>Covers</h2>
+<p>A game's cover comes from one of three places, checked in this order:</p>
+<ol>
+  <li>An image (png or jpg) with the same name as the game, in a <code>covers</code> folder next to it.</li>
+  <li>A screenshot taken with "Screenshot" in the game menu, or an image chosen from the game card's ⋮ menu › Cover › "Choose from gallery". Both are saved to <code>covers</code> too.</li>
+  <li>An automatic cover: after you play a game without a cover for a minute, a frame is captured. It is kept inside the app, never written to your folder, and can be turned off in Settings.</li>
+</ol>
+
+<div class="fig phone"><a href="img/en/covers.webp" target="_blank"><img src="img/en/covers.webp" alt="Game card ⋮ menu › Cover › "Choose from gallery"." loading="lazy"></a></div>
+<p class="cap">Game card ⋮ menu › Cover › "Choose from gallery".</p>
+
+<h2>Saving</h2>
+<h3>In-game saves</h3>
+<p>Saving inside the game (like "Save" in Pokémon) writes a <code>.sav</code> file with the game's name, next to the game. Copy it along with the game to keep playing on another phone.</p>
+<h3>Save states</h3>
+<p>Save and load anywhere from the game menu. Every slot has a thumbnail, and there's an auto-save slot written when you leave a game. If you load the wrong one, tap "Undo" on the banner to go back.</p>
+
+<div class="fig pair"><a href="img/en/m-game-menu.webp" target="_blank"><img src="img/en/m-game-menu.webp" alt="The game menu" loading="lazy"></a><a href="img/en/states.webp" target="_blank"><img src="img/en/states.webp" alt="The save state menu" loading="lazy"></a></div>
+<p class="cap">Open the game menu, then "Save states" to make a new save, load one, or undo a load.</p>
+
+<h2>Controls</h2>
+<ul>
+  <li><b>On-screen buttons</b>: below the screen in portrait, on both sides in landscape.</li>
+  <li><b>Controllers and keyboards</b>: work as soon as they're connected. Remap them in Settings › Gamepad &amp; keyboard buttons; one GBA button can have several keys.</li>
+  <li><b>Screen orientation</b>: switch between portrait, landscape and system from the game menu.</li>
+</ul>
+
+<div class="fig wide"><a href="img/en/tablet.webp" target="_blank"><img src="img/en/tablet.webp" alt="In landscape, the controls move to both sides of the screen." loading="lazy"></a></div>
+<p class="cap">In landscape, the controls move to both sides of the screen.</p>
+
+<h2>BIOS (optional)</h2>
+<p>A replacement BIOS is built in and runs every game. Only a handful of games need the official BIOS, or you may want the boot animation. In that case import your own 16 KB BIOS file in Settings › GBA BIOS.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY doesn't include or distribute any games. Game Boy, Game Boy Color and Game Boy Advance are trademarks of Nintendo; this project is not affiliated with Nintendo.</span><a href="privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>

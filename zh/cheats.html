@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金手指 · RetroGenY</title>
+<meta name="description" content="安卓上的 GBA、GB、GBC 模拟器">
+<link rel="alternate" hreflang="en" href="../cheats.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">联机</a><a href="hhcode.html">扩展码</a><a href="memory.html">内存工具</a><a href="guide.html">使用说明</a></nav>
+  <a class="lang" href="../cheats.html" hreflang="en">English</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html">联机</a></li><li><a href="hhcode.html">扩展码</a></li><li><a href="memory.html">内存工具</a></li><li><a href="cheats.html" aria-current=page>金手指</a></li><li><a href="features.html">功能与设置</a></li><li><a href="faq.html">常见问题</a></li><li><a href="privacy.html">隐私政策</a></li></ol></nav><article class="prose"><h1>金手指</h1>
+<p class="lead">自带的金手指库打开就能用；也可以粘贴你在别处找到的码，或者自己写。</p>
+
+<h2>自带的金手指库</h2>
+<p>库里收了 1700 多个游戏、9000 多条金手指。进入游戏后打开金手指面板，应用会按卡带上的游戏代号找出这个游戏的金手指，点「添加」就生效。</p>
+<p>界面是英文时，金手指名称也显示英文。</p>
+<p class="aside">同一个游戏的不同版本（比如 1.0 和 1.1）有时地址不同，库里的码不一定对每个版本都有效。不生效时可以试试别的版本的码，或者自己搜。</p>
+
+<div class="fig pair"><a href="../img/zh/m-cheats-db.webp" target="_blank"><img src="../img/zh/m-cheats-db.webp" alt="金手指数据库" loading="lazy"></a><a href="../img/zh/m-cheats.webp" target="_blank"><img src="../img/zh/m-cheats.webp" alt="我的金手指" loading="lazy"></a></div>
+<p class="cap">左：「数据库」里是这个游戏的金手指，点「添加」。右：「我的金手指」，每条都有自己的开关；点 + 可以粘贴新的码。</p>
+
+<h2>粘贴金手指</h2>
+<p>在金手指面板里粘贴代码，应用会自动识别格式，开启后每一帧都会写入。支持：</p>
+<ul>
+  <li>GameShark / Action Replay</li>
+  <li>CodeBreaker</li>
+  <li>直接写内存的原始码（VBA Raw 等）</li>
+  <li>RetroGenY 扩展码（见下）</li>
+</ul>
+<p>代码里可以用 <code>#</code> 或 <code>!</code> 写注释，用 <code>[段落名]</code> 分组。有认不出的行会提示你，不会悄悄失效。</p>
+
+<h2>RetroGenY 扩展码</h2>
+<p>我们自己的金手指格式，能跟指针、循环、判断条件、按键触发，所以在普通码失效的地方照样能用：每次存档都会挪的数据、加密的金钱、整个背包。编辑器边写边检查，能用大白话解释任何一段码，还有模板可以直接改。<a href="hhcode.html">扩展码完整介绍</a>。</p>
+
+<h2>用内存工具自己做</h2>
+<p>找不到想要的金手指？在浮在游戏上的小窗口里搜索内存，锁定数值，再设个监视点，就能做成换了存档也有效的金手指。还能直接改游戏的行为，或者让每一次随机判定都向着你。<a href="memory.html">内存工具完整介绍</a>。</p>
+
+<h2>联机时</h2>
+<p>联机时所有金手指自动暂停，改过 ROM 的金手指也会先还原，免得两边游戏对不上。断开联机后恢复。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何游戏。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商标，本项目与任天堂没有关系。</span><a href="privacy.html">隐私政策</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>快速上手 · RetroGenY</title>
+<meta name="description" content="安卓上的 GBA、GB、GBC 模拟器">
+<link rel="alternate" hreflang="en" href="../guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">联机</a><a href="hhcode.html">扩展码</a><a href="memory.html">内存工具</a><a href="guide.html" aria-current=page>使用说明</a></nav>
+  <a class="lang" href="../guide.html" hreflang="en">English</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>快速上手</a></li><li><a href="link.html">联机</a></li><li><a href="hhcode.html">扩展码</a></li><li><a href="memory.html">内存工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能与设置</a></li><li><a href="faq.html">常见问题</a></li><li><a href="privacy.html">隐私政策</a></li></ol></nav><article class="prose"><h1>快速上手</h1>
+<p class="lead">从选文件夹到第一次存档，几分钟就能开始玩。</p>
+
+<h2>准备游戏文件</h2>
+<p>RetroGenY 不自带、也不提供下载任何游戏。请使用你自己合法拥有的卡带备份。支持的文件：</p>
+<ul>
+  <li><code>.gba</code>：Game Boy Advance</li>
+  <li><code>.gb</code>、<code>.gbc</code>：Game Boy、Game Boy Color</li>
+</ul>
+<p>把它们放进手机里任意一个文件夹，可以按系列、按主机分子文件夹。</p>
+
+<h2>选择游戏文件夹</h2>
+<ol>
+  <li>第一次打开应用时，会提示你选择放游戏的文件夹。</li>
+  <li>在系统的文件选择界面里进入放游戏的文件夹，点「使用此文件夹」并允许访问。</li>
+  <li>回到应用，游戏列表就出来了。子文件夹会显示成可以点进去的文件夹。</li>
+</ol>
+<p class="aside">应用只读写你选的这个文件夹，不会去看手机里的其他文件。以后想换文件夹，在设置里重新选就行。</p>
+
+<div class="fig phone"><a href="../img/zh/library.webp" target="_blank"><img src="../img/zh/library.webp" alt="游戏列表。上次玩的游戏排在最上面，点「继续」就回去。" loading="lazy"></a></div>
+<p class="cap">游戏列表。上次玩的游戏排在最上面，点「继续」就回去。</p>
+
+<h2>封面</h2>
+<p>游戏卡片上的封面有三种来源，按这个顺序找：</p>
+<ol>
+  <li>和游戏同一层的 <code>covers</code> 文件夹里，文件名和游戏名相同的图片（png 或 jpg）。</li>
+  <li>你在游戏菜单里用「截图」截的画面，或者在游戏卡片的 ⋮ 菜单 › 封面 › 「从相册选择」挑的图片。这两种也会存进 <code>covers</code>。</li>
+  <li>自动封面：没有封面的游戏玩满一分钟后，自动截一帧当封面。这张只存在应用里，不写进你的文件夹，可以在设置里关掉。</li>
+</ol>
+
+<div class="fig phone"><a href="../img/zh/covers.webp" target="_blank"><img src="../img/zh/covers.webp" alt="游戏卡片的 ⋮ 菜单 › 封面 ›「从相册选择」。" loading="lazy"></a></div>
+<p class="cap">游戏卡片的 ⋮ 菜单 › 封面 ›「从相册选择」。</p>
+
+<h2>存档</h2>
+<h3>游戏自己的存档</h3>
+<p>游戏里正常存档（比如宝可梦的「记录」）会写成和游戏同名的 <code>.sav</code> 文件，放在游戏旁边。换手机时连同 <code>.sav</code> 一起拷过去就能接着玩。</p>
+<h3>即时存档</h3>
+<p>在游戏菜单里随时存、随时读，每个位置都带一张缩略图。另外有一个自动存档位，离开游戏时自动保存。读档读错了，可以在提示条上点「撤销」回到读档前。</p>
+
+<div class="fig pair"><a href="../img/zh/m-game-menu.webp" target="_blank"><img src="../img/zh/m-game-menu.webp" alt="游戏菜单" loading="lazy"></a><a href="../img/zh/states.webp" target="_blank"><img src="../img/zh/states.webp" alt="即时存档菜单" loading="lazy"></a></div>
+<p class="cap">打开游戏菜单，点「即时存档 / 读档」：新建、读取，读错了还能撤销。</p>
+
+<h2>操作</h2>
+<ul>
+  <li><b>屏幕按键</b>：竖屏时在机身下方，横屏时在画面两侧。</li>
+  <li><b>手柄和键盘</b>：连上就能用，在「设置 › 手柄与键盘按键映射」里可以改按键，一个 GBA 键可以对应多个键。</li>
+  <li><b>屏幕方向</b>：游戏菜单里可以切竖屏、横屏或跟随系统。</li>
+</ul>
+
+<div class="fig wide"><a href="../img/zh/tablet.webp" target="_blank"><img src="../img/zh/tablet.webp" alt="横屏时，按键分到屏幕两边。" loading="lazy"></a></div>
+<p class="cap">横屏时，按键分到屏幕两边。</p>
+
+<h2>BIOS（可选）</h2>
+<p>应用内置了替代 BIOS，所有游戏都能直接玩。只有极少数游戏需要官方 BIOS，或者你想看开机动画时，才需要在「设置 › GBA BIOS」里导入自己的 BIOS 文件（16 KB）。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何游戏。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商标，本项目与任天堂没有关系。</span><a href="privacy.html">隐私政策</a></div></footer>
+</body>
+</html>

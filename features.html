@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features and settings · RetroGenY</title>
+<meta name="description" content="GBA, GB and GBC emulator for Android">
+<link rel="alternate" hreflang="zh-Hans" href="zh/features.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link play</a><a href="hhcode.html">Extended codes</a><a href="memory.html">Memory tools</a><a href="guide.html">Guide</a></nav>
+  <a class="lang" href="zh/features.html" hreflang="zh-Hans">中文</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html" aria-current=page>Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Features and settings</h1>
+<p class="lead">The main features, and what the settings marked "testing" actually do.</p>
+
+<h2>Free and premium</h2>
+<p>Playing, in-game saves, save states, cheats, controllers, on-screen buttons and screen orientation are all free. These are premium features:</p>
+<ul>
+  <li><b>Fast forward</b>: 1.5x, 2x and 4x (0.5x and 1x are free)</li>
+  <li><b>Rewind</b>: hold the rewind button to step the game back</li>
+  <li><b>Turbo</b>: hold a button to press it repeatedly, at a speed you choose</li>
+  <li><b>Filters</b>: LCD, scanlines, color correction, xBRZ, HQ4x, ScaleFX, FSR and more</li>
+  <li><b>Memory search</b>: find values yourself and make cheats</li>
+</ul>
+<p>To unlock them, watch one ad and use them for the next 2 hours, with no other ads in that time. If ads can't load (no connection, for example), they unlock for free once a day so you're never stuck.</p>
+<p class="aside">Ads only appear on the home screen (a banner at the bottom and in the game list). There are never ads during a game.</p>
+
+<h2>Display</h2>
+<ul>
+  <li><b>Filters</b>: switch them from the game menu, per game.</li>
+  <li><b>LCD ghosting</b>: emulates the slow response of the original screen. Some games flicker sprites every other frame to fake transparency; this makes them look right.</li>
+  <li><b>Faster rendering (testing)</b>: draws a line at a time instead of a pixel at a time. Much faster, identical picture. On by default.</li>
+  <li><b>Draw on another core (testing)</b>: runs the game and draws the picture on two CPU cores at once. Needs faster rendering.</li>
+</ul>
+
+<div class="fig phone"><a href="img/en/m-game-menu.webp" target="_blank"><img src="img/en/m-game-menu.webp" alt="The game menu" loading="lazy"></a></div>
+<p class="cap">The game menu: speed, renderer and the "testing" switches can be changed without leaving the game.</p>
+<h2>Performance and battery</h2>
+<ul>
+  <li><b>Continuous CPU execution (testing)</b>: skips checks between instructions when nothing is happening. Faster and lighter on the battery, with exactly the same results. Off automatically while linked.</li>
+  <li><b>Power saving</b>: avoids redrawing identical frames and similar savings, so the phone runs cooler. Can be set per game.</li>
+</ul>
+<p>You can switch these from the game menu's display section without leaving the game. If anything looks or runs oddly, turn off the "testing" switches first.</p>
+
+<div class="fig phone"><a href="img/en/m-settings.webp" target="_blank"><img src="img/en/m-settings.webp" alt="Settings" loading="lazy"></a></div>
+<p class="cap">Settings › Performance.</p>
+
+<h2>Sound</h2>
+<ul>
+  <li><b>High-quality audio</b>: finer resampling, cleaner in headphones.</li>
+  <li><b>Handheld speaker sound</b>: mono, with the lows and highs trimmed like the built-in speaker, for that original sound.</li>
+</ul>
+
+<h2>Controllers and cartridge extras</h2>
+<ul>
+  <li><b>Gamepad &amp; keyboard buttons</b>: rebind anything; one GBA button can have several keys.</li>
+  <li><b>Cartridge rumble</b>: games with a rumble cartridge (like Pokémon Pinball: Ruby &amp; Sapphire) vibrate the phone or controller.</li>
+</ul>
+
+<h2>Save states and rewind</h2>
+<p>Every save state slot has a thumbnail, and you can undo a load. Rewind needs some memory; if there isn't enough, the app tells you it couldn't turn on.</p>
+<div class="fig phone"><a href="img/en/states.webp" target="_blank"><img src="img/en/states.webp" alt="The save state menu: a new slot, the auto-save and your earlier slots." loading="lazy"></a></div>
+<p class="cap">The save state menu: a new slot, the auto-save and your earlier slots.</p>
+
+</article></div>
+</main>
+<footer><div><span>RetroGenY doesn't include or distribute any games. Game Boy, Game Boy Color and Game Boy Advance are trademarks of Nintendo; this project is not affiliated with Nintendo.</span><a href="privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>

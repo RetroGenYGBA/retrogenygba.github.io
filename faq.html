@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ · RetroGenY</title>
+<meta name="description" content="GBA, GB and GBC emulator for Android">
+<link rel="alternate" hreflang="zh-Hans" href="zh/faq.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link play</a><a href="hhcode.html">Extended codes</a><a href="memory.html">Memory tools</a><a href="guide.html">Guide</a></nav>
+  <a class="lang" href="zh/faq.html" hreflang="zh-Hans">中文</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Features and settings</a></li><li><a href="faq.html" aria-current=page>FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>FAQ</h1>
+
+<h2>Link play</h2>
+<h3>"The other phone is running a different app version"</h3>
+<p>The two phones have different versions of RetroGenY, and their link protocols don't match. Update both to the latest version and connect again.</p>
+<div class="fig phone"><a href="img/en/m-link-error.webp" target="_blank"><img src="img/en/m-link-error.webp" alt="The version mismatch message" loading="lazy"></a></div>
+<p class="cap">The message as it appears. "Export link log" (highlighted) is always at the bottom of the link panel.</p>
+
+<h3>I can't find the room</h3>
+<ul>
+  <li>Make sure both phones are on the same Wi-Fi. Some public networks (hotels, schools) block devices from reaching each other; use a hotspot on one phone instead.</li>
+  <li>In "Join room", type the address shown on the host's screen.</li>
+  <li>Or connect over Bluetooth or a cable.</li>
+</ul>
+<div class="fig phone"><a href="img/en/m-link-rooms.webp" target="_blank"><img src="img/en/m-link-rooms.webp" alt="Typing the host address" loading="lazy"></a></div>
+<p class="cap">Room not listed? Type the address shown on the host's screen here.</p>
+
+<h3>The game stutters once linked</h3>
+<p>A normal link is sensitive to network delay. Have the host turn on MirrorLink, and use the fastest phone as the host. Moving closer to the router helps too.</p>
+<h3>MirrorLink keeps saying it's receiving game data</h3>
+<p>Sometimes MirrorLink needs to get some data ready before the game starts. It's slow over Bluetooth and much faster over Wi-Fi. With several players, they take turns.</p>
+<h3>How do I report a problem?</h3>
+<p>Tap "Export link log" at the bottom of the link panel and email the file to <a href="mailto:retrogeny2026@gmail.com">retrogeny2026@gmail.com</a> with a description of what happened.</p>
+
+<h2>Games and saves</h2>
+<h3>My game list is empty</h3>
+<p>Check that you chose the folder that contains your <code>.gba</code>, <code>.gb</code> or <code>.gbc</code> files. Unzip archives first.</p>
+<h3>How do I move my saves to a new phone?</h3>
+<p>In-game saves are the <code>.sav</code> files next to each game. Copy them with the games into the games folder on the new phone.</p>
+<h3>A game won't start or looks wrong</h3>
+<p>Turn off the settings marked "testing" first. A few games need the official BIOS, which you can import in Settings › GBA BIOS. If it still fails, tell us the game name and version.</p>
+
+<h2>Cheats</h2>
+<h3>A cheat does nothing</h3>
+<p>Different versions of the same game can use different addresses. Check your cartridge version and try a code for another version, or find one with memory search. Cheats are paused while linked.</p>
+<h3>The game misbehaves after a cheat</h3>
+<p>Turn the cheat off and load a save state from before. Cheats that change encrypted data (editing a Pokémon's stats directly, for example) can make the save fail its own checks, so make a save state before trying them.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY doesn't include or distribute any games. Game Boy, Game Boy Color and Game Boy Advance are trademarks of Nintendo; this project is not affiliated with Nintendo.</span><a href="privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>

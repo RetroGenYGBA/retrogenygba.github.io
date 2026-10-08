@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheats · RetroGenY</title>
+<meta name="description" content="GBA, GB and GBC emulator for Android">
+<link rel="alternate" hreflang="zh-Hans" href="zh/cheats.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link play</a><a href="hhcode.html">Extended codes</a><a href="memory.html">Memory tools</a><a href="guide.html">Guide</a></nav>
+  <a class="lang" href="zh/cheats.html" hreflang="zh-Hans">中文</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html" aria-current=page>Cheats</a></li><li><a href="features.html">Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Cheats</h1>
+<p class="lead">The built-in cheat library works out of the box. You can also paste codes you found elsewhere, or write your own.</p>
+
+<h2>Built-in cheat library</h2>
+<p>The library covers more than 1,700 games with over 9,000 cheats. Open the cheat panel in a game, and the app finds that game's cheats by the game code on the cartridge. Tap Add on one and it takes effect.</p>
+<p>With the app in English, cheat names are shown in English.</p>
+<p class="aside">Different versions of the same game (1.0 and 1.1, for example) sometimes use different addresses, so a library code may not work on every version. If one doesn't, try a code for another version or find your own.</p>
+
+<div class="fig pair"><a href="img/en/m-cheats-db.webp" target="_blank"><img src="img/en/m-cheats-db.webp" alt="The cheat database" loading="lazy"></a><a href="img/en/m-cheats.webp" target="_blank"><img src="img/en/m-cheats.webp" alt="My cheats" loading="lazy"></a></div>
+<p class="cap">Left: "Database" lists the cheats for this game; tap Add. Right: "My Cheats", where each cheat has its own switch. Tap + to paste a code.</p>
+
+<h2>Pasting cheats</h2>
+<p>Paste a code into the cheat panel. The format is detected automatically, and once enabled the code is applied every frame. Supported:</p>
+<ul>
+  <li>GameShark / Action Replay</li>
+  <li>CodeBreaker</li>
+  <li>Raw memory writes (VBA Raw and similar)</li>
+  <li>RetroGenY extended codes (see below)</li>
+</ul>
+<p>Use <code>#</code> or <code>!</code> for comments and <code>[section]</code> headings to group lines. Lines the app can't read are reported instead of silently ignored.</p>
+
+<h2>RetroGenY extended codes</h2>
+<p>Our own cheat format follows pointers, loops, checks conditions and reacts to buttons, so it works where ordinary codes break: data that moves with every save, encrypted money, whole bags. The editor checks it as you type, explains any code in plain language and has templates to start from. <a href="hhcode.html">Everything about extended codes</a>.</p>
+
+<h2>Make your own with memory tools</h2>
+<p>Can't find the cheat you want? Search the game's memory in a floating window, lock the value, and let a watchpoint turn it into a cheat that survives a new save. You can even change what the game does, or force every random roll to go your way. <a href="memory.html">Everything about memory tools</a>.</p>
+
+<h2>While linked</h2>
+<p>All cheats pause while you're linked, and cheats that patch the game are undone first, so both games stay in sync. They come back when you unplug.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY doesn't include or distribute any games. Game Boy, Game Boy Color and Game Boy Advance are trademarks of Nintendo; this project is not affiliated with Nintendo.</span><a href="privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>

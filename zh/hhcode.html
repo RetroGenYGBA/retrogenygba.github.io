@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>扩展码 · RetroGenY</title>
+<meta name="description" content="安卓上的 GBA、GB、GBC 模拟器">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">联机</a><a href="hhcode.html" aria-current=page>扩展码</a><a href="memory.html">内存工具</a><a href="guide.html">使用说明</a></nav>
+  <a class="lang" href="../hhcode.html" hreflang="en">English</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html">联机</a></li><li><a href="hhcode.html" aria-current=page>扩展码</a></li><li><a href="memory.html">内存工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能与设置</a></li><li><a href="faq.html">常见问题</a></li><li><a href="privacy.html">隐私政策</a></li></ol></nav><article class="prose"><h1>扩展码</h1>
+<p class="lead">RetroGenY 自己的金手指格式。普通金手指只能「往一个地址写一个数」；扩展码是一小段程序，能跟指针、能循环、能判断条件，还能做游戏用来藏数值的那些运算。</p>
+
+<h2>普通金手指哪里不够用</h2>
+<p>GameShark、Action Replay、CodeBreaker 是二十多年前给卡带设计的格式，擅长的就是「这里一直写 99」。可很多游戏的数据不在固定的地方：</p>
+<ul>
+  <li><b>地址会变。</b>宝可梦和很多 RPG 的背包、队伍、金钱挂在指针后面，每次存档、甚至每次开菜单地址都可能变。写死地址的金手指今天能用，明天就悄悄失效。</li>
+  <li><b>数值是加密的。</b>火红、叶绿的金钱和每个存档自己的钥匙做了异或。直接写 999999，读出来是个乱数；得先读出钥匙再算。</li>
+  <li><b>一整排格子。</b>把 42 格背包都改成 99 个，要写 42 条码，捡起一样东西顺序一变就全乱了。</li>
+  <li><b>条件。</b>「按住 L+R 才生效」「只改有东西的格子」「只在战斗里」，基本做不到。</li>
+</ul>
+<p>扩展码就是为这些情况做的。</p>
+
+<h2>能做什么</h2>
+<ul>
+  <li><b>跟指针</b>：和游戏自己找数据的方式一样，换了存档照样能用。</li>
+  <li><b>循环</b>：用 <code>repeat 42 … end</code> 走遍背包、队伍、电脑箱子。</li>
+  <li><b>判断条件</b>：比较内存、测试某一位、跳过空格子，还能写「否则」<code>else</code>。</li>
+  <li><b>按键触发</b>：只在按住某组按键时执行，做「按 L+R 回血」这种。</li>
+  <li><b>计算</b>：8 个寄存器，加减乘、与或异或、移位都有，足够按游戏的方式把数值加密好再写进去。</li>
+  <li><b>复制</b>：把一个值或者一整排格子从别处拷过来。</li>
+  <li><b>改游戏本身</b>：用 <code>rom</code> 行改程序，做单改数值做不到的效果（商店 1 块钱、穿墙）。</li>
+  <li><b>给玩家选项</b>：写一行 <code>option</code>，金手指列表里就会出现下拉菜单，玩家直接选「×2 / ×5 / ×10」，不用改码。</li>
+</ul>
+
+<div class="fig pair"><a href="../img/zh/m-hhcode-edit.webp" target="_blank"><img src="../img/zh/m-hhcode-edit.webp" alt="添加扩展码" loading="lazy"></a><a href="../img/zh/m-hhcode-option.webp" target="_blank"><img src="../img/zh/m-hhcode-option.webp" alt="在金手指列表里选选项" loading="lazy"></a></div>
+<p class="cap">左：边输入边检查语法。右：带选项的码，在列表里就有下拉菜单。</p>
+
+<h2>真实的例子</h2>
+<p>火红（英文 v1.0）金钱 999999。钱挂在指针后面，还用存档的钥匙加了密，普通金手指做不了：</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # 存档块1：钱、道具都在这里
+r1 = [0x0300500C]        # 存档块2：钥匙在这里
+r2 = [r1 + 0xF20]        # 读出钥匙
+r2 = r2 ^ 999999         # 用钥匙把 999999 加密
+[r0 + 0x290].32 = r2     # 写进钱</code></pre>
+<p>背包里每样道具都变成 99 个，空格子跳过：</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # 数量也是加密的
+r0 = r0 + 0x310          # 道具口袋，42 格
+repeat 42
+  if [r0].16 != 0        # 空格子跳过
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # 下一格
+end</code></pre>
+<p>按住 L+R 回满血（地址仅作示意）：</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>让玩家在金手指列表里自己选：</p>
+<pre><code>hhcode 1
+option 倍数 = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $倍数</code></pre>
+
+<h2>怎么用</h2>
+<ol>
+  <li>在游戏里打开金手指面板，进「我的金手指」，点 <b>+</b>。</li>
+  <li>起个名字，输入或粘贴代码。第一行必须是 <code>hhcode</code>（或 <code>hhcode 1</code>）。</li>
+  <li>编辑器边输入边检查每一行。写错了会指出是第几行；没问题会显示「语法正确」。</li>
+  <li>看不懂一段码，比如别人发给你的？点 <b>「查看代码说明」</b>，它会用大白话把这段码念给你听。</li>
+  <li>不想从零写？打开 <b>「扩展码模板」</b>：锁定数值、指针链、连续格子、复制数值、遍历表、条件写入、否则分支、按键触发、位开关等等。选一个，改改地址和数值就行。</li>
+  <li>点「添加」，打开开关。和其他金手指一样，每一帧都会执行。</li>
+</ol>
+<p class="aside">很多时候根本不用自己写：<a href="memory.html">内存工具</a>能帮你找到数值，并直接生成跟指针的扩展码。</p>
+
+<h2>语法速查</h2>
+<table>
+  <tr><th>写法</th><th>作用</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>写入（默认 32 位）</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>指定宽度写入：.8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>连续写一串字节</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>写 30 格，每格隔 4 字节</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>复制一个值</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>读出、修改、写回：+= -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>把内存读进寄存器（指针链的第一步）</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>再跟一层指针</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>按寄存器偏移写入</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>运算：+ - * &amp; | ^ &lt;&lt; &gt;&gt; 和取反 ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>固定次数循环</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>条件：== != &lt; &gt; &lt;= &gt;=，无符号 &lt;u &gt;u，位测试 &amp; 和 !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>按住这些键时才执行</td></tr>
+  <tr><td><code>… else … end</code></td><td>否则</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>改游戏程序本身（重进游戏才会恢复）</td></tr>
+  <tr><td><code>option 名字 = v { v 说明; … }</code></td><td>在金手指列表里出现的选项，码里用 <code>$名字</code></td></tr>
+  <tr><td><code># 文字</code></td><td>注释</td></tr>
+</table>
+<p>完整的规则在 App 里：金手指面板 ›「详解」› RetroGenY 扩展码。</p>
+
+<h2>写错了也不怕</h2>
+<ul>
+  <li><b>不会卡死游戏。</b>每趟最多执行 20 万条指令，写错的循环到点就停。</li>
+  <li><b>宽度很宽容。</b>数值装不下你写的宽度时会自动加宽并提示你，不会悄悄截断。</li>
+  <li><b>会提醒可疑的写法</b>，比如一个看起来像别的格式里「偏移量」的地址。</li>
+  <li><b>写的就是数值。</b>十进制和十六进制一样，写的是数本身，不用管字节顺序。</li>
+</ul>
+
+<h2>整个金手指库都是扩展码</h2>
+<p>自带库里 1700 多个游戏、9000 多条金手指已经全部转成扩展码，每一条都和原码逐字节核对过。有些游戏还加了旧格式写不出来的手写扩展码，比如火红的加密金钱、整个背包。GameShark、Action Replay、CodeBreaker 照样能用，和以前一样。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何游戏。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商标，本项目与任天堂没有关系。</span><a href="privacy.html">隐私政策</a></div></footer>
+</body>
+</html>

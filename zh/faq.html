@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>常见问题 · RetroGenY</title>
+<meta name="description" content="安卓上的 GBA、GB、GBC 模拟器">
+<link rel="alternate" hreflang="en" href="../faq.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">联机</a><a href="hhcode.html">扩展码</a><a href="memory.html">内存工具</a><a href="guide.html">使用说明</a></nav>
+  <a class="lang" href="../faq.html" hreflang="en">English</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html">联机</a></li><li><a href="hhcode.html">扩展码</a></li><li><a href="memory.html">内存工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能与设置</a></li><li><a href="faq.html" aria-current=page>常见问题</a></li><li><a href="privacy.html">隐私政策</a></li></ol></nav><article class="prose"><h1>常见问题</h1>
+
+<h2>联机</h2>
+<h3>提示「对方的应用版本或机型不一致」</h3>
+<p>两台手机上的 RetroGenY 版本不同，联机协议对不上。把两台都更新到最新版再连。</p>
+<div class="fig phone"><a href="../img/zh/m-link-error.webp" target="_blank"><img src="../img/zh/m-link-error.webp" alt="版本不一致的提示" loading="lazy"></a></div>
+<p class="cap">提示的样子。「导出联机日志」（框出来的那行）一直在联机面板最下面。</p>
+
+<h3>找不到房间</h3>
+<ul>
+  <li>确认两台连的是同一个 Wi-Fi。有些公共 Wi-Fi（酒店、学校）会阻止设备互相访问，可以改用一台手机开热点。</li>
+  <li>在「加入房间」里手动输入主机屏幕上显示的地址。</li>
+  <li>也可以改用蓝牙或数据线。</li>
+</ul>
+<div class="fig phone"><a href="../img/zh/m-link-rooms.webp" target="_blank"><img src="../img/zh/m-link-rooms.webp" alt="手动输入主机地址" loading="lazy"></a></div>
+<p class="cap">找不到房间时，在这里输入主机屏幕上显示的地址。</p>
+
+<h3>联机后游戏变卡</h3>
+<p>普通联机对网络延迟比较敏感。让主机打开「镜像联机」，并用最快的那台手机当主机。离路由器近一点也有帮助。</p>
+<h3>镜像联机时一直显示「正在接收游戏数据」</h3>
+<p>有时开始前要先准备一些数据。走蓝牙会比较慢，用 Wi-Fi 会快很多。几台手机时会排队，一台一台来。</p>
+<h3>怎么把问题告诉你们</h3>
+<p>在联机面板最下面点「导出联机日志」，把文件和问题描述一起发到 <a href="mailto:retrogeny2026@gmail.com">retrogeny2026@gmail.com</a>。</p>
+
+<h2>游戏和存档</h2>
+<h3>游戏列表是空的</h3>
+<p>确认选的是放游戏的那个文件夹，里面有 <code>.gba</code>、<code>.gb</code> 或 <code>.gbc</code> 文件。压缩包要先解压。</p>
+<h3>换手机后怎么带走存档</h3>
+<p>游戏存档是游戏旁边同名的 <code>.sav</code> 文件，和游戏一起拷到新手机的游戏文件夹就行。</p>
+<h3>某个游戏打不开或画面不对</h3>
+<p>先在设置里把带「测试中」的开关关掉试试。有个别游戏需要官方 BIOS，可以在「设置 › GBA BIOS」里导入。还是不行的话请告诉我们游戏名和版本。</p>
+
+<h2>金手指</h2>
+<h3>开了金手指没效果</h3>
+<p>同一个游戏的不同版本地址可能不同。确认卡带版本，试试其他版本的码；或者用内存搜索自己找。联机时金手指会自动暂停。</p>
+<h3>开了金手指后游戏出问题</h3>
+<p>关掉金手指，读取开之前的即时存档。修改加密数据的金手指（比如直接改宝可梦能力）可能让存档里的数据校验不通过，用之前最好先存一个即时存档。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何游戏。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商标，本项目与任天堂没有关系。</span><a href="privacy.html">隐私政策</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory tools · RetroGenY</title>
+<meta name="description" content="GBA, GB and GBC emulator for Android">
+<link rel="alternate" hreflang="zh-Hans" href="zh/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link play</a><a href="hhcode.html">Extended codes</a><a href="memory.html" aria-current=page>Memory tools</a><a href="guide.html">Guide</a></nav>
+  <a class="lang" href="zh/memory.html" hreflang="zh-Hans">中文</a>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html" aria-current=page>Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Memory tools</h1>
+<p class="lead">Find any number in a game, lock it, and turn it into a cheat that keeps working in every save, without leaving the game. Then go further: change how the game behaves, or bend its luck.</p>
+
+<h2>What it's for</h2>
+<p>The cheat library covers a lot, but not everything: a less famous game, a translation patch, a ROM hack, or just the one value you care about. Memory tools let you make that cheat yourself. Most emulators stop at "search and lock an address". RetroGenY keeps going:</p>
+<ul>
+  <li><b>It runs in a floating window over the game.</b> Move it and resize it so the number you're hunting stays visible, and keep playing while you search.</li>
+  <li><b>Cheats that survive a new save.</b> A watchpoint shows where the game itself finds the value, and the cheat is written to follow the same path, as an <a href="hhcode.html">extended code</a>.</li>
+  <li><b>Change the game's behaviour</b>, not just its numbers: make a counter never go down, skip a check, all from a list of the instructions that touched your value.</li>
+  <li><b>Control randomness.</b> Find the random-number seed, see what's coming, or force every roll to the best result.</li>
+</ul>
+
+<div class="fig phone"><a href="img/en/m-mem-search.webp" target="_blank"><img src="img/en/m-mem-search.webp" alt="The memory search window over a running game" loading="lazy"></a></div>
+<p class="cap">The memory tools window floats over the game. Drag the title bar to move it, the corner to resize it.</p>
+
+<h2>Turning it on</h2>
+<ol>
+  <li>In a game, open the game menu and, under Tools, switch on <b>Memory search</b>.</li>
+  <li>A memory search key appears under the game screen. Tap it to open the window; tap ✕ to close it. Your search stays where you left it.</li>
+</ol>
+<p class="aside">Memory search is a premium feature: watch one ad to use it for 2 hours. Cheats you make with it are saved like any other and keep working afterwards.</p>
+
+<h2>Finding a value</h2>
+<p>Say you have 1,250 gold and want 999,999.</p>
+<ol>
+  <li>Pick a width. Money is usually 16- or 32-bit; small counters like lives are often 8-bit. If unsure, try 32-bit first.</li>
+  <li>Type the value you see (1250), keep the condition on "=", and tap <b>Search</b>.</li>
+  <li>Change the value in the game: buy something, pick some up.</li>
+  <li>Type the new value and tap <b>Refine</b>. Repeat until only a few addresses remain.</li>
+  <li>Tap <b>Cheat</b> on a result, set "Lock to" to 999999 and tap <b>Save to cheats</b>.</li>
+</ol>
+<p><b>Don't know the number?</b> HP bars, timers and hidden stats show no digits. Search with a condition instead: take a hit and refine with "decreased", heal and refine with "increased", stand still and refine with "unchanged". Also available: not equal, greater than and less than.</p>
+
+<h2>Cheats that keep working</h2>
+<p>A plain locked address breaks when the game moves its data, which many games do on every save. Memory tools fix that:</p>
+<ol>
+  <li>Tap <b>Watch</b> on the result you found.</li>
+  <li>Make the value change once in the game.</li>
+  <li>The emulator stops at the instruction that wrote it and records how the game got to that address.</li>
+  <li>Now tap <b>Cheat</b> again. The code it writes follows the game's own pointer, and says so: "Resolved through the pointer the game itself uses, so it remains valid in other saves."</li>
+</ol>
+
+<div class="fig pair"><a href="img/en/m-mem-cheat.webp" target="_blank"><img src="img/en/m-mem-cheat.webp" alt="Creating a cheat that follows the game's pointer" loading="lazy"></a><a href="img/en/m-mem-luck.webp" target="_blank"><img src="img/en/m-mem-luck.webp" alt="The luck setting in the seed tab" loading="lazy"></a></div>
+<p class="cap">Left: a cheat generated from a watchpoint, as an extended code that follows the pointer. Right: Luck forces every random roll to the best (or worst) result.</p>
+
+<h2>Changing what the game does</h2>
+<p>Sometimes locking a value isn't what you want. You want money to stop going down while still letting you earn it, or a check to always pass. The Watches tab lists every <b>instruction that wrote</b> your address, with a count:</p>
+<ol>
+  <li>Tap <b>Clear counts</b>, then do the thing in the game (buy something, take damage). "Record without pausing the game" keeps play smooth.</li>
+  <li>Come back and find the entry whose count went up.</li>
+  <li>Tap <b>Modify</b> and choose: replace with NOP, swap add and subtract, edit a constant, always jump, never jump, fix a register's value, or type one line of assembly.</li>
+  <li>It becomes a cheat like any other, with a name you choose.</li>
+</ol>
+<p class="aside">Game code is often shared: the routine that takes your money may also pay rewards. The app warns you when this is likely; use a breakpoint to check the instruction only runs when you expect. Turning off an instruction cheat takes effect after reopening the game.</p>
+
+<h2>Randomness and luck</h2>
+<p>Most games roll their dice with one line of arithmetic, and the four bytes holding its seed are the only data in memory whose every change fits that formula. The Seed tab finds them for you:</p>
+<ul>
+  <li><b>Luck</b>: Best or Worst forces every roll in the game to its lowest or highest value. Critical hits, rare drops, catches. If Best makes everything fail, the game counts high rolls as good; switch to Worst. It affects enemies too, so turn it off when you're done.</li>
+  <li><b>Advanced</b>: scan for the seed somewhere the game is idle, see the next values it will produce, and lock the seed.</li>
+</ul>
+
+<h2>For the curious</h2>
+<ul>
+  <li><b>Memory</b>: a hex view of any address, opened straight from a search result.</li>
+  <li><b>Breakpoints</b>: stop when a given instruction runs, then step one instruction at a time and read the registers.</li>
+  <li>Watchpoints keep working while the window is closed. When one fires, the window opens by itself.</li>
+</ul>
+
+<h2>Why it's different</h2>
+<ul>
+  <li>Search, lock and save without leaving the game or switching apps.</li>
+  <li>Pointer-based cheats generated for you, so they don't break with the next save.</li>
+  <li>Instruction cheats from a list of real writers, no disassembler needed.</li>
+  <li>Luck control that works across games, because it targets how games roll dice, not one game's addresses.</li>
+  <li>Everything you make is an ordinary cheat: name it and switch it on and off like any other.</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>RetroGenY doesn't include or distribute any games. Game Boy, Game Boy Color and Game Boy Advance are trademarks of Nintendo; this project is not affiliated with Nintendo.</span><a href="privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>
