@@ -19,7 +19,7 @@
 </header></div>
 <main>
 <div class="doc"><nav class="side"><ol><li><a href="guide.html">Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html" aria-current=page>Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Features and settings</h1>
-<p class="lead">The main features, and what the settings marked "testing" actually do.</p>
+<p class="lead">The main features, and what the performance settings do.</p>
 
 <h2>Free and premium</h2>
 <p>Playing, in-game saves, save states, cheats, controllers, on-screen buttons and screen orientation are all free. These are premium features:</p>
@@ -37,18 +37,18 @@
 <ul>
   <li><b>Filters</b>: switch them from the game menu, per game.</li>
   <li><b>LCD ghosting</b>: emulates the slow response of the original screen. Some games flicker sprites every other frame to fake transparency; this makes them look right.</li>
-  <li><b>Faster rendering (testing)</b>: draws a line at a time instead of a pixel at a time. Much faster, identical picture. On by default.</li>
-  <li><b>Draw on another core (testing)</b>: runs the game and draws the picture on two CPU cores at once. Needs faster rendering.</li>
+  <li><b>Fast rendering</b>: renders the screen one scanline at a time instead of pixel by pixel. Much faster, identical picture. On by default.</li>
+  <li><b>Multithreaded rendering</b>: runs emulation and rendering in parallel on two CPU cores. Requires Fast rendering.</li>
 </ul>
 
 <div class="fig phone"><a href="img/en/m-game-menu.webp" target="_blank"><img src="img/en/m-game-menu.webp" alt="The game menu" loading="lazy"></a></div>
-<p class="cap">The game menu: speed, renderer and the "testing" switches can be changed without leaving the game.</p>
+<p class="cap">The game menu: speed, renderer and the performance switches can be changed without leaving the game.</p>
 <h2>Performance and battery</h2>
 <ul>
-  <li><b>Continuous CPU execution (testing)</b>: skips checks between instructions when nothing is happening. Faster and lighter on the battery, with exactly the same results. Off automatically while linked.</li>
+  <li><b>Continuous CPU execution</b>: skips checks between instructions when nothing is happening. Faster and lighter on the battery, with exactly the same results. Off automatically while linked.</li>
   <li><b>Power saving</b>: avoids redrawing identical frames and similar savings, so the phone runs cooler. Can be set per game.</li>
 </ul>
-<p>You can switch these from the game menu's display section without leaving the game. If anything looks or runs oddly, turn off the "testing" switches first.</p>
+<p>You can switch these from the game menu's display section without leaving the game. If anything looks or runs oddly, turn these switches off first.</p>
 
 <div class="fig phone"><a href="img/en/m-settings.webp" target="_blank"><img src="img/en/m-settings.webp" alt="Settings" loading="lazy"></a></div>
 <p class="cap">Settings › Performance.</p>
