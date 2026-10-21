@@ -68,17 +68,37 @@ img { height: auto; }
 .platforms li { border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: #c9d1ff; }
 .platforms li b { color: #fff; }
 
-/* 首页社群入口：小标签 + 三个胶囊按钮（彩色小圆点区分，不用各家的商标图） */
-.community { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 18px 0 0; }
-.community-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #aab5ff; margin-right: 4px; }
-.chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 12px; border-radius: 999px;
-  background: rgba(5,13,74,.38); border: 1px solid rgba(255,255,255,.16); color: #fff; font-size: 14px; font-weight: 600;
-  text-decoration: none; transition: background .15s, border-color .15s, transform .15s; }
-.chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 25%, transparent); }
-.chip span { font-size: 12px; opacity: .55; transition: opacity .15s, transform .15s; }
-.chip:hover { background: rgba(5,13,74,.6); border-color: rgba(255,255,255,.32); transform: translateY(-1px); }
-.chip:hover span { opacity: 1; transform: translate(1px,-1px); }
-@media (max-width: 480px) { .community-label { flex-basis: 100%; } }
+/* 首页「加入社群」：米白底一整节，三张品牌色大卡片（图标来自 Simple Icons，CC0） */
+.join { background: var(--cream); color: var(--deep); }
+.join-in { max-width: 1120px; margin: 0 auto; padding: 56px 20px 60px; }
+.join h2 { font: 700 30px/1.2 var(--display); margin: 0 0 6px; }
+.join-in > p { margin: 0 0 26px; color: #4a4f6e; font-size: 17px; }
+.join-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.join-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 20px; color: #fff; text-decoration: none;
+  background: var(--bg); box-shadow: 0 6px 0 var(--drop); transition: transform .15s, box-shadow .15s; }
+.join-card:hover { transform: translateY(-3px); box-shadow: 0 9px 0 var(--drop); }
+.join-card:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--drop); }
+.join-card.reddit { --bg: #ff4500; --drop: #b33000; }
+.join-card.discord { --bg: #5865f2; --drop: #3c45a5; }
+.join-card.telegram { --bg: #229ed9; --drop: #16729c; }
+.join-ic { width: 48px; height: 48px; background: #fff; -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat; }
+.reddit .join-ic { -webkit-mask-image: url(img/social/reddit.svg); mask-image: url(img/social/reddit.svg); }
+.discord .join-ic { -webkit-mask-image: url(img/social/discord.svg); mask-image: url(img/social/discord.svg); }
+.telegram .join-ic { -webkit-mask-image: url(img/social/telegram.svg); mask-image: url(img/social/telegram.svg); }
+.join-txt { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.join-txt b { font: 700 24px/1.2 var(--display); }
+.join-txt small { font-size: 14px; opacity: .8; }
+.join-txt span { margin-top: 8px; font-size: 16px; line-height: 1.45; }
+.join-go { align-self: flex-start; background: rgba(255,255,255,.2); border-radius: 999px; padding: 7px 16px; font-weight: 700; font-size: 15px; }
+.join-card:hover .join-go { background: #fff; color: var(--bg); }
+@media (max-width: 760px) {
+  .join-grid { grid-template-columns: 1fr; gap: 14px; }
+  .join-card { flex-direction: row; align-items: center; padding: 16px 18px; }
+  .join-ic { width: 40px; height: 40px; flex: none; }
+  .join-txt b { font-size: 20px; }
+  .join-txt span { margin-top: 2px; font-size: 14px; }
+  .join-go { align-self: center; padding: 6px 12px; font-size: 14px; }
+}
 
 /* 两台手机，一根联机线 */
 .duo { position: relative; display: flex; justify-content: center; gap: 4%; padding-top: 70px; }
