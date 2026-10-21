@@ -63,6 +63,8 @@ img { height: auto; }
   display: inline-block; padding: 12px 22px; border-radius: 14px; text-decoration: none; font: 700 17px/1.4 var(--display);
   background: var(--orange); color: #fff; box-shadow: 0 4px 0 #c43f05;
 }
+.community { margin: 22px 0 0; font-size: 15px; font-weight: 500; opacity: .92; }
+.community a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .btn.ghost { background: var(--cream); color: var(--deep); box-shadow: 0 4px 0 #cfc5ad; }
 .platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; padding: 0; list-style: none; }
 .platforms li { border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: #c9d1ff; }
