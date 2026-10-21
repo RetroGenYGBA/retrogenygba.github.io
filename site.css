@@ -63,12 +63,22 @@ img { height: auto; }
   display: inline-block; padding: 12px 22px; border-radius: 14px; text-decoration: none; font: 700 17px/1.4 var(--display);
   background: var(--orange); color: #fff; box-shadow: 0 4px 0 #c43f05;
 }
-.community { margin: 22px 0 0; font-size: 15px; font-weight: 500; opacity: .92; }
-.community a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .btn.ghost { background: var(--cream); color: var(--deep); box-shadow: 0 4px 0 #cfc5ad; }
 .platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; padding: 0; list-style: none; }
 .platforms li { border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: #c9d1ff; }
 .platforms li b { color: #fff; }
+
+/* 首页社群入口：小标签 + 三个胶囊按钮（彩色小圆点区分，不用各家的商标图） */
+.community { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 18px 0 0; }
+.community-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #aab5ff; margin-right: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 12px; border-radius: 999px;
+  background: rgba(5,13,74,.38); border: 1px solid rgba(255,255,255,.16); color: #fff; font-size: 14px; font-weight: 600;
+  text-decoration: none; transition: background .15s, border-color .15s, transform .15s; }
+.chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 25%, transparent); }
+.chip span { font-size: 12px; opacity: .55; transition: opacity .15s, transform .15s; }
+.chip:hover { background: rgba(5,13,74,.6); border-color: rgba(255,255,255,.32); transform: translateY(-1px); }
+.chip:hover span { opacity: 1; transform: translate(1px,-1px); }
+@media (max-width: 480px) { .community-label { flex-basis: 100%; } }
 
 /* 两台手机，一根联机线 */
 .duo { position: relative; display: flex; justify-content: center; gap: 4%; padding-top: 70px; }
