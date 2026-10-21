@@ -68,37 +68,19 @@ img { height: auto; }
 .platforms li { border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: #c9d1ff; }
 .platforms li b { color: #fff; }
 
-/* 首页「加入社群」：米白底一整节，三张品牌色大卡片（图标来自 Simple Icons，CC0） */
-.join { background: var(--cream); color: var(--deep); }
-.join-in { max-width: 1120px; margin: 0 auto; padding: 56px 20px 60px; }
-.join h2 { font: 700 30px/1.2 var(--display); margin: 0 0 6px; }
-.join-in > p { margin: 0 0 26px; color: #4a4f6e; font-size: 17px; }
-.join-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.join-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 20px; color: #fff; text-decoration: none;
-  background: var(--bg); box-shadow: 0 6px 0 var(--drop); transition: transform .15s, box-shadow .15s; }
-.join-card:hover { transform: translateY(-3px); box-shadow: 0 9px 0 var(--drop); }
-.join-card:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--drop); }
-.join-card.reddit { --bg: #ff4500; --drop: #b33000; }
-.join-card.discord { --bg: #5865f2; --drop: #3c45a5; }
-.join-card.telegram { --bg: #229ed9; --drop: #16729c; }
-.join-ic { width: 48px; height: 48px; background: #fff; -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat; }
-.reddit .join-ic { -webkit-mask-image: url(img/social/reddit.svg); mask-image: url(img/social/reddit.svg); }
-.discord .join-ic { -webkit-mask-image: url(img/social/discord.svg); mask-image: url(img/social/discord.svg); }
-.telegram .join-ic { -webkit-mask-image: url(img/social/telegram.svg); mask-image: url(img/social/telegram.svg); }
-.join-txt { display: flex; flex-direction: column; gap: 2px; flex: 1; }
-.join-txt b { font: 700 24px/1.2 var(--display); }
-.join-txt small { font-size: 14px; opacity: .8; }
-.join-txt span { margin-top: 8px; font-size: 16px; line-height: 1.45; }
-.join-go { align-self: flex-start; background: rgba(255,255,255,.2); border-radius: 999px; padding: 7px 16px; font-weight: 700; font-size: 15px; }
-.join-card:hover .join-go { background: #fff; color: var(--bg); }
-@media (max-width: 760px) {
-  .join-grid { grid-template-columns: 1fr; gap: 14px; }
-  .join-card { flex-direction: row; align-items: center; padding: 16px 18px; }
-  .join-ic { width: 40px; height: 40px; flex: none; }
-  .join-txt b { font-size: 20px; }
-  .join-txt span { margin-top: 2px; font-size: 14px; }
-  .join-go { align-self: center; padding: 6px 12px; font-size: 14px; }
-}
+/* 首页按钮下面的社群入口：一行一个，品牌色圆标 + 文字，整行可点（图标来自 Simple Icons，CC0） */
+.community { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin: 24px 0 0; }
+.community a { display: inline-flex; align-items: center; gap: 12px; color: #fff; font-size: 16px; font-weight: 600; text-decoration: none; }
+.community a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.soc { width: 32px; height: 32px; border-radius: 50%; flex: none; background: var(--bg) no-repeat center / 18px 18px; position: relative; transition: transform .15s; }
+.soc::after { content: ""; position: absolute; inset: 7px; background: #fff; -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat; }
+.community a:hover .soc { transform: scale(1.08); }
+.community .telegram .soc { --bg: #229ed9; }
+.community .discord .soc { --bg: #5865f2; }
+.community .reddit .soc { --bg: #ff4500; }
+.community .telegram .soc::after { -webkit-mask-image: url(img/social/telegram.svg); mask-image: url(img/social/telegram.svg); }
+.community .discord .soc::after { -webkit-mask-image: url(img/social/discord.svg); mask-image: url(img/social/discord.svg); }
+.community .reddit .soc::after { -webkit-mask-image: url(img/social/reddit.svg); mask-image: url(img/social/reddit.svg); }
 
 /* 两台手机，一根联机线 */
 .duo { position: relative; display: flex; justify-content: center; gap: 4%; padding-top: 70px; }
