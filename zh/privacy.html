@@ -25,7 +25,7 @@
 
 <h2>本应用自己不收集个人信息</h2>
 <ul>
-  <li>你的游戏文件、存档、即时存档、截图和封面都只保存在你的手机上（你选的文件夹或本应用的私有空间），不会上传。</li>
+  <li>你的游戏文件、存档、即时存档、截图和封面都只保存在你的手机上（你选的文件夹或本应用的私有空间）。唯一的例外是云存档：你打开以后，游戏存档会复制到你自己的 Google Drive（见下文）。任何内容都不会上传给我们。</li>
   <li>本应用没有自己的账号系统，不要求你提供姓名、邮箱或电话。（可选的 RetroAchievements 登录用的是你在 RetroAchievements 的账号，见下文。）</li>
   <li>本应用没有自己的服务器，不收集使用统计。</li>
 </ul>
@@ -33,6 +33,20 @@
 <h2>联机</h2>
 <p>联机时，你的手机直接和其他手机通过同一个局域网、蓝牙或数据线通信，不经过我们的服务器。通信内容是游戏联机所需的数据，以及你的设备名称（让对方认出你）。使用蓝牙联机时，系统会请求「附近设备」权限，只用于找到和连接对方的手机。</p>
 <p>「导出联机日志」生成的日志只保存在你的手机上；只有你自己决定发送给我们时，我们才会看到。</p>
+
+<h2>Google Drive 云存档（可选）</h2>
+<p>云存档默认关闭，只有你在设置里连接 Google Drive 后才会开启。开启后：</p>
+<ul>
+  <li>本应用会把游戏存档（<code>.sav</code> 文件）复制到<strong>你自己的</strong> Google Drive 里一个叫「RetroGenY Saves」的文件夹，也会把那里更新的存档取回手机，方便你换手机或重装后接着玩。即时存档、游戏文件、截图和封面不会上传。</li>
+  <li>本应用只向 Google 申请 <code>drive.file</code> 权限：只能看到和修改本应用自己建的文件，看不到你 Google Drive 里的其他任何内容。</li>
+  <li>文件直接在你的手机和 Google 之间通过加密连接传输，我们收不到你的存档；本应用也不读取你 Google 账号的名字或邮箱。</li>
+  <li>为了记录同步状态，本应用会在手机上保存每个存档的校验值和它在 Google Drive 上那份的文件 ID。</li>
+</ul>
+<p>在设置里断开后就不再同步。已经在 Google Drive 里的存档会留着，直到你自己在 Drive 里删除。要彻底收回本应用的权限，请到 Google 账号的<a href="https://myaccount.google.com/connections">第三方应用和服务</a>里移除 RetroGenY。你在 Google Drive 里的数据由 Google 按 <a href="https://policies.google.com/privacy">Google 隐私权政策</a>处理。</p>
+<p>RetroGenY 对通过 Google API 获得的信息的使用和传输，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其中的「有限使用」要求。</p>
+
+<h2>导出和导入存档</h2>
+<p>「导出存档」通过 Android 的分享菜单把存档文件交给你选的应用（邮件、聊天软件、网盘等），之后发到哪里由你决定。「导入存档」只读取你选的那个文件。</p>
 
 <h2>RetroAchievements（可选）</h2>
 <p>只有你在设置里打开 RetroAchievements 并登录后，本应用才会和 RetroAchievements（retroachievements.org，独立的第三方服务）通信。会发送的内容：</p>

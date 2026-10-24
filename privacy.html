@@ -25,7 +25,7 @@
 
 <h2>The app itself collects no personal information</h2>
 <ul>
-  <li>Your games, saves, save states, screenshots and covers stay on your phone, in the folder you chose or in the app's private storage. They are never uploaded.</li>
+  <li>Your games, saves, save states, screenshots and covers stay on your phone, in the folder you chose or in the app's private storage. The only exception is cloud saves: if you turn them on, your game saves are copied to your own Google Drive (see below). Nothing is ever uploaded to us.</li>
   <li>The app has no accounts of its own and never asks for your name, email or phone number. (The optional RetroAchievements login uses your RetroAchievements account; see below.)</li>
   <li>The app has no servers of its own and collects no usage statistics.</li>
 </ul>
@@ -33,6 +33,20 @@
 <h2>Link play</h2>
 <p>When you link, your phone talks directly to the other phones over the same local network, Bluetooth or a cable, never through our servers. What's exchanged is the data the games need to link, plus your device name so the other players can recognize you. For Bluetooth play the system asks for the "Nearby devices" permission, used only to find and connect to the other phone.</p>
 <p>Logs made with "Export link log" stay on your phone. We only see one if you choose to send it to us.</p>
+
+<h2>Cloud saves with Google Drive (optional)</h2>
+<p>Cloud saves are off until you connect Google Drive in Settings. When they are on:</p>
+<ul>
+  <li>The app copies your game saves (<code>.sav</code> files) to a folder called "RetroGenY Saves" in <strong>your own</strong> Google Drive, and copies newer saves back from it, so you can continue on another phone or after reinstalling. Save states, games, screenshots and covers are not uploaded.</li>
+  <li>The app asks Google only for the <code>drive.file</code> permission. With it the app can see and change only the files it created itself. It cannot see anything else in your Google Drive.</li>
+  <li>The files travel directly between your phone and Google over an encrypted connection. We never receive your saves, and the app does not read your Google account's name or email address.</li>
+  <li>To keep the sync records, the app stores on your phone a checksum of each save and the ID of its copy on Google Drive.</li>
+</ul>
+<p>Disconnect in Settings and the app stops syncing. Your saves stay in your Google Drive until you delete them there. To withdraw the app's access completely, remove RetroGenY under <a href="https://myaccount.google.com/connections">Third-party apps &amp; services</a> in your Google Account. Google handles your Drive data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<p>RetroGenY's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>Exporting and importing saves</h2>
+<p>"Export save" hands the save file to the app you pick (email, a chat app, a cloud drive) through Android's share sheet; where it goes from there is up to you. "Import save" only reads the file you pick.</p>
 
 <h2>RetroAchievements (optional)</h2>
 <p>The app only talks to RetroAchievements (retroachievements.org, an independent third-party service) if you turn RetroAchievements on in Settings and log in. What it sends:</p>
