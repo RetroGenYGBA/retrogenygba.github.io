@@ -68,6 +68,8 @@ img { height: auto; }
 /* 下载渠道：Google Play 下面接 Uptodown，同样的按钮、一样宽 */
 .stores { display: flex; flex-direction: column; gap: 12px; }
 .stores .btn { text-align: center; }
+/* Uptodown 的品牌蓝 */
+.btn.uptodown { background: #0090d6; box-shadow: 0 4px 0 #005f8f; }
 .platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; padding: 0; list-style: none; }
 .platforms li { border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: #c9d1ff; }
 .platforms li b { color: #fff; }
