@@ -27,7 +27,7 @@
 <ul>
   <li>Your games, saves, save states, screenshots and covers stay on your phone, in the folder you chose or in the app's private storage. The only exception is cloud saves: if you turn them on, your game saves are copied to your own Google Drive (see below). Nothing is ever uploaded to us.</li>
   <li>The app has no accounts of its own and never asks for your name, email or phone number. (The optional RetroAchievements login uses your RetroAchievements account; see below.)</li>
-  <li>The app has no servers of its own and collects no usage statistics.</li>
+  <li>The app has no servers of its own. To find and fix crashes, and to see how the app is used, it sends crash reports and anonymous usage statistics to Google Firebase (see below).</li>
 </ul>
 
 <h2>Link play</h2>
@@ -62,10 +62,17 @@
 <p>The app shows ads through Google AdMob. AdMob may collect device identifiers (such as the advertising ID), approximate location, device information and ad interaction data to serve and measure ads. Where consent is required (for example in the EEA and the UK), the app asks for your choice through Google's consent tool before showing ads, and you can choose non-personalized ads.</p>
 <p>See <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>. You can reset or delete your advertising ID in your phone's settings.</p>
 
-<!-- 买断开了再放回来：
 <h2>Purchases</h2>
 <p>The one-time purchase is handled by Google Play Billing. Google processes your payment details; the app only learns whether the purchase succeeded, to unlock features.</p>
--->
+
+<h2>Crash reports and usage statistics (Google Firebase)</h2>
+<p>The app uses Google Firebase, a Google service for app developers:</p>
+<ul>
+  <li><strong>Crashlytics</strong>: when the app crashes, it sends a crash report: where in the app it happened, the app and Android version, the phone model, and a random installation ID. It contains no games, saves or personal information.</li>
+  <li><strong>Analytics</strong>: anonymous usage statistics, such as which console a game is for (GBA, GB or GBC), which screen renderer is used, and whether link play, ads or the purchase were used. Game names are not sent. Firebase collects a random app-instance ID and device information (model, Android version, language, approximate country from the IP address). Where consent is required (for example in the EEA and the UK), statistics follow the choice you make in the consent form.</li>
+  <li><strong>Remote Config</strong>: the app downloads a few settings from Firebase (for example how often ads appear), so they can change without an app update.</li>
+</ul>
+<p>We use this data only to fix problems and improve the app; it is not sold, and we do not use it to identify you. Google handles it under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and the <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</p>
 
 <h2>Children</h2>
 <p>The app is not directed at children under 13 and does not knowingly collect their personal information.</p>
