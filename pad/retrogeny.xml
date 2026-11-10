@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>Hand written</MASTER_PAD_EDITOR>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>TTProject</Company_Name>
+    <Address_1>Sydney NSW</Address_1>
+    <Address_2></Address_2>
+    <City_Town>Sydney</City_Town>
+    <State_Province>NSW</State_Province>
+    <Zip_Postal_Code>2000</Zip_Postal_Code>
+    <Country>Australia</Country>
+    <Company_WebSite_URL>https://retrogenygba.github.io/</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>TTProject</Author_First_Name>
+      <Author_Last_Name>Team</Author_Last_Name>
+      <Author_Email>retrogeny2026@gmail.com</Author_Email>
+      <Contact_First_Name>TTProject</Contact_First_Name>
+      <Contact_Last_Name>Team</Contact_Last_Name>
+      <Contact_Email>retrogeny2026@gmail.com</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>retrogeny2026@gmail.com</Sales_Email>
+      <Support_Email>retrogeny2026@gmail.com</Support_Email>
+      <General_Email>retrogeny2026@gmail.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>RetroGenY</Program_Name>
+    <Program_Version>1.5.1</Program_Version>
+    <Program_Release_Month>11</Program_Release_Month>
+    <Program_Release_Day>01</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Android</Program_OS_Support>
+    <Program_Language>English,Chinese</Program_Language>
+    <Program_Change_Info>New GBA and GB/GBC cores written from scratch; reset game from the in-game menu; one-time purchase to remove ads; better OpenGL performance; choose the ROM folder from the empty game list; link play fixes.</Program_Change_Info>
+    <Program_Specific_Category>Emulators</Program_Specific_Category>
+    <Program_Category_Class>Games &amp; Entertainment::Other</Program_Category_Class>
+    <Program_System_Requirements>Android 8.0 or later</Program_System_Requirements>
+    <File_Info>
+      <File_Size_Bytes>20709378</File_Size_Bytes>
+      <File_Size_K>20224</File_Size_K>
+      <File_Size_MB>19.75</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Count></Expire_Count>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>GBA emulator, GBC emulator, Game Boy emulator, Game Boy Advance, Android emulator, retro games, cheats, link play</Keywords>
+      <Char_Desc_45>GBA, GBC and GB emulator for Android</Char_Desc_45>
+      <Char_Desc_80>Accurate, fast GBA, GBC and GB emulator for Android with cheats and link play</Char_Desc_80>
+      <Char_Desc_250>RetroGenY plays Game Boy Advance, Game Boy Color and Game Boy games on Android. Its own GBA and GB/GBC cores are accurate and fast, with save states, cheats, fast forward, rewind, cloud saves and link play.</Char_Desc_250>
+      <Char_Desc_450>RetroGenY is a Game Boy Advance, Game Boy Color and Game Boy emulator for Android. Both cores are written from scratch from public hardware documentation, aiming for accuracy and speed. Features include save states, rewind, fast forward, turbo buttons, a large cheat database, game controller support, screen filters, cloud saves through your own Google Drive and link play. Bring your own game files; no games are included.</Char_Desc_450>
+      <Char_Desc_2000>RetroGenY is a Game Boy Advance (GBA), Game Boy Color (GBC) and Game Boy (GB) emulator for Android phones and tablets.
+
+Accurate, fast cores
+Both the GBA core and the GB/GBC core are written from scratch from public hardware documentation. They are tested against hundreds of games and run full speed on most phones, with Vulkan and OpenGL renderers.
+
+Features
+- In-game saves and save states
+- Rewind, fast forward and turbo buttons
+- A large built-in cheat database, plus your own Action Replay, GameShark and CodeBreaker codes
+- Game controller support with button mapping
+- Screen filters: LCD grid, ghosting, brightness, contrast and gamma
+- Cloud saves through your own Google Drive, and save export / import
+- Link play between phones
+- Cartridge sensors: solar sensor, tilt and gyro games use the phone's sensors
+- Portrait and landscape layouts, English and Chinese interface
+
+RetroGenY is free with ads. A one-time purchase removes the ads and permanently unlocks all premium features.
+
+No games are included. Use game files you own.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://retrogenygba.github.io/</Application_Info_URL>
+      <Application_Order_URL>https://play.google.com/store/apps/details?id=com.ttproject.retro</Application_Order_URL>
+      <Application_Screenshot_URL>https://retrogenygba.github.io/pad/screenshot.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://retrogenygba.github.io/pad/icon.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://retrogenygba.github.io/pad/retrogeny.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://play.google.com/store/apps/details?id=com.ttproject.retro</Primary_Download_URL>
+      <Secondary_Download_URL>https://retrogeny-gba.en.uptodown.com/android</Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>You may link to the Google Play page of RetroGenY. Do not redistribute or modify the installation files.</Distribution_Permissions>
+    <EULA>RetroGenY is free to use with ads. No games are included; use only game files you own. See the privacy policy at https://retrogenygba.github.io/privacy.html.</EULA>
+  </Permissions>
+</XML_DIZ_INFO>
