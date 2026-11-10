@@ -46,7 +46,7 @@
     <Program_Install_Support>Install and Uninstall</Program_Install_Support>
     <Program_OS_Support>Android</Program_OS_Support>
     <Program_Language>English,Chinese</Program_Language>
-    <Program_Change_Info>New GBA and GB/GBC cores written from scratch; reset game from the in-game menu; one-time purchase to remove ads; better OpenGL performance; choose the ROM folder from the empty game list; link play fixes.</Program_Change_Info>
+    <Program_Change_Info>New GBA and GB/GBC cores written from scratch; reset game from the in-game menu; one-time purchase to unlock all premium features; better OpenGL performance; choose the ROM folder from the empty game list; link play fixes.</Program_Change_Info>
     <Program_Specific_Category>Emulators</Program_Specific_Category>
     <Program_Category_Class>Games &amp; Entertainment::Other</Program_Category_Class>
     <Program_System_Requirements>Android 8.0 or later</Program_System_Requirements>
@@ -88,7 +88,7 @@ Features
 - Cartridge sensors: solar sensor, tilt and gyro games use the phone's sensors
 - Portrait and landscape layouts, English and Chinese interface
 
-RetroGenY is free with ads. A one-time purchase removes the ads and permanently unlocks all premium features.
+RetroGenY is free. A one-time purchase permanently unlocks all premium features.
 
 No games are included. Use game files you own.</Char_Desc_2000>
     </English>
@@ -110,6 +110,6 @@ No games are included. Use game files you own.</Char_Desc_2000>
   </Web_Info>
   <Permissions>
     <Distribution_Permissions>You may link to the Google Play page of RetroGenY. Do not redistribute or modify the installation files.</Distribution_Permissions>
-    <EULA>RetroGenY is free to use with ads. No games are included; use only game files you own. See the privacy policy at https://retrogenygba.github.io/privacy.html.</EULA>
+    <EULA>RetroGenY is free to use. No games are included; use only game files you own. See the privacy policy at https://retrogenygba.github.io/privacy.html.</EULA>
   </Permissions>
 </XML_DIZ_INFO>
