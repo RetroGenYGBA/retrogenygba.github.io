@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RetroGenY：能連線的 GBA、GB、GBC 模擬器</title>
+
+<meta name="description" content="Android 上的 GBA、GB、GBC 模擬器">
+<link rel="alternate" hreflang="en" href="../index.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/index.html">
+<link rel="alternate" hreflang="ja" href="../ja/index.html">
+<link rel="alternate" hreflang="ko" href="../ko/index.html">
+<link rel="alternate" hreflang="es" href="../es/index.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/index.html">
+<link rel="alternate" hreflang="fr" href="../fr/index.html">
+<link rel="alternate" hreflang="de" href="../de/index.html">
+<link rel="alternate" hreflang="it" href="../it/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans TC","Noto Sans SC",sans-serif;--body:"Noto Sans TC","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body class="home">
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">連線</a><a href="hhcode.html">擴充碼</a><a href="memory.html">記憶體工具</a><a href="guide.html">使用說明</a></nav>
+  <details class="lang-menu"><summary class="lang">繁體中文</summary><ul><li><a href="../index.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/index.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/index.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}" aria-current=true>繁體中文</a></li><li><a href="../ja/index.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/index.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/index.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/index.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/index.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/index.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="stage">
+<section class="hero">
+  <div class="hero-copy">
+    <h1>RetroGenY<br>GBA 模擬器</h1>
+    <p>Android 上的 GBA 模擬器，也能玩 GB 和 GBC 遊戲。支援 Wi-Fi、藍牙和傳輸線連線，GBA 遊戲最多四人一起玩。</p>
+    <div class="cta">
+      <div class="stores">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.ttproject.retro">在 Google Play 下載</a>
+        <a class="btn uptodown" href="https://retrogeny-gba.en.uptodown.com/android" rel="noopener">在 Uptodown 下載</a>
+      </div>
+      <a class="btn ghost" href="guide.html">看使用說明</a>
+    </div>
+    <div class="community">
+      <a class="telegram" href="https://t.me/RetroGenY" rel="noopener"><span class="soc" aria-hidden="true"></span>加入 Telegram 群組</a>
+      <a class="discord" href="https://discord.gg/z5SVpRcUN" rel="noopener"><span class="soc" aria-hidden="true"></span>加入 Discord 伺服器</a>
+      <a class="reddit" href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener"><span class="soc" aria-hidden="true"></span>加入 Reddit 社群</a>
+    </div>
+    <ul class="platforms">
+    <li><b>Android</b> 已推出</li>
+    <li><b>iPhone / iPad</b> 開發中</li>
+    <li><b>Mac</b> 開發中</li>
+  </ul>
+  </div>
+  <div class="duo">
+  <svg class="cable" viewBox="0 0 520 130" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M 140 78 C 140 8, 250 8, 260 40 S 380 120, 382 126"/>
+  </svg>
+  <img src="../img/en/library.webp" alt="RetroGenY 的遊戲庫" width="573" height="1000">
+  <img src="../img/en/play.webp" alt="在 RetroGenY 裡玩遊戲" width="573" height="1000">
+</div>
+</section>
+</div>
+<section class="shots"><div class="shots-in">
+  <h2>就像真正的掌機</h2>
+  <p>按鍵大、畫面清楚，存檔隨時一按就到。</p>
+  <ul class="shot-row">
+      <li><figure><img src="../img/en/library.webp" alt="截圖：遊戲庫" width="573" height="1000" loading="lazy">
+        <figcaption><b>遊戲庫</b>直接讀你自己資料夾裡的遊戲，有封面，上次玩的遊戲有「繼續遊戲」按鈕。</figcaption></figure></li>
+      <li><figure><img src="../img/en/play.webp" alt="截圖：遊戲中" width="573" height="1000" loading="lazy">
+        <figcaption><b>遊戲中</b>按鍵大而清楚，像素畫面銳利。手機轉橫就是寬版面。</figcaption></figure></li>
+      <li><figure><img src="../img/en/states.webp" alt="截圖：即時存檔" width="573" height="1000" loading="lazy">
+        <figcaption><b>即時存檔</b>欄位不限數量，另有自動存檔，每個都標著存檔時間。</figcaption></figure></li>
+      <li><figure><img src="../img/en/covers.webp" alt="截圖：封面" width="573" height="1000" loading="lazy">
+        <figcaption><b>封面</b>從相簿選一張當封面，或用遊戲裡截的圖。</figcaption></figure></li>
+  </ul>
+</div></section>
+<section class="big3"><div class="big3-in">
+  <h2>RetroGenY 的不同之處</h2>
+  <article class="big">
+    <div class="big-copy">
+      <h3>和朋友一起玩</h3>
+      <p>連接兩到四支手機，對戰、交換、賽車，就像這些遊戲原本該玩的樣子。</p>
+      <ul><li>GB/GBC 兩人連線，GBA 多人最多四人</li><li>同一個 Wi-Fi、手機熱點、藍牙或 USB-C 傳輸線</li><li>每支手機一條不同顏色的線，點一下就接上</li><li>網路慢時，鏡像連線也能保持順暢</li></ul>
+      <a class="btn" href="link.html">連線怎麼用</a>
+    </div>
+    <div class="big-pic"><img src="../img/en/m-link-linked.webp" alt="" width="573" height="1000" loading="lazy"></div>
+  </article>
+  <article class="big flip">
+    <div class="big-copy">
+      <h3>擴充碼：更強的金手指</h3>
+      <p>我們自己的金手指格式，能做到 GameShark 和 Action Replay 做不到的事：指標後面的資料、加密的金錢、整個背包和箱子。</p>
+      <ul><li>會跟隨指標，所以一條代碼在任何存檔都有效</li><li>迴圈、條件、按鍵觸發和算術</li><li>邊輸入邊檢查，能翻成白話說明，還有範本</li><li>內建的 9000 多條金手指全都用它</li></ul>
+      <a class="btn" href="hhcode.html">了解擴充碼</a>
+    </div>
+    <div class="big-pic"><img src="../img/en/m-hhcode-edit.webp" alt="" width="573" height="1000" loading="lazy"></div>
+  </article>
+  <article class="big">
+    <div class="big-copy">
+      <h3>記憶體工具：自己做金手指</h3>
+      <p>在遊戲上方的浮動視窗裡找到任何數字，再把它變成換了存檔也有效的金手指。</p>
+      <ul><li>依數值搜尋，或依「改變 / 增加 / 減少」搜尋</li><li>監看點會幫你寫出指標金手指</li><li>直接從寫入數值的指令，改變遊戲的行為</li><li>運氣控制：讓每次隨機判定都是最好的結果</li></ul>
+      <a class="btn" href="memory.html">看看記憶體工具</a>
+    </div>
+    <div class="big-pic"><img src="../img/en/m-mem-search.webp" alt="" width="573" height="1000" loading="lazy"></div>
+  </article>
+</div></section>
+<section class="features"><h2 class="more-h">RetroGenY 還有</h2>
+  <div>
+    <h2>金手指資料庫</h2>
+    <p>內建 1700 多款遊戲的金手指，開遊戲就能用。也可以貼上 GameShark、Action Replay、CodeBreaker 或 RetroGenY 擴充碼。<a href="cheats.html">金手指說明</a></p>
+  </div>
+  <div>
+    <h2>你的遊戲，你的資料夾</h2>
+    <p>選好放遊戲的資料夾，子資料夾、封面和存檔都留在原處，換手機時一起帶走就好。App 不附帶、也不下載任何遊戲。<a href="guide.html">快速上手</a></p>
+  </div>
+  <div>
+    <h2>即時存檔和倒帶</h2>
+    <p>隨時存、隨時讀，每個欄位都有縮圖，讀錯了還能復原。按住倒帶鍵，遊戲就往回倒。<a href="features.html">功能</a></p>
+  </div>
+  <div>
+    <h2>手把和掌機細節</h2>
+    <p>任何手把或鍵盤都能對應按鍵。卡匣震動、掌機喇叭的聲音和 LCD 殘影都能模擬。<a href="features.html">功能</a></p>
+  </div>
+  <div>
+    <h2>RetroAchievements</h2>
+    <p>登入你的 RetroAchievements 帳號，在支援的 GBA、GBC、GB 遊戲裡解成就，解鎖時會跳出提示，遊戲選單裡能看成就列表。<a href="features.html">功能</a></p>
+  </div>
+  <div>
+    <h2>需要幫忙？</h2>
+    <p>連不上、找不到房間，或者看到版本不一致？常見情況都寫在這裡。<a href="faq.html">常見問題</a></p>
+    <p>也可以到我們的 <a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a>，或 <a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a>、<a href="https://t.me/RetroGenY" rel="noopener">Telegram</a> 群組發問，玩家也會在那裡找人連線。</p>
+  </div>
+</section>
+
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何遊戲。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商標，本專案與任天堂沒有關係。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

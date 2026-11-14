@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erweiterte Codes · RetroGenY</title>
+
+<meta name="description" content="GBA-, GB- und GBC-Emulator für Android">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/hhcode.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/hhcode.html">
+<link rel="alternate" hreflang="ja" href="../ja/hhcode.html">
+<link rel="alternate" hreflang="ko" href="../ko/hhcode.html">
+<link rel="alternate" hreflang="es" href="../es/hhcode.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/hhcode.html">
+<link rel="alternate" hreflang="fr" href="../fr/hhcode.html">
+<link rel="alternate" hreflang="it" href="../it/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link-Spiel</a><a href="hhcode.html" aria-current=page>Erweiterte Codes</a><a href="memory.html">Speicherwerkzeuge</a><a href="guide.html">Anleitung</a></nav>
+  <details class="lang-menu"><summary class="lang">Deutsch</summary><ul><li><a href="../hhcode.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/hhcode.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/hhcode.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/hhcode.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/hhcode.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/hhcode.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/hhcode.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/hhcode.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/hhcode.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}" aria-current=true>Deutsch</a></li><li><a href="../it/hhcode.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Erste Schritte</a></li><li><a href="link.html">Link-Spiel</a></li><li><a href="hhcode.html" aria-current=page>Erweiterte Codes</a></li><li><a href="memory.html">Speicherwerkzeuge</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Funktionen und Einstellungen</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Datenschutzerklärung</a></li></ol></nav><article class="prose"><h1>Erweiterte Codes</h1>
+<p class="lead">Das eigene Cheat-Format von RetroGenY. Ein normaler Code schreibt einen Wert an eine Adresse. Ein erweiterter Code ist ein kurzes Programm: Er kann Zeigern folgen, Schleifen ausführen, Bedingungen prüfen und die Rechnungen nachvollziehen, mit denen ein Spiel seine Zahlen versteckt.</p>
+
+<h2>Warum normale Codes nicht reichen</h2>
+<p>GameShark, Action Replay und CodeBreaker wurden für Module der frühen 2000er entwickelt. Sie können gut „schreib hier immer 99“, und das war's im Grunde. Viele Spiele halten ihre Daten nicht an einer Stelle:</p>
+<ul>
+  <li><b>Daten, die wandern.</b> Pokémon und viele RPGs legen Beutel, Team und Geld hinter einen Zeiger, und die Adresse ändert sich mit jedem Speichern oder sogar bei jedem Öffnen eines Menüs. Ein Code mit fester Adresse funktioniert heute und morgen stillschweigend nicht mehr.</li>
+  <li><b>Verschlüsselte Werte.</b> Feuerrot und Blattgrün speichern dein Geld per XOR mit einem Schlüssel, der je Spielstand anders ist. Schreibst du direkt 999999, bekommst du eine Zufallszahl; erst muss der Schlüssel gelesen werden.</li>
+  <li><b>Ganze Listen.</b> Jedes Item in einem Beutel mit 42 Plätzen auf 99 zu setzen braucht 42 einzelne Codes, und die verrutschen, sobald du etwas aufhebst.</li>
+  <li><b>Bedingungen.</b> „Nur solange ich L+R halte“, „nur bei leeren Plätzen“, „nur im Kampf“ sind meist unerreichbar.</li>
+</ul>
+<p>Erweiterte Codes wurden genau für diese Fälle gemacht.</p>
+
+<h2>Was sie können</h2>
+<ul>
+  <li><b>Zeigern folgen</b> wie das Spiel selbst, damit ein Code in jedem Spielstand weiter funktioniert.</li>
+  <li><b>Schleifen</b> über einen Beutel, ein Team oder eine PC-Box, mit <code>repeat 42 … end</code>.</li>
+  <li><b>Bedingungen prüfen</b>: Speicher vergleichen, Bits testen, leere Plätze überspringen, und ein <code>else</code> ergänzen.</li>
+  <li><b>Auf Tasten reagieren</b>: nur laufen, solange eine Tastenkombination gehalten wird, für „L+R zum Heilen“.</li>
+  <li><b>Rechnen</b> mit acht Registern: Addieren, Subtrahieren, Multiplizieren, AND, OR, XOR und Verschiebungen, genug, um einen Wert so zu kodieren, wie das Spiel ihn erwartet.</li>
+  <li><b>Kopieren</b> eines Wertes oder einer ganzen Reihe von Plätzen von woanders.</li>
+  <li><b>Das Spiel patchen</b> mit <code>rom</code>-Zeilen, für Änderungen, die mit Werten allein nicht gehen (ein Laden, der 1 verlangt, durch Wände gehen).</li>
+  <li><b>Auswahl anbieten.</b> Eine <code>option</code>-Zeile macht aus einem Wert ein Dropdown in der Cheat-Liste, sodass Spieler „×2 / ×5 / ×10“ wählen, ohne den Code anzufassen.</li>
+</ul>
+
+<div class="fig pair"><a href="../img/en/m-hhcode-edit.webp" target="_blank"><img src="../img/en/m-hhcode-edit.webp" alt="Einen erweiterten Code hinzufügen" loading="lazy"></a><a href="../img/en/m-hhcode-option.webp" target="_blank"><img src="../img/en/m-hhcode-option.webp" alt="Eine Option in der Cheat-Liste wählen" loading="lazy"></a></div>
+<p class="cap">Links: Der Editor prüft den Code beim Tippen. Rechts: Codes mit Optionen bekommen direkt in der Liste ein Dropdown.</p>
+
+<h2>Ein echtes Beispiel</h2>
+<p>Geld 999999 in Feuerrot (englische v1.0). Das Geld liegt hinter einem Zeiger und ist mit dem Schlüssel des Spielstands verschlüsselt, was kein normaler Code bewältigt:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # Block 1: Geld und Items
+r1 = [0x0300500C]        # Block 2: hier liegt der Schlüssel
+r2 = [r1 + 0xF20]        # Schlüssel lesen
+r2 = r2 ^ 999999         # 999999 damit kodieren
+[r0 + 0x290].32 = r2     # Geld schreiben</code></pre>
+<p>Jedes Item im Beutel auf 99, leere Plätze überspringen:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # auch Anzahlen sind verschlüsselt
+r0 = r0 + 0x310          # der Beutel: 42 Plätze
+repeat 42
+  if [r0].16 != 0        # leere Plätze überspringen
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # nächster Platz
+end</code></pre>
+<p>L+R halten, um KP aufzufüllen (Adresse nur als Beispiel):</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>Eine Auswahl, die der Spieler in der Cheat-Liste ändern kann:</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>So benutzt du sie</h2>
+<ol>
+  <li>Öffne im Spiel das Cheat-Fenster und geh zu „Meine Cheats“. Tippe auf <b>+</b>.</li>
+  <li>Gib einen Namen ein und tippe oder füge den Code ein. Die erste Zeile muss <code>hhcode</code> (oder <code>hhcode 1</code>) sein.</li>
+  <li>Der Editor prüft jede Zeile beim Tippen. Ein Fehler wird mit Zeilennummer angezeigt; ein gültiger Code meldet „Syntax gültig“.</li>
+  <li>Unsicher, was ein Code macht, etwa einer, den dir jemand geschickt hat? Tippe auf <b>„Diesen Code erklären“</b>, und er wird dir in Klartext vorgelesen.</li>
+  <li>Keine Lust, bei null anzufangen? Öffne <b>„Vorlagen für erweiterte Codes“</b>: Wert sperren, Zeigerkette, aufeinanderfolgende Plätze, Wert kopieren, Tabelle durchlaufen, bedingtes Schreiben, Else-Zweig, Tasten-Auslöser, Bitschalter und mehr. Wähle eine und ändere Adresse und Wert.</li>
+  <li>Tippe auf Hinzufügen und schalte ihn ein. Wie jeder Cheat läuft er in jedem Frame.</li>
+</ol>
+<p class="aside">Oft musst du gar keinen schreiben: Die <a href="memory.html">Speicherwerkzeuge</a> finden einen Wert und schreiben dir einen zeigerbasierten erweiterten Code.</p>
+
+<h2>Syntax auf einen Blick</h2>
+<table>
+  <tr><th>Code</th><th>Was er tut</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>Schreiben (standardmäßig 32 Bit)</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>Mit fester Breite schreiben: .8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>Eine Bytefolge schreiben</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>30 Plätze im Abstand von 4 Bytes schreiben</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>Einen Wert kopieren</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>Lesen, ändern, zurückschreiben: += -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>Speicher in ein Register lesen (Beginn einer Zeigerkette)</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>Dem Zeiger eine Ebene weiter folgen</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>Relativ zu einem Register schreiben</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>Arithmetik: + - * &amp; | ^ &lt;&lt; &gt;&gt; und ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>Eine feste Anzahl wiederholen</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>Bedingung: == != &lt; &gt; &lt;= &gt;=, vorzeichenlos &lt;u &gt;u, Bittest &amp; und !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>Nur, solange diese Tasten gehalten werden</td></tr>
+  <tr><td><code>… else … end</code></td><td>Sonst</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>Das Spiel selbst patchen (Spiel neu öffnen zum Rückgängigmachen)</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>Eine Auswahl in der Cheat-Liste; als <code>$name</code> verwenden</td></tr>
+  <tr><td><code># text</code></td><td>Kommentar</td></tr>
+</table>
+<p>Die vollständige Referenz mit allen Regeln steht in der App: Cheat-Fenster › „Anleitung“ › Erweiterte RetroGenY-Codes.</p>
+
+<h2>Auf Sicherheit gebaut</h2>
+<ul>
+  <li><b>Sie können das Spiel nicht einfrieren.</b> Jeder Durchlauf ist auf 200.000 Befehle begrenzt, eine falsch geschriebene Schleife hält also einfach an.</li>
+  <li><b>Breiten sind nachsichtig.</b> Passt ein Wert nicht in die angegebene Breite, wird sie erweitert und du bekommst einen Hinweis, statt dass er still abgeschnitten wird.</li>
+  <li><b>Sie warnen vor wahrscheinlichen Fehlern</b>, etwa einer Adresse, die wie ein Offset aus einem anderen Format aussieht.</li>
+  <li><b>Werte sind Werte.</b> Dezimal und hexadezimal bedeuten dasselbe, und du schreibst die Zahl, nicht ihre Bytereihenfolge.</li>
+</ul>
+
+<h2>Die ganze Bibliothek spricht sie</h2>
+<p>Die über 9.000 Cheats der eingebauten Bibliothek für über 1.700 Spiele wurden in erweiterte Codes umgewandelt, und jeder wurde Byte für Byte mit dem Original abgeglichen. Einige Spiele haben handgeschriebene erweiterte Codes bekommen, die die alten Formate nicht ausdrücken konnten, etwa verschlüsseltes Geld und volle Beutel in Feuerrot. GameShark-, Action-Replay- und CodeBreaker-Codes funktionieren weiterhin genau wie vorher.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY enthält und verbreitet keine Spiele. Game Boy, Game Boy Color und Game Boy Advance sind Marken von Nintendo; dieses Projekt steht in keiner Verbindung zu Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Datenschutzerklärung</a></div></footer>
+</body>
+</html>

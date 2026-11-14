@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erste Schritte · RetroGenY</title>
+
+<meta name="description" content="GBA-, GB- und GBC-Emulator für Android">
+<link rel="alternate" hreflang="en" href="../guide.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/guide.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/guide.html">
+<link rel="alternate" hreflang="ja" href="../ja/guide.html">
+<link rel="alternate" hreflang="ko" href="../ko/guide.html">
+<link rel="alternate" hreflang="es" href="../es/guide.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/guide.html">
+<link rel="alternate" hreflang="fr" href="../fr/guide.html">
+<link rel="alternate" hreflang="it" href="../it/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link-Spiel</a><a href="hhcode.html">Erweiterte Codes</a><a href="memory.html">Speicherwerkzeuge</a><a href="guide.html" aria-current=page>Anleitung</a></nav>
+  <details class="lang-menu"><summary class="lang">Deutsch</summary><ul><li><a href="../guide.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/guide.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/guide.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/guide.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/guide.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/guide.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/guide.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/guide.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/guide.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}" aria-current=true>Deutsch</a></li><li><a href="../it/guide.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>Erste Schritte</a></li><li><a href="link.html">Link-Spiel</a></li><li><a href="hhcode.html">Erweiterte Codes</a></li><li><a href="memory.html">Speicherwerkzeuge</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Funktionen und Einstellungen</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Datenschutzerklärung</a></li></ol></nav><article class="prose"><h1>Erste Schritte</h1>
+<p class="lead">Vom Ordner wählen bis zum ersten Spielstand dauert es nur ein paar Minuten.</p>
+
+<h2>Spieldateien vorbereiten</h2>
+<p>RetroGenY enthält und lädt keine Spiele. Verwende Sicherungen von Modulen, die du besitzt. Unterstützte Dateien:</p>
+<ul>
+  <li><code>.gba</code>: Game Boy Advance</li>
+  <li><code>.gb</code>, <code>.gbc</code>: Game Boy, Game Boy Color</li>
+</ul>
+<p>Leg sie in einen beliebigen Ordner auf dem Handy. Unterordner nach Reihe oder System sind kein Problem.</p>
+
+<h2>Spieleordner wählen</h2>
+<ol>
+  <li>Beim ersten Öffnen bittet dich die App, einen Spieleordner zu wählen.</li>
+  <li>Öffne in der Dateiauswahl des Systems deinen Spieleordner, tippe auf „Diesen Ordner verwenden“ und erlaube den Zugriff.</li>
+  <li>Zurück in der App sind deine Spiele aufgelistet. Unterordner erscheinen als Ordner, die du öffnen kannst.</li>
+</ol>
+<p class="aside">Die App liest und schreibt nur im gewählten Ordner. Um später einen anderen Ordner zu nutzen, wähle ihn in den Einstellungen neu.</p>
+
+<div class="fig phone"><a href="../img/en/library.webp" target="_blank"><img src="../img/en/library.webp" alt="Die Spieleliste. Das zuletzt gespielte Spiel steht oben mit einer Weiter-Taste." loading="lazy"></a></div>
+<p class="cap">Die Spieleliste. Das zuletzt gespielte Spiel steht oben mit einer Weiter-Taste.</p>
+
+<h2>Cover</h2>
+<p>Das Cover eines Spiels stammt aus einer von drei Quellen, in dieser Reihenfolge geprüft:</p>
+<ol>
+  <li>Ein Bild (png oder jpg) mit demselben Namen wie das Spiel, in einem Ordner <code>covers</code> daneben.</li>
+  <li>Ein Screenshot über „Screenshot“ im Spielmenü oder ein Bild, gewählt über das ⋮-Menü der Spielkarte › Cover › „Aus Galerie wählen“. Beide werden ebenfalls in <code>covers</code> gespeichert.</li>
+  <li>Ein automatisches Cover: Spielst du ein Spiel ohne Cover eine Minute lang, wird ein Bild aufgenommen. Es wird in der App aufbewahrt, nie in deinen Ordner geschrieben und lässt sich in den Einstellungen abschalten.</li>
+</ol>
+
+<div class="fig phone"><a href="../img/en/covers.webp" target="_blank"><img src="../img/en/covers.webp" alt="⋮-Menü der Spielkarte › Cover › „Aus Galerie wählen“." loading="lazy"></a></div>
+<p class="cap">⋮-Menü der Spielkarte › Cover › „Aus Galerie wählen“.</p>
+
+<h2>Speichern</h2>
+<h3>Speichern im Spiel</h3>
+<p>Speichern im Spiel (wie „Speichern“ in Pokémon) schreibt eine <code>.sav</code>-Datei mit dem Namen des Spiels neben das Spiel. Kopiere sie zusammen mit dem Spiel, um auf einem anderen Handy weiterzuspielen.</p>
+<h3>Savestates</h3>
+<p>Speichern und laden überall über das Spielmenü. Jeder Platz hat ein Vorschaubild, und beim Verlassen eines Spiels wird ein automatischer Platz geschrieben. Wenn du den falschen lädst, tippe im Hinweis auf „Rückgängig“.</p>
+
+<div class="fig pair"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="Das Spielmenü" loading="lazy"></a><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="Das Savestate-Menü" loading="lazy"></a></div>
+<p class="cap">Öffne das Spielmenü und dann „Savestates“, um neu zu speichern, zu laden oder ein Laden rückgängig zu machen.</p>
+
+<h2>Steuerung</h2>
+<ul>
+  <li><b>Bildschirmtasten</b>: im Hochformat unter dem Bild, im Querformat an beiden Seiten.</li>
+  <li><b>Controller und Tastaturen</b>: funktionieren, sobald sie verbunden sind. Ändere die Belegung unter Einstellungen › Gamepad- und Tastaturtasten; eine GBA-Taste kann mehrere Tasten haben.</li>
+  <li><b>Bildschirmausrichtung</b>: wechsle im Spielmenü zwischen Hochformat, Querformat und System.</li>
+</ul>
+
+<div class="fig wide"><a href="../img/en/tablet.webp" target="_blank"><img src="../img/en/tablet.webp" alt="Im Querformat wandern die Tasten an beide Seiten des Bildes." loading="lazy"></a></div>
+<p class="cap">Im Querformat wandern die Tasten an beide Seiten des Bildes.</p>
+
+<h2>BIOS (optional)</h2>
+<p>Ein Ersatz-BIOS ist eingebaut und führt jedes Spiel aus. Nur eine Handvoll Spiele braucht das offizielle BIOS, oder du möchtest die Startanimation sehen. Dann importiere deine eigene 16-KB-BIOS-Datei unter Einstellungen › GBA BIOS.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY enthält und verbreitet keine Spiele. Game Boy, Game Boy Color und Game Boy Advance sind Marken von Nintendo; dieses Projekt steht in keiner Verbindung zu Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Datenschutzerklärung</a></div></footer>
+</body>
+</html>

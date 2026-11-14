@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speicherwerkzeuge · RetroGenY</title>
+
+<meta name="description" content="GBA-, GB- und GBC-Emulator für Android">
+<link rel="alternate" hreflang="en" href="../memory.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/memory.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/memory.html">
+<link rel="alternate" hreflang="ja" href="../ja/memory.html">
+<link rel="alternate" hreflang="ko" href="../ko/memory.html">
+<link rel="alternate" hreflang="es" href="../es/memory.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/memory.html">
+<link rel="alternate" hreflang="fr" href="../fr/memory.html">
+<link rel="alternate" hreflang="it" href="../it/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Link-Spiel</a><a href="hhcode.html">Erweiterte Codes</a><a href="memory.html" aria-current=page>Speicherwerkzeuge</a><a href="guide.html">Anleitung</a></nav>
+  <details class="lang-menu"><summary class="lang">Deutsch</summary><ul><li><a href="../memory.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/memory.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/memory.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/memory.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/memory.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/memory.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/memory.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/memory.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/memory.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}" aria-current=true>Deutsch</a></li><li><a href="../it/memory.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Erste Schritte</a></li><li><a href="link.html">Link-Spiel</a></li><li><a href="hhcode.html">Erweiterte Codes</a></li><li><a href="memory.html" aria-current=page>Speicherwerkzeuge</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Funktionen und Einstellungen</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Datenschutzerklärung</a></li></ol></nav><article class="prose"><h1>Speicherwerkzeuge</h1>
+<p class="lead">Finde jede Zahl in einem Spiel, sperre sie und mach daraus einen Cheat, der in jedem Spielstand funktioniert, ohne das Spiel zu verlassen. Und dann geh weiter: ändere, wie sich das Spiel verhält, oder biege sein Glück zurecht.</p>
+
+<h2>Wofür das ist</h2>
+<p>Die Cheat-Bibliothek deckt viel ab, aber nicht alles: ein weniger bekanntes Spiel, ein Übersetzungspatch, ein ROM-Hack oder genau der eine Wert, der dir wichtig ist. Mit den Speicherwerkzeugen baust du diesen Cheat selbst. Die meisten Emulatoren hören bei „Suchen und Adresse sperren“ auf. RetroGenY macht weiter:</p>
+<ul>
+  <li><b>Es läuft in einem schwebenden Fenster über dem Spiel.</b> Verschiebe es und ändere die Größe, damit die gesuchte Zahl sichtbar bleibt, und spiel weiter, während du suchst.</li>
+  <li><b>Cheats, die einen neuen Spielstand überstehen.</b> Ein Beobachtungspunkt zeigt, wo das Spiel selbst den Wert findet, und der Cheat folgt demselben Weg, als <a href="hhcode.html">erweiterter Code</a>.</li>
+  <li><b>Ändere das Verhalten des Spiels</b>, nicht nur seine Zahlen: ein Zähler, der nie sinkt, eine übersprungene Prüfung, alles aus einer Liste der Befehle, die deinen Wert angefasst haben.</li>
+  <li><b>Steuere den Zufall.</b> Finde den Zufalls-Seed, sieh, was als Nächstes kommt, oder erzwinge bei jedem Wurf das beste Ergebnis.</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-mem-search.webp" target="_blank"><img src="../img/en/m-mem-search.webp" alt="Das Speichersuche-Fenster über einem laufenden Spiel" loading="lazy"></a></div>
+<p class="cap">Das Fenster der Speicherwerkzeuge schwebt über dem Spiel. Titelleiste ziehen zum Verschieben, Ecke ziehen zum Ändern der Größe.</p>
+
+<h2>Einschalten</h2>
+<ol>
+  <li>Öffne im Spiel das Spielmenü und schalte unter Werkzeuge die <b>Speichersuche</b> ein.</li>
+  <li>Unter dem Spielbildschirm erscheint eine Speichersuche-Taste. Tippe darauf, um das Fenster zu öffnen; tippe auf ✕ zum Schließen. Deine Suche bleibt, wo du sie gelassen hast.</li>
+</ol>
+<p class="aside">Die Speichersuche ist eine <a href="features.html">Premium-Funktion</a>. Damit erstellte Cheats werden wie alle anderen gespeichert und funktionieren auch danach weiter.</p>
+
+<h2>Einen Wert finden</h2>
+<p>Angenommen, du hast 1.250 Gold und willst 999.999.</p>
+<ol>
+  <li>Wähle eine Breite. Geld ist meist 16 oder 32 Bit; kleine Zähler wie Leben sind oft 8 Bit. Im Zweifel zuerst 32 Bit probieren.</li>
+  <li>Gib den angezeigten Wert ein (1250), lass die Bedingung auf „=“ und tippe auf <b>Suchen</b>.</li>
+  <li>Ändere den Wert im Spiel: etwas kaufen, etwas aufsammeln.</li>
+  <li>Gib den neuen Wert ein und tippe auf <b>Eingrenzen</b>. Wiederhole, bis nur noch wenige Adressen übrig sind.</li>
+  <li>Tippe bei einem Ergebnis auf <b>Cheat</b>, setze „Sperren auf“ auf 999999 und tippe auf <b>In Cheats speichern</b>.</li>
+</ol>
+<p><b>Du kennst die Zahl nicht?</b> Lebensbalken, Timer und versteckte Werte zeigen keine Ziffern. Suche stattdessen mit einer Bedingung: Treffer einstecken und mit „gesunken“ eingrenzen, heilen und mit „gestiegen“ eingrenzen, stillstehen und mit „unverändert“ eingrenzen. Außerdem gibt es ungleich, größer als und kleiner als.</p>
+
+<h2>Cheats, die weiter funktionieren</h2>
+<p>Eine einfach gesperrte Adresse bricht, wenn das Spiel seine Daten verschiebt, und viele Spiele tun das bei jedem Speichern. Die Speicherwerkzeuge lösen das:</p>
+<ol>
+  <li>Tippe beim gefundenen Ergebnis auf <b>Beobachten</b>.</li>
+  <li>Lass den Wert im Spiel einmal ändern.</li>
+  <li>Der Emulator hält bei dem Befehl an, der ihn geschrieben hat, und zeichnet auf, wie das Spiel zu dieser Adresse gelangt ist.</li>
+  <li>Tippe jetzt noch einmal auf <b>Cheat</b>. Der erzeugte Code folgt dem Zeiger des Spiels selbst und sagt das auch: „Wird über den Zeiger aufgelöst, den das Spiel selbst nutzt, und funktioniert daher auch in anderen Spielständen.“</li>
+</ol>
+
+<div class="fig pair"><a href="../img/en/m-mem-cheat.webp" target="_blank"><img src="../img/en/m-mem-cheat.webp" alt="Einen Cheat erstellen, der dem Zeiger des Spiels folgt" loading="lazy"></a><a href="../img/en/m-mem-luck.webp" target="_blank"><img src="../img/en/m-mem-luck.webp" alt="Die Glückseinstellung im Seed-Tab" loading="lazy"></a></div>
+<p class="cap">Links: ein Cheat aus einem Beobachtungspunkt, als erweiterter Code, der dem Zeiger folgt. Rechts: Glück erzwingt bei jedem Wurf das beste (oder schlechteste) Ergebnis.</p>
+
+<h2>Ändern, was das Spiel tut</h2>
+<p>Manchmal willst du keinen Wert sperren. Du willst, dass das Geld nicht mehr sinkt, du aber trotzdem verdienen kannst, oder dass eine Prüfung immer besteht. Der Beobachtungs-Tab listet jeden <b>Befehl, der</b> deine Adresse <b>geschrieben hat</b>, mit Zähler:</p>
+<ol>
+  <li>Tippe auf <b>Zähler zurücksetzen</b> und tu dann das im Spiel (etwas kaufen, Schaden nehmen). „Aufzeichnen, ohne das Spiel anzuhalten“ hält das Spiel flüssig.</li>
+  <li>Komm zurück und suche den Eintrag, dessen Zähler gestiegen ist.</li>
+  <li>Tippe auf <b>Ändern</b> und wähle: durch NOP ersetzen, Addition und Subtraktion tauschen, eine Konstante ändern, immer springen, nie springen, einen Registerwert festlegen oder eine Zeile Assembler eingeben.</li>
+  <li>Daraus wird ein Cheat wie jeder andere, mit einem Namen deiner Wahl.</li>
+</ol>
+<p class="aside">Spielcode wird oft mehrfach genutzt: Die Routine, die dir Geld abzieht, zahlt vielleicht auch Belohnungen aus. Die App warnt dich, wenn das wahrscheinlich ist; prüfe mit einem Haltepunkt, dass der Befehl nur dann läuft, wenn du es erwartest. Das Abschalten eines Befehls-Cheats wirkt nach dem erneuten Öffnen des Spiels.</p>
+
+<h2>Zufall und Glück</h2>
+<p>Die meisten Spiele würfeln mit einer Zeile Arithmetik, und die vier Bytes mit dem Seed sind die einzigen Daten im Speicher, deren Änderungen alle zu dieser Formel passen. Der Seed-Tab findet sie für dich:</p>
+<ul>
+  <li><b>Glück</b>: Bestes oder Schlechtestes zwingt jeden Wurf im Spiel auf den niedrigsten oder höchsten Wert. Volltreffer, seltene Beute, Fänge. Lässt Bestes alles scheitern, wertet das Spiel hohe Würfe als gut; wechsle zu Schlechtestes. Es wirkt auch für Gegner, also schalte es ab, wenn du fertig bist.</li>
+  <li><b>Erweitert</b>: Suche den Seed an einer Stelle, an der das Spiel im Leerlauf ist, sieh dir die nächsten Werte an und sperre den Seed.</li>
+</ul>
+
+<h2>Für Neugierige</h2>
+<ul>
+  <li><b>Speicher</b>: eine Hex-Ansicht jeder Adresse, direkt aus einem Suchergebnis geöffnet.</li>
+  <li><b>Haltepunkte</b>: anhalten, wenn ein bestimmter Befehl läuft, dann Befehl für Befehl weiter und die Register lesen.</li>
+  <li>Beobachtungspunkte arbeiten auch bei geschlossenem Fenster weiter. Löst einer aus, öffnet sich das Fenster von selbst.</li>
+</ul>
+
+<h2>Was es anders macht</h2>
+<ul>
+  <li>Suchen, sperren und speichern, ohne das Spiel zu verlassen oder die App zu wechseln.</li>
+  <li>Zeigerbasierte Cheats werden für dich erzeugt, damit sie beim nächsten Speichern nicht brechen.</li>
+  <li>Befehls-Cheats aus einer Liste der tatsächlichen Schreiber, ganz ohne Disassembler.</li>
+  <li>Glückssteuerung, die über Spiele hinweg funktioniert, weil sie darauf zielt, wie Spiele würfeln, nicht auf die Adressen eines Spiels.</li>
+  <li>Alles, was du baust, ist ein normaler Cheat: benenne ihn und schalte ihn ein und aus wie jeden anderen.</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>RetroGenY enthält und verbreitet keine Spiele. Game Boy, Game Boy Color und Game Boy Advance sind Marken von Nintendo; dieses Projekt steht in keiner Verbindung zu Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Datenschutzerklärung</a></div></footer>
+</body>
+</html>

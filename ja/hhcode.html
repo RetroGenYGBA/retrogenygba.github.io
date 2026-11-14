@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>拡張コード · RetroGenY</title>
+
+<meta name="description" content="Android 向けの GBA・GB・GBC エミュレーター">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/hhcode.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/hhcode.html">
+<link rel="alternate" hreflang="ko" href="../ko/hhcode.html">
+<link rel="alternate" hreflang="es" href="../es/hhcode.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/hhcode.html">
+<link rel="alternate" hreflang="fr" href="../fr/hhcode.html">
+<link rel="alternate" hreflang="de" href="../de/hhcode.html">
+<link rel="alternate" hreflang="it" href="../it/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans JP","Noto Sans SC",sans-serif;--body:"Noto Sans JP","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">通信プレイ</a><a href="hhcode.html" aria-current=page>拡張コード</a><a href="memory.html">メモリツール</a><a href="guide.html">使い方</a></nav>
+  <details class="lang-menu"><summary class="lang">日本語</summary><ul><li><a href="../hhcode.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/hhcode.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/hhcode.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/hhcode.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}" aria-current=true>日本語</a></li><li><a href="../ko/hhcode.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/hhcode.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/hhcode.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/hhcode.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/hhcode.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/hhcode.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">はじめに</a></li><li><a href="link.html">通信プレイ</a></li><li><a href="hhcode.html" aria-current=page>拡張コード</a></li><li><a href="memory.html">メモリツール</a></li><li><a href="cheats.html">チート</a></li><li><a href="features.html">機能と設定</a></li><li><a href="faq.html">よくある質問</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ol></nav><article class="prose"><h1>拡張コード</h1>
+<p class="lead">RetroGenY 独自のチート形式です。普通のコードは 1 つのアドレスに 1 つの値を書くだけですが、拡張コードは小さなプログラムです。ポインタをたどり、ループし、条件を判定し、ゲームが数値を隠すための計算もできます。</p>
+
+<h2>普通のコードで足りない理由</h2>
+<p>GameShark、Action Replay、CodeBreaker は 2000 年代初めのカートリッジ向けに作られました。「ここにずっと 99 を書く」は得意ですが、それくらいです。多くのゲームはデータを 1 か所に置いていません。</p>
+<ul>
+  <li><b>動くデータ。</b>ポケモンや多くの RPG はバッグ、手持ち、お金をポインタの先に置いていて、アドレスはセーブのたびに、ときにはメニューを開くたびに変わります。固定アドレスのコードは今日は効いても、明日には黙って効かなくなります。</li>
+  <li><b>暗号化された値。</b>ファイアレッドとリーフグリーンは、お金をセーブごとに異なる鍵で XOR して保存しています。999999 を直接書いてもでたらめな数になるので、まず鍵を読む必要があります。</li>
+  <li><b>リストまるごと。</b>42 スロットのバッグのアイテムをすべて 99 にするには 42 本のコードが必要で、何か拾った瞬間にずれてしまいます。</li>
+  <li><b>条件。</b>「L+R を押しているときだけ」「空きスロットだけ」「戦闘中だけ」は、ほとんど実現できません。</li>
+</ul>
+<p>拡張コードは、まさにこうしたケースのために作りました。</p>
+
+<h2>できること</h2>
+<ul>
+  <li><b>ポインタをたどる</b>：ゲームと同じ方法で。だからどのセーブデータでも効きます。</li>
+  <li><b>ループ</b>：バッグ、手持ち、パソコンのボックスを <code>repeat 42 … end</code> で処理。</li>
+  <li><b>条件を判定</b>：メモリの比較、ビットのテスト、空きスロットの読み飛ばし、<code>else</code> も。</li>
+  <li><b>ボタンに反応</b>：ボタンの組み合わせを押している間だけ実行。「L+R で回復」のように。</li>
+  <li><b>計算</b>：8 つのレジスタで加算、減算、乗算、AND、OR、XOR、シフト。ゲームが期待する形に値を暗号化するには十分です。</li>
+  <li><b>コピー</b>：別の場所から値を 1 つ、または連続するスロットをまとめて。</li>
+  <li><b>ゲーム自体を書き換える</b>：<code>rom</code> 行で、値だけではできない変更を（何でも 1 円のショップ、壁抜けなど）。</li>
+  <li><b>選択肢を用意。</b><code>option</code> 行で値をチート一覧のドロップダウンにでき、プレイヤーはコードに触れずに「×2 / ×5 / ×10」を選べます。</li>
+</ul>
+
+<div class="fig pair"><a href="../img/en/m-hhcode-edit.webp" target="_blank"><img src="../img/en/m-hhcode-edit.webp" alt="拡張コードを追加" loading="lazy"></a><a href="../img/en/m-hhcode-option.webp" target="_blank"><img src="../img/en/m-hhcode-option.webp" alt="チート一覧で選択肢を選ぶ" loading="lazy"></a></div>
+<p class="cap">左：エディターは入力しながらコードをチェックします。右：選択肢のあるコードは、一覧にそのままドロップダウンが出ます。</p>
+
+<h2>実例</h2>
+<p>ファイアレッド（英語版 v1.0）でお金 999999。お金はポインタの先にあり、セーブの鍵で暗号化されているので、普通のコードでは扱えません。</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # セーブ領域 1：お金とアイテム
+r1 = [0x0300500C]        # セーブ領域 2：鍵がある
+r2 = [r1 + 0xF20]        # 鍵を読む
+r2 = r2 ^ 999999         # 鍵で 999999 を暗号化
+[r0 + 0x290].32 = r2     # お金を書き込む</code></pre>
+<p>バッグのアイテムをすべて 99 に（空きスロットは飛ばす）：</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # 個数も暗号化されている
+r0 = r0 + 0x310          # バッグ：42 スロット
+repeat 42
+  if [r0].16 != 0        # 空きスロットは飛ばす
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # 次のスロット
+end</code></pre>
+<p>L+R を押している間 HP を回復（アドレスは説明用）：</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>プレイヤーがチート一覧で変えられる選択肢：</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>使い方</h2>
+<ol>
+  <li>ゲーム中にチートパネルを開き、「マイチート」で <b>+</b> をタップします。</li>
+  <li>名前を付けて、コードを入力または貼り付けます。1 行目は <code>hhcode</code>（または <code>hhcode 1</code>）にしてください。</li>
+  <li>エディターは入力しながら各行をチェックします。間違いは行番号付きで表示され、正しいコードには「構文 OK」と出ます。</li>
+  <li>人からもらったコードなど、何をするのかわからない？ <b>「このコードの説明」</b>をタップすると、わかりやすい言葉で読み上げてくれます。</li>
+  <li>一から書きたくない？ <b>「拡張コードのテンプレート」</b>を開きましょう。値を固定、ポインタチェーン、連続したスロット、値をコピー、テーブルを走査、条件付き書き込み、else 分岐、ボタントリガー、ビットスイッチなど。選んでアドレスと値を変えるだけです。</li>
+  <li>「追加」をタップしてオンにします。ほかのチートと同じく毎フレーム実行されます。</li>
+</ol>
+<p class="aside">多くの場合、自分で書く必要すらありません。<a href="memory.html">メモリツール</a>が値を見つけ、ポインタ型の拡張コードを書いてくれます。</p>
+
+<h2>構文早見表</h2>
+<table>
+  <tr><th>コード</th><th>動作</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>書き込み（既定は 32 ビット）</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>幅を指定して書き込み：.8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>バイト列を書き込み</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>4 バイト間隔で 30 スロットに書き込み</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>値をコピー</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>読んで、変えて、書き戻す：+= -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>メモリをレジスタに読み込む（ポインタチェーンの始まり）</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>ポインタをもう 1 段たどる</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>レジスタを基準に書き込み</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>計算：+ - * &amp; | ^ &lt;&lt; &gt;&gt; と ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>決まった回数だけループ</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>条件：== != &lt; &gt; &lt;= &gt;=、符号なし &lt;u &gt;u、ビットテスト &amp; と !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>そのボタンを押している間だけ</td></tr>
+  <tr><td><code>… else … end</code></td><td>それ以外のとき</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>ゲーム自体を書き換える（元に戻すにはゲームを開き直す）</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>チート一覧に表示される選択肢。<code>$name</code> で使う</td></tr>
+  <tr><td><code># text</code></td><td>コメント</td></tr>
+</table>
+<p>すべてのルールを含む完全なリファレンスはアプリにあります：チートパネル › 「解説」 › RetroGenY 拡張コード。</p>
+
+<h2>安全設計</h2>
+<ul>
+  <li><b>ゲームを固まらせません。</b>1 回の実行は 200,000 命令までなので、書き間違えたループも止まるだけです。</li>
+  <li><b>幅は柔軟。</b>書いた幅に値が収まらない場合は、黙って切り捨てずに幅を広げてお知らせします。</li>
+  <li><b>よくある間違いを警告します。</b>たとえば、ほかの形式のオフセットに見えるアドレスなど。</li>
+  <li><b>値は値。</b>10 進も 16 進も同じ意味で、書くのは数値そのもの。バイト順ではありません。</li>
+</ul>
+
+<h2>データベースもすべてこの形式</h2>
+<p>内蔵データベースの 1,700 以上のゲーム、9,000 以上のチートは拡張コードに変換済みで、1 本ずつ元のコードとバイト単位で照合しました。一部のゲームには、昔の形式では書けなかった手書きの拡張コードも加えています。ファイアレッドの暗号化されたお金やバッグまるごとなど。GameShark、Action Replay、CodeBreaker のコードもこれまでどおり使えます。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY にゲームは含まれておらず、配布もしていません。ゲームボーイ、ゲームボーイカラー、ゲームボーイアドバンスは任天堂の商標です。本プロジェクトは任天堂とは関係ありません。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

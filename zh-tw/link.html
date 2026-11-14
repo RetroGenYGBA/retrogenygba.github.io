@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>連線 · RetroGenY</title>
+
+<meta name="description" content="Android 上的 GBA、GB、GBC 模擬器">
+<link rel="alternate" hreflang="en" href="../link.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/link.html">
+<link rel="alternate" hreflang="ja" href="../ja/link.html">
+<link rel="alternate" hreflang="ko" href="../ko/link.html">
+<link rel="alternate" hreflang="es" href="../es/link.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/link.html">
+<link rel="alternate" hreflang="fr" href="../fr/link.html">
+<link rel="alternate" hreflang="de" href="../de/link.html">
+<link rel="alternate" hreflang="it" href="../it/link.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans TC","Noto Sans SC",sans-serif;--body:"Noto Sans TC","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html" aria-current=page>連線</a><a href="hhcode.html">擴充碼</a><a href="memory.html">記憶體工具</a><a href="guide.html">使用說明</a></nav>
+  <details class="lang-menu"><summary class="lang">繁體中文</summary><ul><li><a href="../link.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/link.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/link.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}" aria-current=true>繁體中文</a></li><li><a href="../ja/link.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/link.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/link.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/link.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/link.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/link.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/link.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html" aria-current=page>連線</a></li><li><a href="hhcode.html">擴充碼</a></li><li><a href="memory.html">記憶體工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能與設定</a></li><li><a href="faq.html">常見問題</a></li><li><a href="privacy.html">隱私權政策</a></li></ol></nav><article class="prose"><h1>連線</h1>
+<p class="lead">每支手機各跑各的遊戲，透過 Wi-Fi、藍牙或傳輸線連在一起，對戰和交換就和原本的主機一樣。</p>
+<div class="fig art"><svg class="cable" viewBox="0 0 560 230" role="img" aria-label="兩台掌機用連線線連在一起">
+  <path d="M 145 52 C 145 -10, 280 10, 280 60 S 415 130, 415 52"/>
+  <g transform="translate(30 60)">
+    <rect width="230" height="140" rx="38" fill="#0a1a8c" stroke="#050d4a" stroke-width="4"/>
+    <rect x="62" y="22" width="106" height="74" rx="8" fill="#050d4a"/>
+    <rect x="70" y="30" width="90" height="58" rx="3" fill="#f5efe2"/>
+    <text x="115" y="67" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0a1450">1P</text>
+    <rect x="20" y="52" width="30" height="10" rx="3" fill="#f5efe2"/><rect x="30" y="42" width="10" height="30" rx="3" fill="#f5efe2"/>
+    <circle cx="186" cy="48" r="11" fill="#ff5a14"/>
+    <circle cx="206" cy="72" r="11" fill="#ffb08a"/>
+    <rect x="100" y="-8" width="30" height="12" rx="3" fill="#050d4a"/>
+  </g>
+  <g transform="translate(300 60)">
+    <rect width="230" height="140" rx="38" fill="#0a1a8c" stroke="#050d4a" stroke-width="4"/>
+    <rect x="62" y="22" width="106" height="74" rx="8" fill="#050d4a"/>
+    <rect x="70" y="30" width="90" height="58" rx="3" fill="#f5efe2"/>
+    <text x="115" y="67" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0a1450">2P</text>
+    <rect x="20" y="52" width="30" height="10" rx="3" fill="#f5efe2"/><rect x="30" y="42" width="10" height="30" rx="3" fill="#f5efe2"/>
+    <circle cx="186" cy="48" r="11" fill="#ff5a14"/>
+    <circle cx="206" cy="72" r="11" fill="#ffb08a"/>
+    <rect x="100" y="-8" width="30" height="12" rx="3" fill="#050d4a"/>
+  </g>
+</svg></div>
+
+<h2>能玩什麼</h2>
+<table>
+  <tr><th>遊戲</th><th>人數</th><th>例子</th></tr>
+  <tr><td>GB / GBC 連線</td><td>2</td><td>寶可夢 紅、藍、黃、金、銀、水晶 的對戰和交換</td></tr>
+  <tr><td>GBA 多人</td><td>2–4</td><td>寶可夢 紅寶石、藍寶石、火紅、葉綠、綠寶石 的對戰和交換、瑪利歐賽車和其他多人遊戲</td></tr>
+</table>
+<p>兩支手機不需要是同一款遊戲，只要遊戲之間本來就能連線，例如火紅和葉綠互相交換。</p>
+
+<h2>三種連線方式</h2>
+<h3>同一個 Wi-Fi 或手機熱點</h3>
+<ol>
+  <li>每支手機都連到同一個 Wi-Fi，或連到其中一支手機的熱點。</li>
+  <li>在一支手機上打開連線面板，點「建立房間」。</li>
+  <li>其他手機點「加入房間」並選擇房間。沒出現的話，輸入主機畫面上顯示的位址。</li>
+</ol>
+<div class="fig pair"><a href="../img/en/m-link-panel.webp" target="_blank"><img src="../img/en/m-link-panel.webp" alt="連線面板" loading="lazy"></a><a href="../img/en/m-link-rooms.webp" target="_blank"><img src="../img/en/m-link-rooms.webp" alt="房間列表" loading="lazy"></a></div>
+<p class="cap">左：連線面板。右：點「加入房間」後，同一個 Wi-Fi 裡的房間會列出來，也有輸入位址的欄位。</p>
+
+<h3>藍牙</h3>
+<ol>
+  <li>在一支手機上點「藍牙建立房間」。</li>
+  <li>另一支點「藍牙加入」，選第一支手機的名字。第一次需要允許「附近的裝置」。</li>
+</ol>
+<h3>傳輸線</h3>
+<ol>
+  <li>用 USB-C 對 USB-C 傳輸線連接兩支手機。</li>
+  <li>兩支都點「USB 傳輸線」，被問到時允許 USB 存取。</li>
+  <li>沒反應？在主機那支手機的系統設定裡開啟 OTG。有些手機用傳輸線只能充電，這時請改用 Wi-Fi 或藍牙。</li>
+</ol>
+
+<h2>接上線</h2>
+<p>有手機加入時，主機會看到每支手機各一條不同顏色的線。點一條線，就把那支手機接上。只有一支手機時會自動接上。</p>
+<p>接上後，每個玩家各自打開遊戲，連線就會自動接通。回到遊戲列表不會拔線，所以可以換遊戲而保持連線。GBA 遊戲可以點等待中的線加入更多玩家，最多 4 人。</p>
+<p class="aside">連線時速度固定為 1 倍，倒帶和讀取即時存檔停用，金手指暫停，讓兩邊的遊戲保持同步。</p>
+
+<div class="fig pair"><a href="../img/en/m-link-pick.webp" target="_blank"><img src="../img/en/m-link-pick.webp" alt="主機選擇一條線" loading="lazy"></a><a href="../img/en/m-link-linked.webp" target="_blank"><img src="../img/en/m-link-linked.webp" alt="三支手機已連線" loading="lazy"></a></div>
+<p class="cap">左：主機點一條線，和那支手機連線。右：三支手機已連線；點等待中的線可以再加一支。</p>
+
+<h2>鏡像連線</h2>
+<p>一般連線時，網路慢或不穩會讓遊戲卡頓。鏡像連線是另一種連線方式，就算連線狀況不好，也能讓遊戲保持順暢。</p>
+<ul>
+  <li><b>優點</b>：畫面更新率穩定得多，透過藍牙或普通網路也一樣。</li>
+  <li><b>代價</b>：主機負擔較重，請用最快的手機當主機。其他玩家可能會感覺到操作多一點延遲。</li>
+  <li><b>開啟方式</b>：只要主機在連線面板裡打開「鏡像連線」，其他人會跟著用。</li>
+  <li><b>第一次連線</b>：第一次使用時，鏡像連線可能要在遊戲開始前準備一下。Wi-Fi 比藍牙快。</li>
+</ul>
+
+<h2>出問題時</h2>
+<p>連線面板最下面的「匯出連線記錄」會存一份記錄，寄給我們就能追查原因。常見情況請看<a href="faq.html">常見問題</a>。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何遊戲。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商標，本專案與任天堂沒有關係。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

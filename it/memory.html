@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strumenti di memoria · RetroGenY</title>
+
+<meta name="description" content="Emulatore GBA, GB e GBC per Android">
+<link rel="alternate" hreflang="en" href="../memory.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/memory.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/memory.html">
+<link rel="alternate" hreflang="ja" href="../ja/memory.html">
+<link rel="alternate" hreflang="ko" href="../ko/memory.html">
+<link rel="alternate" hreflang="es" href="../es/memory.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/memory.html">
+<link rel="alternate" hreflang="fr" href="../fr/memory.html">
+<link rel="alternate" hreflang="de" href="../de/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Gioco in link</a><a href="hhcode.html">Codici estesi</a><a href="memory.html" aria-current=page>Strumenti di memoria</a><a href="guide.html">Guida</a></nav>
+  <details class="lang-menu"><summary class="lang">Italiano</summary><ul><li><a href="../memory.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/memory.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/memory.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/memory.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/memory.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/memory.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/memory.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/memory.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/memory.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/memory.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}" aria-current=true>Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Per iniziare</a></li><li><a href="link.html">Gioco in link</a></li><li><a href="hhcode.html">Codici estesi</a></li><li><a href="memory.html" aria-current=page>Strumenti di memoria</a></li><li><a href="cheats.html">Trucchi</a></li><li><a href="features.html">Funzioni e impostazioni</a></li><li><a href="faq.html">Domande frequenti</a></li><li><a href="privacy.html">Informativa sulla privacy</a></li></ol></nav><article class="prose"><h1>Strumenti di memoria</h1>
+<p class="lead">Trova qualsiasi numero in un gioco, bloccalo e trasformalo in un trucco che funziona in ogni salvataggio, senza uscire dal gioco. Poi vai oltre: cambia come si comporta il gioco, o piega la sua fortuna.</p>
+
+<h2>A cosa serve</h2>
+<p>La libreria di trucchi copre molto, ma non tutto: un gioco meno famoso, una patch di traduzione, un hack di ROM o proprio quel valore che ti interessa. Gli strumenti di memoria ti permettono di creare quel trucco da solo. La maggior parte degli emulatori si ferma a "cerca e blocca un indirizzo". RetroGenY va avanti:</p>
+<ul>
+  <li><b>Funziona in una finestra fluttuante sopra il gioco.</b> Spostala e ridimensionala perché il numero che cerchi resti visibile, e continua a giocare mentre cerchi.</li>
+  <li><b>Trucchi che sopravvivono a un nuovo salvataggio.</b> Un punto di monitoraggio mostra dove il gioco stesso trova il valore, e il trucco viene scritto seguendo lo stesso percorso, come <a href="hhcode.html">codice esteso</a>.</li>
+  <li><b>Cambia il comportamento del gioco</b>, non solo i numeri: un contatore che non scende mai, un controllo saltato, tutto da un elenco delle istruzioni che hanno toccato il tuo valore.</li>
+  <li><b>Controlla la casualità.</b> Trova il seed dei numeri casuali, guarda cosa sta per uscire o forza ogni tiro al miglior risultato.</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-mem-search.webp" target="_blank"><img src="../img/en/m-mem-search.webp" alt="La finestra di ricerca in memoria sopra un gioco in esecuzione" loading="lazy"></a></div>
+<p class="cap">La finestra degli strumenti di memoria fluttua sopra il gioco. Trascina la barra del titolo per spostarla e l'angolo per ridimensionarla.</p>
+
+<h2>Attivarla</h2>
+<ol>
+  <li>In un gioco, apri il menu di gioco e, sotto Strumenti, attiva <b>Ricerca in memoria</b>.</li>
+  <li>Sotto lo schermo di gioco compare un tasto di ricerca in memoria. Toccalo per aprire la finestra; tocca ✕ per chiuderla. La ricerca resta dove l'hai lasciata.</li>
+</ol>
+<p class="aside">La ricerca in memoria è una <a href="features.html">funzione premium</a>. I trucchi creati con essa vengono salvati come gli altri e continuano a funzionare anche dopo.</p>
+
+<h2>Trovare un valore</h2>
+<p>Mettiamo che tu abbia 1.250 monete d'oro e ne voglia 999.999.</p>
+<ol>
+  <li>Scegli una larghezza. Il denaro di solito è a 16 o 32 bit; i piccoli contatori come le vite sono spesso a 8 bit. Nel dubbio, prova prima 32 bit.</li>
+  <li>Inserisci il valore che vedi (1250), lascia la condizione su "=" e tocca <b>Cerca</b>.</li>
+  <li>Cambia il valore nel gioco: compra qualcosa, raccogline un po'.</li>
+  <li>Inserisci il nuovo valore e tocca <b>Affina</b>. Ripeti finché restano pochi indirizzi.</li>
+  <li>Tocca <b>Trucco</b> su un risultato, imposta "Blocca a" su 999999 e tocca <b>Salva nei trucchi</b>.</li>
+</ol>
+<p><b>Non conosci il numero?</b> Barre della salute, timer e statistiche nascoste non mostrano cifre. Cerca allora con una condizione: subisci un colpo e affina con "diminuito", curati e affina con "aumentato", resta fermo e affina con "invariato". Ci sono anche diverso da, maggiore di e minore di.</p>
+
+<h2>Trucchi che continuano a funzionare</h2>
+<p>Un indirizzo semplicemente bloccato si rompe quando il gioco sposta i dati, e molti giochi lo fanno a ogni salvataggio. Gli strumenti di memoria risolvono il problema:</p>
+<ol>
+  <li>Tocca <b>Monitora</b> sul risultato trovato.</li>
+  <li>Fai cambiare il valore una volta nel gioco.</li>
+  <li>L'emulatore si ferma sull'istruzione che lo ha scritto e registra come il gioco è arrivato a quell'indirizzo.</li>
+  <li>Ora tocca di nuovo <b>Trucco</b>. Il codice che scrive segue il puntatore del gioco stesso, e lo dice: "Risolto tramite il puntatore usato dal gioco stesso, quindi resta valido anche in altri salvataggi."</li>
+</ol>
+
+<div class="fig pair"><a href="../img/en/m-mem-cheat.webp" target="_blank"><img src="../img/en/m-mem-cheat.webp" alt="Creare un trucco che segue il puntatore del gioco" loading="lazy"></a><a href="../img/en/m-mem-luck.webp" target="_blank"><img src="../img/en/m-mem-luck.webp" alt="L'impostazione della fortuna nella scheda Seed" loading="lazy"></a></div>
+<p class="cap">A sinistra: un trucco generato da un punto di monitoraggio, come codice esteso che segue il puntatore. A destra: la Fortuna forza ogni tiro al miglior (o peggior) risultato.</p>
+
+<h2>Cambiare ciò che fa il gioco</h2>
+<p>A volte bloccare un valore non è ciò che vuoi. Vuoi che il denaro smetta di scendere pur potendone guadagnare, o che un controllo passi sempre. La scheda Monitoraggio elenca ogni <b>istruzione che ha scritto</b> il tuo indirizzo, con un conteggio:</p>
+<ol>
+  <li>Tocca <b>Azzera conteggi</b>, poi compi l'azione nel gioco (comprare qualcosa, subire danni). "Registra senza mettere in pausa il gioco" mantiene la partita fluida.</li>
+  <li>Torna e trova la voce il cui conteggio è salito.</li>
+  <li>Tocca <b>Modifica</b> e scegli: sostituisci con NOP, scambia somma e sottrazione, modifica una costante, salta sempre, non saltare mai, fissa il valore di un registro o scrivi una riga di assembly.</li>
+  <li>Diventa un trucco come gli altri, con il nome che scegli.</li>
+</ol>
+<p class="aside">Il codice dei giochi è spesso condiviso: la routine che ti toglie il denaro può anche pagare le ricompense. L'app ti avvisa quando è probabile; usa un breakpoint per verificare che l'istruzione venga eseguita solo quando te lo aspetti. La disattivazione di un trucco su istruzione ha effetto dopo aver riaperto il gioco.</p>
+
+<h2>Casualità e fortuna</h2>
+<p>La maggior parte dei giochi tira i dadi con una riga di aritmetica, e i quattro byte che contengono il seed sono gli unici dati in memoria i cui cambiamenti seguono sempre quella formula. La scheda Seed li trova per te:</p>
+<ul>
+  <li><b>Fortuna</b>: Migliore o Peggiore forza ogni tiro del gioco al valore più basso o più alto. Colpi critici, oggetti rari, catture. Se con Migliore fallisce tutto, il gioco considera buoni i tiri alti; passa a Peggiore. Vale anche per i nemici, quindi disattivala quando hai finito.</li>
+  <li><b>Avanzate</b>: cerca il seed in un punto in cui il gioco è inattivo, guarda i prossimi valori che produrrà e blocca il seed.</li>
+</ul>
+
+<h2>Per i curiosi</h2>
+<ul>
+  <li><b>Memoria</b>: una vista esadecimale di qualsiasi indirizzo, aperta direttamente da un risultato di ricerca.</li>
+  <li><b>Breakpoint</b>: fermati quando viene eseguita una certa istruzione, poi avanza un'istruzione alla volta leggendo i registri.</li>
+  <li>I punti di monitoraggio continuano a funzionare a finestra chiusa. Quando uno scatta, la finestra si apre da sola.</li>
+</ul>
+
+<h2>Perché è diverso</h2>
+<ul>
+  <li>Cerca, blocca e salva senza uscire dal gioco né cambiare app.</li>
+  <li>Trucchi con puntatore generati per te, così non si rompono al salvataggio successivo.</li>
+  <li>Trucchi su istruzione da un elenco di chi ha davvero scritto, senza bisogno di un disassemblatore.</li>
+  <li>Un controllo della fortuna che funziona tra giochi diversi, perché punta a come i giochi tirano i dadi, non agli indirizzi di un singolo gioco.</li>
+  <li>Tutto ciò che crei è un trucco normale: dagli un nome e attivalo o disattivalo come gli altri.</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>RetroGenY non include né distribuisce alcun gioco. Game Boy, Game Boy Color e Game Boy Advance sono marchi di Nintendo; questo progetto non è affiliato a Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Informativa sulla privacy</a></div></footer>
+</body>
+</html>

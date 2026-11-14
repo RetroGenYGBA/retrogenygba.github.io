@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codes étendus · RetroGenY</title>
+
+<meta name="description" content="Émulateur GBA, GB et GBC pour Android">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/hhcode.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/hhcode.html">
+<link rel="alternate" hreflang="ja" href="../ja/hhcode.html">
+<link rel="alternate" hreflang="ko" href="../ko/hhcode.html">
+<link rel="alternate" hreflang="es" href="../es/hhcode.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/hhcode.html">
+<link rel="alternate" hreflang="de" href="../de/hhcode.html">
+<link rel="alternate" hreflang="it" href="../it/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Jeu en link</a><a href="hhcode.html" aria-current=page>Codes étendus</a><a href="memory.html">Outils mémoire</a><a href="guide.html">Guide</a></nav>
+  <details class="lang-menu"><summary class="lang">Français</summary><ul><li><a href="../hhcode.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/hhcode.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/hhcode.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/hhcode.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/hhcode.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/hhcode.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/hhcode.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/hhcode.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}" aria-current=true>Français</a></li><li><a href="../de/hhcode.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/hhcode.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Bien démarrer</a></li><li><a href="link.html">Jeu en link</a></li><li><a href="hhcode.html" aria-current=page>Codes étendus</a></li><li><a href="memory.html">Outils mémoire</a></li><li><a href="cheats.html">Triches</a></li><li><a href="features.html">Fonctions et réglages</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Politique de confidentialité</a></li></ol></nav><article class="prose"><h1>Codes étendus</h1>
+<p class="lead">Le format de triche propre à RetroGenY. Un code ordinaire écrit une valeur à une adresse. Un code étendu est un petit programme : il peut suivre des pointeurs, boucler, tester des conditions et faire les calculs qu'un jeu utilise pour cacher ses nombres.</p>
+
+<h2>Pourquoi les codes ordinaires ne suffisent pas</h2>
+<p>GameShark, Action Replay et CodeBreaker ont été conçus pour les cartouches du début des années 2000. Ils sont doués pour « écrire toujours 99 ici », et c'est à peu près tout. Beaucoup de jeux ne gardent pas leurs données au même endroit :</p>
+<ul>
+  <li><b>Des données qui bougent.</b> Pokémon et beaucoup de RPG rangent le sac, l'équipe et l'argent derrière un pointeur, et l'adresse change à chaque sauvegarde, voire à chaque ouverture de menu. Un code à adresse fixe marche aujourd'hui et cesse de marcher demain sans prévenir.</li>
+  <li><b>Des valeurs chiffrées.</b> Rouge Feu et Vert Feuille stockent votre argent avec un XOR par une clé différente pour chaque sauvegarde. Écrire directement 999999 donne un nombre aléatoire ; il faut d'abord lire la clé.</li>
+  <li><b>Des listes entières.</b> Mettre à 99 chaque objet d'un sac de 42 emplacements demande 42 codes séparés, qui se décalent dès que vous ramassez quelque chose.</li>
+  <li><b>Des conditions.</b> « Seulement quand je maintiens L+R », « seulement sur les emplacements vides », « seulement en combat » sont presque toujours hors de portée.</li>
+</ul>
+<p>Les codes étendus ont été créés exactement pour ces cas.</p>
+
+<h2>Ce qu'ils savent faire</h2>
+<ul>
+  <li><b>Suivre des pointeurs</b> comme le fait le jeu, pour qu'un code continue de marcher dans n'importe quelle sauvegarde.</li>
+  <li><b>Boucler</b> sur un sac, une équipe ou une boîte du PC, avec <code>repeat 42 … end</code>.</li>
+  <li><b>Tester des conditions</b> : comparer la mémoire, tester des bits, sauter les emplacements vides, et ajouter un <code>else</code>.</li>
+  <li><b>Réagir aux boutons</b> : ne s'exécuter que tant qu'une combinaison est maintenue, pour « appuyez sur L+R pour vous soigner ».</li>
+  <li><b>Calculer</b> avec huit registres : addition, soustraction, multiplication, AND, OR, XOR et décalages, de quoi encoder une valeur comme le jeu l'attend.</li>
+  <li><b>Copier</b> une valeur ou une série entière d'emplacements depuis ailleurs.</li>
+  <li><b>Modifier le jeu</b> avec des lignes <code>rom</code>, pour des changements que les valeurs seules ne permettent pas (une boutique à 1, traverser les murs).</li>
+  <li><b>Proposer des choix.</b> Une ligne <code>option</code> transforme une valeur en liste déroulante dans la liste des triches : le joueur choisit « ×2 / ×5 / ×10 » sans toucher au code.</li>
+</ul>
+
+<div class="fig pair"><a href="../img/en/m-hhcode-edit.webp" target="_blank"><img src="../img/en/m-hhcode-edit.webp" alt="Ajouter un code étendu" loading="lazy"></a><a href="../img/en/m-hhcode-option.webp" target="_blank"><img src="../img/en/m-hhcode-option.webp" alt="Choisir une option dans la liste des triches" loading="lazy"></a></div>
+<p class="cap">À gauche : l'éditeur vérifie le code pendant la saisie. À droite : les codes avec options ont une liste déroulante directement dans la liste.</p>
+
+<h2>Un exemple réel</h2>
+<p>Argent 999999 dans Rouge Feu (anglais v1.0). L'argent est derrière un pointeur et chiffré avec la clé de la sauvegarde, ce qu'aucun code ordinaire ne sait gérer :</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # bloc 1 : argent et objets
+r1 = [0x0300500C]        # bloc 2 : la clé est ici
+r2 = [r1 + 0xF20]        # lit la clé
+r2 = r2 ^ 999999         # chiffre 999999 avec elle
+[r0 + 0x290].32 = r2     # écrit l'argent</code></pre>
+<p>Chaque objet du sac à 99, en sautant les emplacements vides :</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # les quantités sont chiffrées aussi
+r0 = r0 + 0x310          # le sac : 42 emplacements
+repeat 42
+  if [r0].16 != 0        # saute les cases vides
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # case suivante
+end</code></pre>
+<p>Maintenez L+R pour remplir les PV (adresse donnée à titre d'exemple) :</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>Un choix que le joueur peut changer depuis la liste des triches :</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>Comment les utiliser</h2>
+<ol>
+  <li>En jeu, ouvrez le panneau de triche et allez dans « Mes triches ». Touchez <b>+</b>.</li>
+  <li>Donnez-lui un nom, puis tapez ou collez le code. La première ligne doit être <code>hhcode</code> (ou <code>hhcode 1</code>).</li>
+  <li>L'éditeur vérifie chaque ligne pendant la saisie. Une erreur s'affiche avec son numéro de ligne ; un code valide indique « syntaxe valide ».</li>
+  <li>Vous ne savez pas ce que fait un code, par exemple un qu'on vous a envoyé ? Touchez <b>« Expliquer ce code »</b> et il vous est décrit en langage clair.</li>
+  <li>Pas envie de partir de zéro ? Ouvrez <b>« Modèles de code étendu »</b> : bloquer une valeur, chaîne de pointeurs, emplacements consécutifs, copier une valeur, parcourir une table, écriture conditionnelle, branche else, déclencheur par bouton, interrupteur de bit et plus. Choisissez-en un et changez l'adresse et la valeur.</li>
+  <li>Touchez Ajouter et activez-le. Comme toute triche, il s'exécute à chaque image.</li>
+</ol>
+<p class="aside">Souvent, vous n'avez même pas besoin d'en écrire un : les <a href="memory.html">outils mémoire</a> trouvent une valeur et écrivent pour vous un code étendu par pointeur.</p>
+
+<h2>La syntaxe en bref</h2>
+<table>
+  <tr><th>Code</th><th>Ce qu'il fait</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>Écrit (32 bits par défaut)</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>Écrit avec une largeur explicite : .8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>Écrit une suite d'octets</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>Écrit 30 emplacements espacés de 4 octets</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>Copie une valeur</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>Lit, modifie, réécrit : += -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>Lit la mémoire dans un registre (début d'une chaîne de pointeurs)</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>Suit le pointeur d'un niveau de plus</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>Écrit relativement à un registre</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>Arithmétique : + - * &amp; | ^ &lt;&lt; &gt;&gt; et ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>Boucle un nombre fixe de fois</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>Condition : == != &lt; &gt; &lt;= &gt;=, non signé &lt;u &gt;u, test de bits &amp; et !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>Seulement tant que ces boutons sont maintenus</td></tr>
+  <tr><td><code>… else … end</code></td><td>Sinon</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>Modifie le jeu lui-même (rouvrez le jeu pour annuler)</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>Un choix affiché dans la liste des triches ; utilisez-le avec <code>$name</code></td></tr>
+  <tr><td><code># text</code></td><td>Commentaire</td></tr>
+</table>
+<p>La référence complète, avec toutes les règles, est dans l'application : panneau de triche › « Guide » › Codes étendus RetroGenY.</p>
+
+<h2>Conçus pour être sûrs</h2>
+<ul>
+  <li><b>Ils ne peuvent pas bloquer le jeu.</b> Chaque passe est plafonnée à 200 000 instructions : une boucle mal écrite s'arrête simplement.</li>
+  <li><b>Les largeurs sont tolérantes.</b> Si une valeur ne tient pas dans la largeur écrite, celle-ci est élargie et vous êtes prévenu, au lieu de couper la valeur en silence.</li>
+  <li><b>Ils signalent les erreurs probables</b>, comme une adresse qui ressemble à un décalage d'un autre format.</li>
+  <li><b>Une valeur est une valeur.</b> Décimal et hexadécimal veulent dire la même chose, et vous écrivez le nombre, pas son ordre d'octets.</li>
+</ul>
+
+<h2>Toute la bibliothèque parle cette langue</h2>
+<p>Les plus de 9 000 triches de la bibliothèque intégrée, pour plus de 1 700 jeux, ont été converties en codes étendus, et chacune a été vérifiée octet par octet par rapport à l'original. Certains jeux ont reçu des codes étendus écrits à la main que les anciens formats ne pouvaient pas exprimer, comme l'argent chiffré et le sac complet dans Rouge Feu. Les codes GameShark, Action Replay et CodeBreaker fonctionnent toujours exactement comme avant.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY n'inclut ni ne distribue aucun jeu. Game Boy, Game Boy Color et Game Boy Advance sont des marques de Nintendo ; ce projet n'est pas affilié à Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Politique de confidentialité</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>通信プレイ · RetroGenY</title>
+
+<meta name="description" content="Android 向けの GBA・GB・GBC エミュレーター">
+<link rel="alternate" hreflang="en" href="../link.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/link.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/link.html">
+<link rel="alternate" hreflang="ko" href="../ko/link.html">
+<link rel="alternate" hreflang="es" href="../es/link.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/link.html">
+<link rel="alternate" hreflang="fr" href="../fr/link.html">
+<link rel="alternate" hreflang="de" href="../de/link.html">
+<link rel="alternate" hreflang="it" href="../it/link.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans JP","Noto Sans SC",sans-serif;--body:"Noto Sans JP","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html" aria-current=page>通信プレイ</a><a href="hhcode.html">拡張コード</a><a href="memory.html">メモリツール</a><a href="guide.html">使い方</a></nav>
+  <details class="lang-menu"><summary class="lang">日本語</summary><ul><li><a href="../link.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/link.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/link.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/link.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}" aria-current=true>日本語</a></li><li><a href="../ko/link.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/link.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/link.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/link.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/link.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/link.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">はじめに</a></li><li><a href="link.html" aria-current=page>通信プレイ</a></li><li><a href="hhcode.html">拡張コード</a></li><li><a href="memory.html">メモリツール</a></li><li><a href="cheats.html">チート</a></li><li><a href="features.html">機能と設定</a></li><li><a href="faq.html">よくある質問</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ol></nav><article class="prose"><h1>通信プレイ</h1>
+<p class="lead">それぞれのスマホが自分のゲームを動かし、Wi-Fi、Bluetooth、ケーブルでつながります。対戦も交換も、本物のハードと同じように遊べます。</p>
+<div class="fig art"><svg class="cable" viewBox="0 0 560 230" role="img" aria-label="通信ケーブルでつながった 2 台の携帯ゲーム機">
+  <path d="M 145 52 C 145 -10, 280 10, 280 60 S 415 130, 415 52"/>
+  <g transform="translate(30 60)">
+    <rect width="230" height="140" rx="38" fill="#0a1a8c" stroke="#050d4a" stroke-width="4"/>
+    <rect x="62" y="22" width="106" height="74" rx="8" fill="#050d4a"/>
+    <rect x="70" y="30" width="90" height="58" rx="3" fill="#f5efe2"/>
+    <text x="115" y="67" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0a1450">1P</text>
+    <rect x="20" y="52" width="30" height="10" rx="3" fill="#f5efe2"/><rect x="30" y="42" width="10" height="30" rx="3" fill="#f5efe2"/>
+    <circle cx="186" cy="48" r="11" fill="#ff5a14"/>
+    <circle cx="206" cy="72" r="11" fill="#ffb08a"/>
+    <rect x="100" y="-8" width="30" height="12" rx="3" fill="#050d4a"/>
+  </g>
+  <g transform="translate(300 60)">
+    <rect width="230" height="140" rx="38" fill="#0a1a8c" stroke="#050d4a" stroke-width="4"/>
+    <rect x="62" y="22" width="106" height="74" rx="8" fill="#050d4a"/>
+    <rect x="70" y="30" width="90" height="58" rx="3" fill="#f5efe2"/>
+    <text x="115" y="67" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0a1450">2P</text>
+    <rect x="20" y="52" width="30" height="10" rx="3" fill="#f5efe2"/><rect x="30" y="42" width="10" height="30" rx="3" fill="#f5efe2"/>
+    <circle cx="186" cy="48" r="11" fill="#ff5a14"/>
+    <circle cx="206" cy="72" r="11" fill="#ffb08a"/>
+    <rect x="100" y="-8" width="30" height="12" rx="3" fill="#050d4a"/>
+  </g>
+</svg></div>
+
+<h2>遊べるもの</h2>
+<table>
+  <tr><th>ゲーム</th><th>人数</th><th>例</th></tr>
+  <tr><td>GB / GBC 通信</td><td>2</td><td>ポケモン 赤・緑・青・ピカチュウ・金・銀・クリスタルの対戦と交換</td></tr>
+  <tr><td>GBA マルチプレイ</td><td>2–4</td><td>ポケモン ルビー・サファイア・ファイアレッド・リーフグリーン・エメラルドの対戦と交換、マリオカートなどのマルチプレイ対応ゲーム</td></tr>
+</table>
+<p>2 台が同じゲームである必要はありません。ファイアレッドとリーフグリーンの交換のように、ゲーム同士が通信できれば大丈夫です。</p>
+
+<h2>3 つの接続方法</h2>
+<h3>同じ Wi-Fi、またはスマホのテザリング</h3>
+<ol>
+  <li>すべてのスマホを同じ Wi-Fi か、どれか 1 台のテザリングにつなぎます。</li>
+  <li>1 台で通信パネルを開き、「ルームを作成」をタップします。</li>
+  <li>ほかのスマホで「ルームに参加」をタップしてルームを選びます。表示されない場合は、ホストの画面に出ているアドレスを入力します。</li>
+</ol>
+<div class="fig pair"><a href="../img/en/m-link-panel.webp" target="_blank"><img src="../img/en/m-link-panel.webp" alt="通信パネル" loading="lazy"></a><a href="../img/en/m-link-rooms.webp" target="_blank"><img src="../img/en/m-link-rooms.webp" alt="ルーム一覧" loading="lazy"></a></div>
+<p class="cap">左：通信パネル。右：「ルームに参加」を押すと同じ Wi-Fi のルームが並び、アドレスを入力する欄もあります。</p>
+
+<h3>Bluetooth</h3>
+<ol>
+  <li>1 台で「Bluetooth ルーム」をタップします。</li>
+  <li>もう 1 台で「Bluetooth で参加」をタップし、1 台目の名前を選びます。初回は「付近のデバイス」を許可してください。</li>
+</ol>
+<h3>ケーブル</h3>
+<ol>
+  <li>USB-C to USB-C ケーブルで 2 台をつなぎます。</li>
+  <li>両方で「USB ケーブル」をタップし、聞かれたら USB へのアクセスを許可します。</li>
+  <li>反応がない場合は、ホストのスマホのシステム設定で OTG をオンにしてください。ケーブルでは充電しかできない機種もあるので、その場合は Wi-Fi か Bluetooth を使ってください。</li>
+</ol>
+
+<h2>つなぐ</h2>
+<p>スマホが参加すると、ホストには端末ごとに色の違うケーブルが表示されます。ケーブルをタップすると、その端末が接続されます。1 台だけなら自動で接続されます。</p>
+<p>接続したら、それぞれがゲームを開けば通信は自動でつながります。ゲーム一覧に戻っても抜けないので、ゲームを切り替えても通信は続きます。GBA のゲームでは、待機中のケーブルをタップして最大 4 人まで追加できます。</p>
+<p class="aside">通信中は速度が 1 倍に固定され、巻き戻しと即時セーブのロードは使えず、チートは停止します。両方のゲームの足並みをそろえるためです。</p>
+
+<div class="fig pair"><a href="../img/en/m-link-pick.webp" target="_blank"><img src="../img/en/m-link-pick.webp" alt="ホストがケーブルを選ぶ" loading="lazy"></a><a href="../img/en/m-link-linked.webp" target="_blank"><img src="../img/en/m-link-linked.webp" alt="3 台が接続中" loading="lazy"></a></div>
+<p class="cap">左：ホストがケーブルをタップしてその端末とつなぐ。右：3 台が接続中。待機中のケーブルをタップするともう 1 台追加できます。</p>
+
+<h2>MirrorLink</h2>
+<p>通常の通信では、ネットワークが遅かったり不安定だったりするとゲームがカクつきます。MirrorLink は、回線が悪くてもゲームをなめらかに保つための別の通信方式です。</p>
+<ul>
+  <li><b>メリット</b>：Bluetooth や普通の回線でも、フレームレートがずっと安定します。</li>
+  <li><b>デメリット</b>：ホストの負担が増えるので、いちばん速いスマホをホストにしてください。ほかのプレイヤーは操作の遅れを少し感じることがあります。</li>
+  <li><b>オンにするには</b>：ホストが通信パネルで「MirrorLink」をオンにするだけで、ほかの人も合わせます。</li>
+  <li><b>初回の接続</b>：初めて使うときは、ゲーム開始前に少し準備時間がかかることがあります。Bluetooth より Wi-Fi のほうが速く終わります。</li>
+</ul>
+
+<h2>うまくいかないときは</h2>
+<p>通信パネルのいちばん下の「通信ログを書き出す」でログを保存し、私たちに送っていただければ原因を調べられます。よくあるケースは<a href="faq.html">よくある質問</a>をご覧ください。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY にゲームは含まれておらず、配布もしていません。ゲームボーイ、ゲームボーイカラー、ゲームボーイアドバンスは任天堂の商標です。本プロジェクトは任天堂とは関係ありません。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

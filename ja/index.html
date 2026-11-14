@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RetroGenY：通信プレイできる GBA・GB・GBC エミュレーター</title>
+
+<meta name="description" content="Android 向けの GBA・GB・GBC エミュレーター">
+<link rel="alternate" hreflang="en" href="../index.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/index.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/index.html">
+<link rel="alternate" hreflang="ko" href="../ko/index.html">
+<link rel="alternate" hreflang="es" href="../es/index.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/index.html">
+<link rel="alternate" hreflang="fr" href="../fr/index.html">
+<link rel="alternate" hreflang="de" href="../de/index.html">
+<link rel="alternate" hreflang="it" href="../it/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans JP","Noto Sans SC",sans-serif;--body:"Noto Sans JP","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body class="home">
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">通信プレイ</a><a href="hhcode.html">拡張コード</a><a href="memory.html">メモリツール</a><a href="guide.html">使い方</a></nav>
+  <details class="lang-menu"><summary class="lang">日本語</summary><ul><li><a href="../index.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/index.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/index.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/index.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}" aria-current=true>日本語</a></li><li><a href="../ko/index.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/index.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/index.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/index.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/index.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="stage">
+<section class="hero">
+  <div class="hero-copy">
+    <h1>みんなで遊ぶ<br>GBA エミュ</h1>
+    <p>Android スマホでゲームボーイアドバンス、ゲームボーイ、ゲームボーイカラーのゲームを遊べます。Wi-Fi、Bluetooth、USB ケーブルで友だちと通信でき、GBA のゲームは最大 4 人まで一緒に遊べます。</p>
+    <div class="cta">
+      <div class="stores">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.ttproject.retro">Google Play で手に入れよう</a>
+        <a class="btn uptodown" href="https://retrogeny-gba.en.uptodown.com/android" rel="noopener">Uptodown で入手</a>
+      </div>
+      <a class="btn ghost" href="guide.html">使い方を見る</a>
+    </div>
+    <div class="community">
+      <a class="telegram" href="https://t.me/RetroGenY" rel="noopener"><span class="soc" aria-hidden="true"></span>Telegram グループに参加</a>
+      <a class="discord" href="https://discord.gg/z5SVpRcUN" rel="noopener"><span class="soc" aria-hidden="true"></span>Discord サーバーに参加</a>
+      <a class="reddit" href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener"><span class="soc" aria-hidden="true"></span>Reddit コミュニティに参加</a>
+    </div>
+    <ul class="platforms">
+    <li><b>Android</b> 配信中</li>
+    <li><b>iPhone / iPad</b> 開発中</li>
+    <li><b>Mac</b> 開発中</li>
+  </ul>
+  </div>
+  <div class="duo">
+  <svg class="cable" viewBox="0 0 520 130" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M 140 78 C 140 8, 250 8, 260 40 S 380 120, 382 126"/>
+  </svg>
+  <img src="../img/en/library.webp" alt="RetroGenY のゲームライブラリ" width="573" height="1000">
+  <img src="../img/en/play.webp" alt="RetroGenY でゲームをプレイ中" width="573" height="1000">
+</div>
+</section>
+</div>
+<section class="shots"><div class="shots-in">
+  <h2>本物の携帯ゲーム機のような手ざわり</h2>
+  <p>大きなボタン、くっきりした画面、セーブはいつでもワンタップ。</p>
+  <ul class="shot-row">
+      <li><figure><img src="../img/en/library.webp" alt="スクリーンショット：ライブラリ" width="573" height="1000" loading="lazy">
+        <figcaption><b>ライブラリ</b>自分のフォルダのゲームをカバー付きで表示。最後に遊んだゲームには「続きから」ボタン。</figcaption></figure></li>
+      <li><figure><img src="../img/en/play.webp" alt="スクリーンショット：プレイ中" width="573" height="1000" loading="lazy">
+        <figcaption><b>プレイ中</b>大きく見やすいボタンと、くっきりしたドット画面。横にすればワイドなレイアウトに。</figcaption></figure></li>
+      <li><figure><img src="../img/en/states.webp" alt="スクリーンショット：即時セーブ" width="573" height="1000" loading="lazy">
+        <figcaption><b>即時セーブ</b>スロット数は無制限、オートセーブ付き。それぞれに保存した時刻が表示されます。</figcaption></figure></li>
+      <li><figure><img src="../img/en/covers.webp" alt="スクリーンショット：カバー" width="573" height="1000" loading="lazy">
+        <figcaption><b>カバー</b>ギャラリーから選ぶか、ゲーム中に撮ったスクリーンショットを使えます。</figcaption></figure></li>
+  </ul>
+</div></section>
+<section class="big3"><div class="big3-in">
+  <h2>RetroGenY ならでは</h2>
+  <article class="big">
+    <div class="big-copy">
+      <h3>友だちと遊ぶ</h3>
+      <p>2〜4 台のスマホをつないで、対戦、交換、レース。これらのゲーム本来の遊び方そのままに。</p>
+      <ul><li>GB/GBC は 2 人通信、GBA は最大 4 人</li><li>同じ Wi-Fi、スマホのテザリング、Bluetooth、USB-C ケーブル</li><li>端末ごとに色の違うケーブル。タップするだけで接続</li><li>回線が遅くても MirrorLink でなめらか</li></ul>
+      <a class="btn" href="link.html">通信プレイのしくみ</a>
+    </div>
+    <div class="big-pic"><img src="../img/en/m-link-linked.webp" alt="" width="573" height="1000" loading="lazy"></div>
+  </article>
+  <article class="big flip">
+    <div class="big-copy">
+      <h3>拡張コード：もっと先へ行けるチート</h3>
+      <p>独自のチート形式で、GameShark や Action Replay ではできないことができます。ポインタの先のデータ、暗号化されたお金、バッグやボックスまるごと。</p>
+      <ul><li>ポインタをたどるので、どのセーブデータでも効く</li><li>ループ、条件、ボタントリガー、計算</li><li>入力しながらチェック、わかりやすい説明、テンプレート付き</li><li>内蔵の 9,000 以上のチートはすべてこの形式</li></ul>
+      <a class="btn" href="hhcode.html">拡張コードを知る</a>
+    </div>
+    <div class="big-pic"><img src="../img/en/m-hhcode-edit.webp" alt="" width="573" height="1000" loading="lazy"></div>
+  </article>
+  <article class="big">
+    <div class="big-copy">
+      <h3>メモリツール：自分でチートを作る</h3>
+      <p>ゲームの上に浮かぶウィンドウで好きな数値を探し、セーブし直しても効くチートにできます。</p>
+      <ul><li>値で検索、または「変化した／増えた／減った」で検索</li><li>監視ポイントがポインタ型のチートを書いてくれる</li><li>値を書き込んだ命令から、ゲームの動きそのものを変える</li><li>運のコントロール：乱数判定をすべて最高の結果に</li></ul>
+      <a class="btn" href="memory.html">メモリツールを見る</a>
+    </div>
+    <div class="big-pic"><img src="../img/en/m-mem-search.webp" alt="" width="573" height="1000" loading="lazy"></div>
+  </article>
+</div></section>
+<section class="features"><h2 class="more-h">ほかにも</h2>
+  <div>
+    <h2>チートデータベース</h2>
+    <p>1,700 以上のゲームに対応したチートデータベースを内蔵。ゲームを開けばすぐ使えます。GameShark、Action Replay、CodeBreaker、RetroGenY 拡張コードの貼り付けも可能。<a href="cheats.html">チートの説明</a></p>
+  </div>
+  <div>
+    <h2>あなたのゲーム、あなたのフォルダ</h2>
+    <p>ゲームを置いたフォルダを選ぶだけ。サブフォルダ、カバー、セーブデータはその場所に残るので、機種変更でもそのまま持っていけます。アプリにゲームは含まれず、ダウンロードもしません。<a href="guide.html">はじめに</a></p>
+  </div>
+  <div>
+    <h2>即時セーブと巻き戻し</h2>
+    <p>どこでもセーブ・ロード。スロットごとにサムネイル付きで、間違えたロードも元に戻せます。巻き戻しボタンを長押しすればゲームが戻ります。<a href="features.html">機能</a></p>
+  </div>
+  <div>
+    <h2>コントローラーと携帯機らしさ</h2>
+    <p>どんなコントローラーやキーボードにも割り当て可能。カートリッジの振動、本体スピーカーの音、液晶の残像も再現できます。<a href="features.html">機能</a></p>
+  </div>
+  <div>
+    <h2>RetroAchievements</h2>
+    <p>RetroAchievements のアカウントでログインすると、対応する GBA・GBC・GB ゲームで実績を獲得できます。解除時にポップアップが出て、ゲームメニューで実績一覧を確認できます。<a href="features.html">機能</a></p>
+  </div>
+  <div>
+    <h2>困ったときは</h2>
+    <p>つながらない、ルームが見つからない、バージョンが違うと言われる。よくあるケースはまとめてあります。<a href="faq.html">よくある質問</a></p>
+    <p>私たちの <a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a>、<a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a>、<a href="https://t.me/RetroGenY" rel="noopener">Telegram</a> グループで質問することもできます。通信相手を探しているプレイヤーもいます。</p>
+  </div>
+</section>
+
+</main>
+<footer><div><span>RetroGenY にゲームは含まれておらず、配布もしていません。ゲームボーイ、ゲームボーイカラー、ゲームボーイアドバンスは任天堂の商標です。本プロジェクトは任天堂とは関係ありません。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

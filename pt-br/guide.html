@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeiros passos · RetroGenY</title>
+
+<meta name="description" content="Emulador de GBA, GB e GBC para Android">
+<link rel="alternate" hreflang="en" href="../guide.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/guide.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/guide.html">
+<link rel="alternate" hreflang="ja" href="../ja/guide.html">
+<link rel="alternate" hreflang="ko" href="../ko/guide.html">
+<link rel="alternate" hreflang="es" href="../es/guide.html">
+<link rel="alternate" hreflang="fr" href="../fr/guide.html">
+<link rel="alternate" hreflang="de" href="../de/guide.html">
+<link rel="alternate" hreflang="it" href="../it/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Jogo em link</a><a href="hhcode.html">Códigos estendidos</a><a href="memory.html">Ferramentas de memória</a><a href="guide.html" aria-current=page>Guia</a></nav>
+  <details class="lang-menu"><summary class="lang">Português</summary><ul><li><a href="../guide.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/guide.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/guide.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/guide.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/guide.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/guide.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/guide.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}" aria-current=true>Português</a></li><li><a href="../fr/guide.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/guide.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/guide.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>Primeiros passos</a></li><li><a href="link.html">Jogo em link</a></li><li><a href="hhcode.html">Códigos estendidos</a></li><li><a href="memory.html">Ferramentas de memória</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Recursos e configurações</a></li><li><a href="faq.html">Perguntas frequentes</a></li><li><a href="privacy.html">Política de privacidade</a></li></ol></nav><article class="prose"><h1>Primeiros passos</h1>
+<p class="lead">De escolher uma pasta ao seu primeiro save, leva poucos minutos.</p>
+
+<h2>Prepare seus arquivos de jogo</h2>
+<p>O RetroGenY não inclui nem baixa nenhum jogo. Use backups de cartuchos que você possui. Arquivos compatíveis:</p>
+<ul>
+  <li><code>.gba</code>: Game Boy Advance</li>
+  <li><code>.gb</code>, <code>.gbc</code>: Game Boy, Game Boy Color</li>
+</ul>
+<p>Coloque-os em qualquer pasta do celular. Subpastas por série ou console não têm problema.</p>
+
+<h2>Escolha sua pasta de jogos</h2>
+<ol>
+  <li>Na primeira vez que você abre o app, ele pede para escolher uma pasta de jogos.</li>
+  <li>No seletor de arquivos do sistema, abra sua pasta de jogos, toque em “Usar esta pasta” e permita o acesso.</li>
+  <li>De volta ao app, seus jogos aparecem na lista. Subpastas aparecem como pastas que você pode abrir.</li>
+</ol>
+<p class="aside">O app só lê e grava na pasta que você escolheu. Para usar outra pasta depois, escolha-a de novo nas Configurações.</p>
+
+<div class="fig phone"><a href="../img/en/library.webp" target="_blank"><img src="../img/en/library.webp" alt="A lista de jogos. O último jogo que você jogou fica no topo com um botão Continuar." loading="lazy"></a></div>
+<p class="cap">A lista de jogos. O último jogo que você jogou fica no topo com um botão Continuar.</p>
+
+<h2>Capas</h2>
+<p>A capa de um jogo vem de um destes três lugares, verificados nesta ordem:</p>
+<ol>
+  <li>Uma imagem (png ou jpg) com o mesmo nome do jogo, numa pasta <code>covers</code> ao lado dele.</li>
+  <li>Uma captura feita com “Captura de tela” no menu do jogo, ou uma imagem escolhida no menu ⋮ do card do jogo › Capa › “Escolher da galeria”. As duas também são salvas em <code>covers</code>.</li>
+  <li>Uma capa automática: depois de jogar um minuto um jogo sem capa, um quadro é capturado. Ela fica dentro do app, nunca é gravada na sua pasta e pode ser desativada nas Configurações.</li>
+</ol>
+
+<div class="fig phone"><a href="../img/en/covers.webp" target="_blank"><img src="../img/en/covers.webp" alt="Menu ⋮ do card do jogo › Capa › “Escolher da galeria”." loading="lazy"></a></div>
+<p class="cap">Menu ⋮ do card do jogo › Capa › “Escolher da galeria”.</p>
+
+<h2>Salvando</h2>
+<h3>Saves dentro do jogo</h3>
+<p>Salvar dentro do jogo (como “Salvar” em Pokémon) cria um arquivo <code>.sav</code> com o nome do jogo, ao lado do jogo. Copie-o junto com o jogo para continuar jogando em outro celular.</p>
+<h3>Save states</h3>
+<p>Salve e carregue em qualquer lugar pelo menu do jogo. Cada espaço tem uma miniatura, e há um espaço de save automático gravado quando você sai de um jogo. Se carregar o errado, toque em “Desfazer” no aviso para voltar.</p>
+
+<div class="fig pair"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="O menu do jogo" loading="lazy"></a><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="O menu de save states" loading="lazy"></a></div>
+<p class="cap">Abra o menu do jogo e depois “Save states” para criar um novo save, carregar um ou desfazer um carregamento.</p>
+
+<h2>Controles</h2>
+<ul>
+  <li><b>Botões na tela</b>: abaixo da tela no modo retrato, dos dois lados no modo paisagem.</li>
+  <li><b>Controles e teclados</b>: funcionam assim que são conectados. Remapeie em Configurações › Botões do controle e do teclado; um botão do GBA pode ter várias teclas.</li>
+  <li><b>Orientação da tela</b>: alterne entre retrato, paisagem e a do sistema pelo menu do jogo.</li>
+</ul>
+
+<div class="fig wide"><a href="../img/en/tablet.webp" target="_blank"><img src="../img/en/tablet.webp" alt="No modo paisagem, os controles vão para os dois lados da tela." loading="lazy"></a></div>
+<p class="cap">No modo paisagem, os controles vão para os dois lados da tela.</p>
+
+<h2>BIOS (opcional)</h2>
+<p>Uma BIOS substituta vem embutida e roda todos os jogos. Só alguns poucos jogos precisam da BIOS oficial, ou talvez você queira a animação de abertura. Nesse caso, importe seu próprio arquivo de BIOS de 16 KB em Configurações › GBA BIOS.</p>
+</article></div>
+</main>
+<footer><div><span>O RetroGenY não inclui nem distribui nenhum jogo. Game Boy, Game Boy Color e Game Boy Advance são marcas da Nintendo; este projeto não é afiliado à Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Política de privacidade</a></div></footer>
+</body>
+</html>

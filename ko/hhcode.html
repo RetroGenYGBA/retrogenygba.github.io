@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>확장 코드 · RetroGenY</title>
+
+<meta name="description" content="Android용 GBA, GB, GBC 에뮬레이터">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/hhcode.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/hhcode.html">
+<link rel="alternate" hreflang="ja" href="../ja/hhcode.html">
+<link rel="alternate" hreflang="es" href="../es/hhcode.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/hhcode.html">
+<link rel="alternate" hreflang="fr" href="../fr/hhcode.html">
+<link rel="alternate" hreflang="de" href="../de/hhcode.html">
+<link rel="alternate" hreflang="it" href="../it/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans KR","Noto Sans SC",sans-serif;--body:"Noto Sans KR","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">통신 플레이</a><a href="hhcode.html" aria-current=page>확장 코드</a><a href="memory.html">메모리 도구</a><a href="guide.html">사용 방법</a></nav>
+  <details class="lang-menu"><summary class="lang">한국어</summary><ul><li><a href="../hhcode.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/hhcode.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/hhcode.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/hhcode.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/hhcode.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}" aria-current=true>한국어</a></li><li><a href="../es/hhcode.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/hhcode.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/hhcode.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/hhcode.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/hhcode.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">시작하기</a></li><li><a href="link.html">통신 플레이</a></li><li><a href="hhcode.html" aria-current=page>확장 코드</a></li><li><a href="memory.html">메모리 도구</a></li><li><a href="cheats.html">치트</a></li><li><a href="features.html">기능과 설정</a></li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="privacy.html">개인정보 처리방침</a></li></ol></nav><article class="prose"><h1>확장 코드</h1>
+<p class="lead">RetroGenY만의 치트 형식입니다. 일반 코드는 한 주소에 값 하나를 쓰지만, 확장 코드는 짧은 프로그램입니다. 포인터를 따라가고, 반복하고, 조건을 판단하고, 게임이 숫자를 숨기는 데 쓰는 계산까지 할 수 있습니다.</p>
+
+<h2>일반 코드가 부족한 이유</h2>
+<p>GameShark, Action Replay, CodeBreaker는 2000년대 초 카트리지를 위해 만들어졌습니다. "여기에 계속 99를 쓰기"는 잘하지만 그게 거의 전부입니다. 많은 게임은 데이터를 한곳에 두지 않습니다.</p>
+<ul>
+  <li><b>움직이는 데이터.</b>포켓몬과 많은 RPG는 가방, 파티, 돈을 포인터 뒤에 두고, 주소는 저장할 때마다, 심지어 메뉴를 열 때마다 바뀝니다. 고정 주소 코드는 오늘은 되다가 내일은 조용히 작동을 멈춥니다.</li>
+  <li><b>암호화된 값.</b>파이어레드와 리프그린은 돈을 세이브마다 다른 키와 XOR해서 저장합니다. 999999를 바로 쓰면 엉뚱한 숫자가 되므로 먼저 키를 읽어야 합니다.</li>
+  <li><b>목록 전체.</b>42칸 가방의 아이템을 전부 99로 하려면 코드 42개가 필요하고, 뭔가 줍는 순간 어긋납니다.</li>
+  <li><b>조건.</b>"L+R을 누를 때만", "빈 칸에만", "전투 중에만"은 대부분 불가능합니다.</li>
+</ul>
+<p>확장 코드는 바로 이런 경우를 위해 만들었습니다.</p>
+
+<h2>할 수 있는 것</h2>
+<ul>
+  <li><b>포인터 따라가기</b>: 게임과 같은 방식으로, 그래서 어떤 세이브에서도 계속 작동합니다.</li>
+  <li><b>반복</b>: 가방, 파티, PC 박스를 <code>repeat 42 … end</code>로 처리.</li>
+  <li><b>조건 판단</b>: 메모리 비교, 비트 테스트, 빈 칸 건너뛰기, <code>else</code> 추가.</li>
+  <li><b>버튼에 반응</b>: 버튼 조합을 누르고 있는 동안만 실행, "L+R로 회복"처럼.</li>
+  <li><b>계산</b>: 레지스터 8개로 더하기, 빼기, 곱하기, AND, OR, XOR, 시프트. 게임이 기대하는 방식으로 값을 인코딩하기에 충분합니다.</li>
+  <li><b>복사</b>: 다른 곳에서 값 하나나 연속된 칸 전체를.</li>
+  <li><b>게임 자체 수정</b>: <code>rom</code> 줄로 값만으로는 안 되는 변경을(1원짜리 상점, 벽 통과).</li>
+  <li><b>선택지 제공.</b><code>option</code> 줄은 값을 치트 목록의 드롭다운으로 바꿔, 플레이어가 코드를 건드리지 않고 "×2 / ×5 / ×10"을 고를 수 있습니다.</li>
+</ul>
+
+<div class="fig pair"><a href="../img/en/m-hhcode-edit.webp" target="_blank"><img src="../img/en/m-hhcode-edit.webp" alt="확장 코드 추가" loading="lazy"></a><a href="../img/en/m-hhcode-option.webp" target="_blank"><img src="../img/en/m-hhcode-option.webp" alt="치트 목록에서 선택지 고르기" loading="lazy"></a></div>
+<p class="cap">왼쪽: 편집기가 입력하는 동안 코드를 검사합니다. 오른쪽: 선택지가 있는 코드는 목록에 바로 드롭다운이 생깁니다.</p>
+
+<h2>실제 예</h2>
+<p>파이어레드(영문판 v1.0)의 돈 999999. 돈은 포인터 뒤에 있고 세이브의 키로 암호화되어 있어 일반 코드로는 다룰 수 없습니다.</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # 세이브 블록 1: 돈과 아이템
+r1 = [0x0300500C]        # 세이브 블록 2: 키가 있음
+r2 = [r1 + 0xF20]        # 키 읽기
+r2 = r2 ^ 999999         # 키로 999999 인코딩
+[r0 + 0x290].32 = r2     # 돈 쓰기</code></pre>
+<p>가방의 모든 아이템을 99로, 빈 칸은 건너뛰기:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # 개수도 암호화됨
+r0 = r0 + 0x310          # 가방: 42칸
+repeat 42
+  if [r0].16 != 0        # 빈 칸 건너뛰기
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # 다음 칸
+end</code></pre>
+<p>L+R을 누르고 있으면 HP 회복(주소는 예시):</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>플레이어가 치트 목록에서 바꿀 수 있는 선택지:</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>사용 방법</h2>
+<ol>
+  <li>게임 중에 치트 패널을 열고 "내 치트"로 가서 <b>+</b>를 누르세요.</li>
+  <li>이름을 붙이고 코드를 입력하거나 붙여 넣으세요. 첫 줄은 <code>hhcode</code>(또는 <code>hhcode 1</code>)여야 합니다.</li>
+  <li>편집기가 입력하는 동안 모든 줄을 검사합니다. 실수는 줄 번호와 함께 표시되고, 올바른 코드에는 "문법 정상"이 표시됩니다.</li>
+  <li>누군가 보내 준 코드처럼 무엇을 하는지 모르겠나요? <b>"이 코드 설명 보기"</b>를 누르면 쉬운 말로 읽어 줍니다.</li>
+  <li>처음부터 쓰기 싫다면 <b>"확장 코드 템플릿"</b>을 여세요. 값 고정, 포인터 체인, 연속된 칸, 값 복사, 테이블 순회, 조건부 쓰기, else 분기, 버튼 트리거, 비트 스위치 등. 하나를 골라 주소와 값만 바꾸면 됩니다.</li>
+  <li>추가를 누르고 켜세요. 다른 치트처럼 매 프레임 실행됩니다.</li>
+</ol>
+<p class="aside">직접 쓸 필요가 없는 경우도 많습니다. <a href="memory.html">메모리 도구</a>가 값을 찾고 포인터 기반 확장 코드를 대신 써 줍니다.</p>
+
+<h2>문법 한눈에 보기</h2>
+<table>
+  <tr><th>코드</th><th>하는 일</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>쓰기(기본 32비트)</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>크기를 지정해 쓰기: .8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>바이트 열 쓰기</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>4바이트 간격으로 30칸 쓰기</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>값 복사</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>읽고 바꾸고 다시 쓰기: += -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>메모리를 레지스터로 읽기(포인터 체인의 시작)</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>포인터를 한 단계 더 따라가기</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>레지스터 기준으로 쓰기</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>계산: + - * &amp; | ^ &lt;&lt; &gt;&gt; 와 ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>정해진 횟수만큼 반복</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>조건: == != &lt; &gt; &lt;= &gt;=, 부호 없음 &lt;u &gt;u, 비트 테스트 &amp; 와 !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>그 버튼들을 누르고 있는 동안만</td></tr>
+  <tr><td><code>… else … end</code></td><td>그렇지 않으면</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>게임 자체 수정(되돌리려면 게임을 다시 열기)</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>치트 목록에 표시되는 선택지; <code>$name</code>으로 사용</td></tr>
+  <tr><td><code># text</code></td><td>주석</td></tr>
+</table>
+<p>모든 규칙이 담긴 전체 레퍼런스는 앱 안에 있습니다: 치트 패널 › "설명" › RetroGenY 확장 코드.</p>
+
+<h2>안전하게 설계</h2>
+<ul>
+  <li><b>게임을 멈추게 하지 않습니다.</b>한 번 실행에 최대 200,000개 명령까지만 실행하므로 잘못 쓴 반복문은 그냥 멈춥니다.</li>
+  <li><b>크기는 너그럽게.</b>값이 쓴 크기에 들어가지 않으면 몰래 잘라내지 않고 넓힌 뒤 알려 줍니다.</li>
+  <li><b>흔한 실수를 경고합니다.</b>예를 들어 다른 형식의 오프셋처럼 보이는 주소.</li>
+  <li><b>값은 값.</b>10진수와 16진수는 같은 뜻이며, 쓰는 것은 숫자이지 바이트 순서가 아닙니다.</li>
+</ul>
+
+<h2>데이터베이스 전체가 이 형식</h2>
+<p>내장 데이터베이스의 1,700개 이상 게임, 9,000개 이상의 치트가 확장 코드로 변환되었고, 하나하나 원래 코드와 바이트 단위로 대조했습니다. 일부 게임에는 예전 형식으로는 표현할 수 없었던 직접 작성한 확장 코드도 추가했습니다. 파이어레드의 암호화된 돈과 가방 전체 등. GameShark, Action Replay, CodeBreaker 코드도 예전과 똑같이 작동합니다.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY는 게임을 포함하거나 배포하지 않습니다. 게임보이, 게임보이 컬러, 게임보이 어드밴스는 닌텐도의 상표이며, 이 프로젝트는 닌텐도와 관련이 없습니다.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">개인정보 처리방침</a></div></footer>
+</body>
+</html>

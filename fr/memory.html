@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outils mémoire · RetroGenY</title>
+
+<meta name="description" content="Émulateur GBA, GB et GBC pour Android">
+<link rel="alternate" hreflang="en" href="../memory.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/memory.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/memory.html">
+<link rel="alternate" hreflang="ja" href="../ja/memory.html">
+<link rel="alternate" hreflang="ko" href="../ko/memory.html">
+<link rel="alternate" hreflang="es" href="../es/memory.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/memory.html">
+<link rel="alternate" hreflang="de" href="../de/memory.html">
+<link rel="alternate" hreflang="it" href="../it/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Jeu en link</a><a href="hhcode.html">Codes étendus</a><a href="memory.html" aria-current=page>Outils mémoire</a><a href="guide.html">Guide</a></nav>
+  <details class="lang-menu"><summary class="lang">Français</summary><ul><li><a href="../memory.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/memory.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/memory.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/memory.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/memory.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/memory.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/memory.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/memory.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}" aria-current=true>Français</a></li><li><a href="../de/memory.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/memory.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Bien démarrer</a></li><li><a href="link.html">Jeu en link</a></li><li><a href="hhcode.html">Codes étendus</a></li><li><a href="memory.html" aria-current=page>Outils mémoire</a></li><li><a href="cheats.html">Triches</a></li><li><a href="features.html">Fonctions et réglages</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Politique de confidentialité</a></li></ol></nav><article class="prose"><h1>Outils mémoire</h1>
+<p class="lead">Trouvez n'importe quel nombre dans un jeu, bloquez-le et transformez-le en triche qui marche dans toutes les sauvegardes, sans quitter le jeu. Puis allez plus loin : changez le comportement du jeu, ou forcez sa chance.</p>
+
+<h2>À quoi ça sert</h2>
+<p>La bibliothèque de triches couvre beaucoup, mais pas tout : un jeu moins connu, un patch de traduction, un hack de ROM, ou juste la valeur qui vous intéresse. Les outils mémoire vous permettent de créer cette triche vous-même. La plupart des émulateurs s'arrêtent à « chercher et bloquer une adresse ». RetroGenY va plus loin :</p>
+<ul>
+  <li><b>Il tourne dans une fenêtre flottante au-dessus du jeu.</b> Déplacez-la et redimensionnez-la pour garder en vue le nombre que vous traquez, et continuez à jouer pendant la recherche.</li>
+  <li><b>Des triches qui survivent à une nouvelle sauvegarde.</b> Un point de surveillance montre où le jeu lui-même trouve la valeur, et la triche est écrite pour suivre le même chemin, sous forme de <a href="hhcode.html">code étendu</a>.</li>
+  <li><b>Changez le comportement du jeu</b>, pas seulement ses nombres : un compteur qui ne baisse jamais, une vérification sautée, le tout depuis la liste des instructions qui ont touché votre valeur.</li>
+  <li><b>Contrôlez le hasard.</b> Trouvez la graine aléatoire, voyez ce qui va sortir, ou forcez chaque tirage au meilleur résultat.</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-mem-search.webp" target="_blank"><img src="../img/en/m-mem-search.webp" alt="La fenêtre de recherche mémoire au-dessus d'un jeu en cours" loading="lazy"></a></div>
+<p class="cap">La fenêtre des outils mémoire flotte au-dessus du jeu. Faites glisser la barre de titre pour la déplacer, le coin pour la redimensionner.</p>
+
+<h2>L'activer</h2>
+<ol>
+  <li>En jeu, ouvrez le menu du jeu et, sous Outils, activez <b>Recherche mémoire</b>.</li>
+  <li>Une touche de recherche mémoire apparaît sous l'écran de jeu. Touchez-la pour ouvrir la fenêtre ; touchez ✕ pour la fermer. Votre recherche reste là où vous l'avez laissée.</li>
+</ol>
+<p class="aside">La recherche mémoire est une <a href="features.html">fonction premium</a>. Les triches créées avec elle sont enregistrées comme les autres et continuent de fonctionner ensuite.</p>
+
+<h2>Trouver une valeur</h2>
+<p>Disons que vous avez 1 250 pièces d'or et que vous en voulez 999 999.</p>
+<ol>
+  <li>Choisissez une largeur. L'argent est souvent sur 16 ou 32 bits ; les petits compteurs comme les vies sont souvent sur 8 bits. En cas de doute, essayez d'abord 32 bits.</li>
+  <li>Saisissez la valeur affichée (1250), laissez la condition sur « = » et touchez <b>Rechercher</b>.</li>
+  <li>Faites changer la valeur dans le jeu : achetez quelque chose, ramassez-en.</li>
+  <li>Saisissez la nouvelle valeur et touchez <b>Affiner</b>. Répétez jusqu'à ce qu'il ne reste que quelques adresses.</li>
+  <li>Touchez <b>Triche</b> sur un résultat, réglez « Bloquer à » sur 999999 et touchez <b>Enregistrer dans les triches</b>.</li>
+</ol>
+<p><b>Vous ne connaissez pas le nombre ?</b> Barres de vie, minuteurs et statistiques cachées n'affichent pas de chiffres. Cherchez alors avec une condition : prenez un coup et affinez avec « a diminué », soignez-vous et affinez avec « a augmenté », restez immobile et affinez avec « inchangé ». Il y a aussi différent de, supérieur à et inférieur à.</p>
+
+<h2>Des triches qui continuent de marcher</h2>
+<p>Une adresse simplement bloquée casse quand le jeu déplace ses données, ce que beaucoup de jeux font à chaque sauvegarde. Les outils mémoire règlent ça :</p>
+<ol>
+  <li>Touchez <b>Surveiller</b> sur le résultat trouvé.</li>
+  <li>Faites changer la valeur une fois dans le jeu.</li>
+  <li>L'émulateur s'arrête sur l'instruction qui l'a écrite et enregistre comment le jeu est arrivé à cette adresse.</li>
+  <li>Touchez à nouveau <b>Triche</b>. Le code qu'il écrit suit le pointeur du jeu lui-même, et l'indique : « Résolu via le pointeur utilisé par le jeu lui-même : il reste valable dans d'autres sauvegardes. »</li>
+</ol>
+
+<div class="fig pair"><a href="../img/en/m-mem-cheat.webp" target="_blank"><img src="../img/en/m-mem-cheat.webp" alt="Créer une triche qui suit le pointeur du jeu" loading="lazy"></a><a href="../img/en/m-mem-luck.webp" target="_blank"><img src="../img/en/m-mem-luck.webp" alt="Le réglage de chance dans l'onglet Graine" loading="lazy"></a></div>
+<p class="cap">À gauche : une triche générée depuis un point de surveillance, sous forme de code étendu qui suit le pointeur. À droite : la Chance force chaque tirage au meilleur (ou au pire) résultat.</p>
+
+<h2>Changer ce que fait le jeu</h2>
+<p>Parfois, bloquer une valeur n'est pas ce que vous voulez. Vous voulez que l'argent cesse de baisser tout en pouvant en gagner, ou qu'une vérification passe toujours. L'onglet Surveillance liste chaque <b>instruction qui a écrit</b> votre adresse, avec un compteur :</p>
+<ol>
+  <li>Touchez <b>Effacer les compteurs</b>, puis faites l'action dans le jeu (acheter quelque chose, subir des dégâts). « Enregistrer sans mettre le jeu en pause » garde la partie fluide.</li>
+  <li>Revenez et trouvez l'entrée dont le compteur a augmenté.</li>
+  <li>Touchez <b>Modifier</b> et choisissez : remplacer par NOP, inverser addition et soustraction, modifier une constante, toujours sauter, ne jamais sauter, fixer la valeur d'un registre, ou saisir une ligne d'assembleur.</li>
+  <li>Cela devient une triche comme les autres, avec le nom de votre choix.</li>
+</ol>
+<p class="aside">Le code des jeux est souvent partagé : la routine qui vous prend de l'argent peut aussi verser des récompenses. L'application vous prévient quand c'est probable ; utilisez un point d'arrêt pour vérifier que l'instruction ne s'exécute que quand vous l'attendez. La désactivation d'une triche d'instruction prend effet après réouverture du jeu.</p>
+
+<h2>Hasard et chance</h2>
+<p>La plupart des jeux lancent leurs dés avec une ligne d'arithmétique, et les quatre octets qui contiennent la graine sont les seules données en mémoire dont chaque changement suit cette formule. L'onglet Graine les trouve pour vous :</p>
+<ul>
+  <li><b>Chance</b> : Meilleure ou Pire force chaque tirage du jeu à sa valeur la plus basse ou la plus haute. Coups critiques, objets rares, captures. Si Meilleure fait tout échouer, le jeu considère les tirages élevés comme bons ; passez à Pire. Cela touche aussi les ennemis, désactivez-la quand vous avez fini.</li>
+  <li><b>Avancé</b> : cherchez la graine à un moment où le jeu est au repos, voyez les prochaines valeurs qu'il produira et bloquez la graine.</li>
+</ul>
+
+<h2>Pour les curieux</h2>
+<ul>
+  <li><b>Mémoire</b> : une vue hexadécimale de n'importe quelle adresse, ouverte directement depuis un résultat de recherche.</li>
+  <li><b>Points d'arrêt</b> : arrêtez-vous quand une instruction s'exécute, puis avancez instruction par instruction en lisant les registres.</li>
+  <li>Les points de surveillance continuent de fonctionner fenêtre fermée. Quand l'un se déclenche, la fenêtre s'ouvre toute seule.</li>
+</ul>
+
+<h2>Ce qui le rend différent</h2>
+<ul>
+  <li>Cherchez, bloquez et enregistrez sans quitter le jeu ni changer d'application.</li>
+  <li>Des triches par pointeur générées pour vous, qui ne cassent pas à la sauvegarde suivante.</li>
+  <li>Des triches d'instruction à partir d'une liste des vrais auteurs d'écriture, sans désassembleur.</li>
+  <li>Un contrôle de la chance qui marche d'un jeu à l'autre, car il vise la façon dont les jeux lancent les dés, pas les adresses d'un jeu.</li>
+  <li>Tout ce que vous créez est une triche ordinaire : nommez-la, activez-la et désactivez-la comme les autres.</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>RetroGenY n'inclut ni ne distribue aucun jeu. Game Boy, Game Boy Color et Game Boy Advance sont des marques de Nintendo ; ce projet n'est pas affilié à Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Politique de confidentialité</a></div></footer>
+</body>
+</html>

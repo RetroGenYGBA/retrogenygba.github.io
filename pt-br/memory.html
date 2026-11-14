@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferramentas de memória · RetroGenY</title>
+
+<meta name="description" content="Emulador de GBA, GB e GBC para Android">
+<link rel="alternate" hreflang="en" href="../memory.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/memory.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/memory.html">
+<link rel="alternate" hreflang="ja" href="../ja/memory.html">
+<link rel="alternate" hreflang="ko" href="../ko/memory.html">
+<link rel="alternate" hreflang="es" href="../es/memory.html">
+<link rel="alternate" hreflang="fr" href="../fr/memory.html">
+<link rel="alternate" hreflang="de" href="../de/memory.html">
+<link rel="alternate" hreflang="it" href="../it/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Jogo em link</a><a href="hhcode.html">Códigos estendidos</a><a href="memory.html" aria-current=page>Ferramentas de memória</a><a href="guide.html">Guia</a></nav>
+  <details class="lang-menu"><summary class="lang">Português</summary><ul><li><a href="../memory.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/memory.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/memory.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/memory.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/memory.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/memory.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/memory.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}" aria-current=true>Português</a></li><li><a href="../fr/memory.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/memory.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/memory.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Primeiros passos</a></li><li><a href="link.html">Jogo em link</a></li><li><a href="hhcode.html">Códigos estendidos</a></li><li><a href="memory.html" aria-current=page>Ferramentas de memória</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Recursos e configurações</a></li><li><a href="faq.html">Perguntas frequentes</a></li><li><a href="privacy.html">Política de privacidade</a></li></ol></nav><article class="prose"><h1>Ferramentas de memória</h1>
+<p class="lead">Encontre qualquer número num jogo, trave-o e transforme-o num cheat que continua funcionando em qualquer save, sem sair do jogo. E vá além: mude como o jogo se comporta, ou dobre a sorte dele.</p>
+
+<h2>Para que serve</h2>
+<p>A biblioteca de cheats cobre muita coisa, mas não tudo: um jogo menos famoso, um patch de tradução, um hack de ROM ou só aquele valor que importa para você. As ferramentas de memória deixam você criar esse cheat. A maioria dos emuladores para em “pesquisar e travar um endereço”. O RetroGenY vai além:</p>
+<ul>
+  <li><b>Funciona numa janela flutuante sobre o jogo.</b> Mova e redimensione para o número que você procura continuar visível, e continue jogando enquanto pesquisa.</li>
+  <li><b>Cheats que sobrevivem a um novo save.</b> Um ponto de monitoramento mostra onde o próprio jogo encontra o valor, e o cheat é escrito seguindo o mesmo caminho, como um <a href="hhcode.html">código estendido</a>.</li>
+  <li><b>Mude o comportamento do jogo</b>, não só os números: faça um contador nunca diminuir, pule uma verificação, tudo a partir de uma lista das instruções que mexeram no seu valor.</li>
+  <li><b>Controle a aleatoriedade.</b> Encontre a semente dos números aleatórios, veja o que vem pela frente ou force cada sorteio ao melhor resultado.</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-mem-search.webp" target="_blank"><img src="../img/en/m-mem-search.webp" alt="A janela de pesquisa de memória sobre um jogo em execução" loading="lazy"></a></div>
+<p class="cap">A janela das ferramentas de memória flutua sobre o jogo. Arraste a barra de título para mover e o canto para redimensionar.</p>
+
+<h2>Ativando</h2>
+<ol>
+  <li>Num jogo, abra o menu do jogo e, em Ferramentas, ligue a <b>Pesquisa de memória</b>.</li>
+  <li>Um botão de pesquisa de memória aparece abaixo da tela do jogo. Toque nele para abrir a janela; toque em ✕ para fechar. Sua pesquisa fica onde você parou.</li>
+</ol>
+<p class="aside">A pesquisa de memória é um <a href="features.html">recurso premium</a>. Os cheats que você cria com ela são salvos como qualquer outro e continuam funcionando depois.</p>
+
+<h2>Encontrando um valor</h2>
+<p>Digamos que você tem 1.250 de ouro e quer 999.999.</p>
+<ol>
+  <li>Escolha uma largura. Dinheiro costuma ser 16 ou 32 bits; contadores pequenos como vidas costumam ser 8 bits. Na dúvida, tente 32 bits primeiro.</li>
+  <li>Digite o valor que você vê (1250), mantenha a condição em “=” e toque em <b>Pesquisar</b>.</li>
+  <li>Mude o valor no jogo: compre algo, pegue algo.</li>
+  <li>Digite o novo valor e toque em <b>Refinar</b>. Repita até sobrarem poucos endereços.</li>
+  <li>Toque em <b>Cheat</b> num resultado, defina “Travar em” para 999999 e toque em <b>Salvar nos cheats</b>.</li>
+</ol>
+<p><b>Não sabe o número?</b> Barras de vida, cronômetros e atributos escondidos não mostram dígitos. Pesquise com uma condição: leve um golpe e refine com “diminuiu”, cure-se e refine com “aumentou”, fique parado e refine com “não mudou”. Também há diferente de, maior que e menor que.</p>
+
+<h2>Cheats que continuam funcionando</h2>
+<p>Um endereço simplesmente travado quebra quando o jogo move os dados, e muitos jogos fazem isso a cada save. As ferramentas de memória resolvem isso:</p>
+<ol>
+  <li>Toque em <b>Monitorar</b> no resultado que você encontrou.</li>
+  <li>Faça o valor mudar uma vez no jogo.</li>
+  <li>O emulador para na instrução que o escreveu e registra como o jogo chegou àquele endereço.</li>
+  <li>Agora toque em <b>Cheat</b> de novo. O código que ele escreve segue o próprio ponteiro do jogo, e avisa isso: “É resolvido pelo ponteiro que o próprio jogo usa, então continua valendo em outros saves.”</li>
+</ol>
+
+<div class="fig pair"><a href="../img/en/m-mem-cheat.webp" target="_blank"><img src="../img/en/m-mem-cheat.webp" alt="Criando um cheat que segue o ponteiro do jogo" loading="lazy"></a><a href="../img/en/m-mem-luck.webp" target="_blank"><img src="../img/en/m-mem-luck.webp" alt="A opção de sorte na aba de semente" loading="lazy"></a></div>
+<p class="cap">Esquerda: um cheat gerado a partir de um ponto de monitoramento, como código estendido que segue o ponteiro. Direita: a Sorte força cada sorteio ao melhor (ou pior) resultado.</p>
+
+<h2>Mudando o que o jogo faz</h2>
+<p>Às vezes travar um valor não é o que você quer. Você quer que o dinheiro pare de diminuir mas ainda dê para ganhar, ou que uma verificação sempre passe. A aba Monitoramento lista cada <b>instrução que escreveu</b> no seu endereço, com uma contagem:</p>
+<ol>
+  <li>Toque em <b>Zerar contagens</b> e depois faça a ação no jogo (comprar algo, levar dano). “Registrar sem pausar o jogo” mantém a jogatina fluida.</li>
+  <li>Volte e encontre a entrada cuja contagem subiu.</li>
+  <li>Toque em <b>Modificar</b> e escolha: substituir por NOP, trocar soma e subtração, editar uma constante, sempre pular, nunca pular, fixar o valor de um registrador ou digitar uma linha de assembly.</li>
+  <li>Isso vira um cheat como outro qualquer, com o nome que você escolher.</li>
+</ol>
+<p class="aside">O código dos jogos costuma ser compartilhado: a rotina que tira seu dinheiro também pode pagar recompensas. O app avisa quando isso é provável; use um ponto de interrupção para conferir que a instrução só roda quando você espera. Desligar um cheat de instrução vale depois de reabrir o jogo.</p>
+
+<h2>Aleatoriedade e sorte</h2>
+<p>A maioria dos jogos rola os dados com uma linha de aritmética, e os quatro bytes que guardam a semente são os únicos dados na memória cujas mudanças seguem sempre essa fórmula. A aba Semente encontra esses bytes para você:</p>
+<ul>
+  <li><b>Sorte</b>: Melhor ou Pior força cada sorteio do jogo ao menor ou maior valor. Golpes críticos, drops raros, capturas. Se com Melhor tudo falhar, o jogo considera bons os valores altos; troque para Pior. Afeta também os inimigos, então desligue quando terminar.</li>
+  <li><b>Avançado</b>: procure a semente num ponto em que o jogo esteja ocioso, veja os próximos valores que ele vai gerar e trave a semente.</li>
+</ul>
+
+<h2>Para os curiosos</h2>
+<ul>
+  <li><b>Memória</b>: uma visualização hexadecimal de qualquer endereço, aberta direto de um resultado de pesquisa.</li>
+  <li><b>Pontos de interrupção</b>: pare quando uma instrução for executada, depois avance uma instrução por vez e leia os registradores.</li>
+  <li>Pontos de monitoramento continuam funcionando com a janela fechada. Quando um dispara, a janela abre sozinha.</li>
+</ul>
+
+<h2>Por que é diferente</h2>
+<ul>
+  <li>Pesquise, trave e salve sem sair do jogo nem trocar de app.</li>
+  <li>Cheats com ponteiro gerados para você, para não quebrarem no próximo save.</li>
+  <li>Cheats de instrução a partir de uma lista de quem realmente escreveu, sem precisar de desmontador.</li>
+  <li>Controle da sorte que funciona em vários jogos, porque mira em como os jogos rolam dados, não nos endereços de um jogo.</li>
+  <li>Tudo o que você cria é um cheat comum: dê um nome e ligue ou desligue como qualquer outro.</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>O RetroGenY não inclui nem distribui nenhum jogo. Game Boy, Game Boy Color e Game Boy Advance são marcas da Nintendo; este projeto não é afiliado à Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Política de privacidade</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funciones y ajustes · RetroGenY</title>
+
+<meta name="description" content="Emulador de GBA, GB y GBC para Android">
+<link rel="alternate" hreflang="en" href="../features.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/features.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/features.html">
+<link rel="alternate" hreflang="fr" href="../fr/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Juego en red</a><a href="hhcode.html">Códigos extendidos</a><a href="memory.html">Herramientas de memoria</a><a href="guide.html">Guía</a></nav>
+  <details class="lang-menu"><summary class="lang">Español</summary><ul><li><a href="../features.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/features.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/features.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/features.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/features.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/features.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}" aria-current=true>Español</a></li><li><a href="../pt-br/features.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/features.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/features.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/features.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Primeros pasos</a></li><li><a href="link.html">Juego en red</a></li><li><a href="hhcode.html">Códigos extendidos</a></li><li><a href="memory.html">Herramientas de memoria</a></li><li><a href="cheats.html">Trucos</a></li><li><a href="features.html" aria-current=page>Funciones y ajustes</a></li><li><a href="faq.html">Preguntas frecuentes</a></li><li><a href="privacy.html">Política de privacidad</a></li></ol></nav><article class="prose"><h1>Funciones y ajustes</h1>
+<p class="lead">Las funciones principales y qué hacen los ajustes de rendimiento.</p>
+
+<h2>Gratis y premium</h2>
+<p>Jugar, guardar dentro del juego, los estados guardados, los trucos, los mandos, los botones en pantalla y la orientación de la pantalla son gratis. Estas son funciones premium:</p>
+<ul>
+  <li><b>Avance rápido</b>: 1,5×, 2× y 4× (0,5× y 1× son gratis)</li>
+  <li><b>Rebobinado</b>: mantén pulsado el botón de rebobinar para retroceder</li>
+  <li><b>Turbo</b>: mantén pulsado un botón para que se pulse una y otra vez, a la velocidad que elijas</li>
+  <li><b>Filtros</b>: LCD, scanlines, corrección de color, xBRZ, HQ4x, ScaleFX, FSR y más</li>
+  <li><b>Búsqueda en memoria</b>: encuentra valores tú mismo y crea trucos</li>
+</ul>
+<p>Puedes desbloquearlas gratis durante un tiempo desde la propia app, o comprar el desbloqueo único para tenerlas para siempre.</p>
+
+<h2>Pantalla</h2>
+<ul>
+  <li><b>Filtros</b>: se cambian desde el menú del juego, para cada juego.</li>
+  <li><b>Estela de LCD</b>: emula la respuesta lenta de la pantalla original. Algunos juegos hacen parpadear sprites cada dos fotogramas para simular transparencia; con esto se ven bien.</li>
+  <li><b>Renderizado rápido</b>: dibuja la pantalla línea a línea en vez de píxel a píxel. Mucho más rápido, imagen idéntica. Activado por defecto.</li>
+  <li><b>Renderizado multihilo</b>: ejecuta la emulación y el dibujado en paralelo en dos núcleos de CPU. Requiere el renderizado rápido.</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="El menú del juego" loading="lazy"></a></div>
+<p class="cap">El menú del juego: la velocidad, el renderizado y los interruptores de rendimiento se cambian sin salir del juego.</p>
+<h2>Rendimiento y batería</h2>
+<ul>
+  <li><b>Ejecución continua de la CPU</b>: omite comprobaciones entre instrucciones cuando no pasa nada. Más rápido y más suave con la batería, con resultados exactamente iguales. Se desactiva sola durante el enlace.</li>
+  <li><b>Ahorro de energía</b>: evita redibujar fotogramas idénticos y ahorros parecidos, para que el teléfono se caliente menos. Se puede ajustar por juego.</li>
+</ul>
+<p>Puedes cambiar estos ajustes en la sección de pantalla del menú del juego sin salir del juego. Si algo se ve o funciona raro, desactiva primero estos interruptores.</p>
+
+<div class="fig phone"><a href="../img/en/m-settings.webp" target="_blank"><img src="../img/en/m-settings.webp" alt="Ajustes" loading="lazy"></a></div>
+<p class="cap">Ajustes › Rendimiento.</p>
+
+<h2>Sonido</h2>
+<ul>
+  <li><b>Audio de alta calidad</b>: remuestreo más fino, más limpio con auriculares.</li>
+  <li><b>Sonido del altavoz de la consola</b>: mono, con graves y agudos recortados como en el altavoz integrado, para ese sonido original.</li>
+</ul>
+
+<h2>Mandos y extras de cartucho</h2>
+<ul>
+  <li><b>Botones de mando y teclado</b>: reasigna lo que quieras; un botón de la GBA puede tener varias teclas.</li>
+  <li><b>Vibración del cartucho</b>: los juegos con cartucho de vibración (como Pokémon Pinball: Rubí y Zafiro) hacen vibrar el teléfono o el mando.</li>
+  <li><b>Cartuchos con sensor</b>: los juegos con sensor de inclinación, giroscopio o sensor solar usan los sensores de tu teléfono. Consulta la siguiente sección.</li>
+</ul>
+
+<h2>Cartuchos con sensor</h2>
+<p>Algunos cartuchos llevaban un sensor incorporado, así que para jugar había que salir al sol, inclinar o girar la consola. RetroGenY reconoce estos juegos y usa automáticamente los sensores de tu teléfono, sin nada que configurar. Al empezar el juego te dice qué sensor se está usando, o te avisa si tu teléfono no tiene el que necesita el juego.</p>
+<ul>
+  <li><b>Luz solar (Boktai 1, 2 y 3)</b>: el sensor de luz del teléfono sustituye al sensor solar del cartucho. Cuanta más luz, más sol en el juego: sal al exterior o apunta una lámpara a la parte superior de la pantalla y verás llenarse el medidor solar. El sensor de luz suele estar junto a la cámara frontal, así que no lo tapes con los dedos. Los teléfonos sin sensor de luz reciben una cantidad media de sol.</li>
+  <li><b>Inclinación (Yoshi Topsy-Turvy, Koro Koro Puzzle)</b>: usa el acelerómetro del teléfono, así que inclinas el teléfono como en el original para girar el nivel o hacer rodar a tu personaje. La forma en que sostienes el teléfono al empezar el juego cuenta como nivelada; para recalibrar, sal del juego y vuelve a empezar. Funciona en vertical y en horizontal, porque la dirección sigue a la pantalla.</li>
+  <li><b>Giroscopio (WarioWare: Twisted!)</b>: usa el giroscopio del teléfono. Gira el teléfono en el plano de la pantalla, como un volante.</li>
+  <li><b>Cartuchos de inclinación de GBC (Kirby Tilt 'n' Tumble y otros)</b>: también se controlan con el acelerómetro, y los datos de guardado del cartucho se conservan con normalidad.</li>
+</ul>
+<p class="aside">Con un mando conectado, los sensores siguen leyendo el propio teléfono, así que los juegos de inclinación se disfrutan mejor sujetando el teléfono. Los sensores se pausan cuando la app pasa a segundo plano y se reanudan al volver, para no gastar batería.</p>
+
+<h2>RetroAchievements</h2>
+<p>Actívalo en Ajustes › RetroAchievements e inicia sesión con tu cuenta de <a href="https://retroachievements.org">retroachievements.org</a> (registro gratuito). Al empezar un juego, la app lo reconoce y te dice cuántos logros tiene. Los desbloqueos aparecen mientras juegas, y «Logros» en el menú del juego muestra la lista completa y tu progreso.</p>
+<ul>
+  <li>RetroAchievements solo reconoce las versiones de juego que tiene registradas (comprueba una suma de control del archivo), así que las traducciones y los hacks de ROM normalmente no tienen logros.</li>
+  <li>Mientras está activado, los trucos y la edición de memoria se pausan para que los logros sean justos. El avance rápido, el rebobinado y los estados guardados siguen funcionando.</li>
+  <li>Los logros conseguidos sin conexión se guardan y se envían cuando vuelves a estar en línea.</li>
+  <li>RetroAchievements es gratuito.</li>
+</ul>
+
+<h2>Estados guardados y rebobinado</h2>
+<p>Cada ranura de estado guardado tiene una miniatura, y puedes deshacer una carga. El rebobinado necesita algo de memoria; si no hay suficiente, la app te avisa de que no se pudo activar.</p>
+<div class="fig phone"><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="El menú de estados guardados: una ranura nueva, el guardado automático y tus ranuras anteriores." loading="lazy"></a></div>
+<p class="cap">El menú de estados guardados: una ranura nueva, el guardado automático y tus ranuras anteriores.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY no incluye ni distribuye ningún juego. Game Boy, Game Boy Color y Game Boy Advance son marcas de Nintendo; este proyecto no está afiliado a Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Política de privacidad</a></div></footer>
+</body>
+</html>

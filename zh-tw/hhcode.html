@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>擴充碼 · RetroGenY</title>
+
+<meta name="description" content="Android 上的 GBA、GB、GBC 模擬器">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/hhcode.html">
+<link rel="alternate" hreflang="ja" href="../ja/hhcode.html">
+<link rel="alternate" hreflang="ko" href="../ko/hhcode.html">
+<link rel="alternate" hreflang="es" href="../es/hhcode.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/hhcode.html">
+<link rel="alternate" hreflang="fr" href="../fr/hhcode.html">
+<link rel="alternate" hreflang="de" href="../de/hhcode.html">
+<link rel="alternate" hreflang="it" href="../it/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans TC","Noto Sans SC",sans-serif;--body:"Noto Sans TC","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">連線</a><a href="hhcode.html" aria-current=page>擴充碼</a><a href="memory.html">記憶體工具</a><a href="guide.html">使用說明</a></nav>
+  <details class="lang-menu"><summary class="lang">繁體中文</summary><ul><li><a href="../hhcode.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/hhcode.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/hhcode.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}" aria-current=true>繁體中文</a></li><li><a href="../ja/hhcode.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/hhcode.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/hhcode.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/hhcode.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/hhcode.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/hhcode.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/hhcode.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html">連線</a></li><li><a href="hhcode.html" aria-current=page>擴充碼</a></li><li><a href="memory.html">記憶體工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能與設定</a></li><li><a href="faq.html">常見問題</a></li><li><a href="privacy.html">隱私權政策</a></li></ol></nav><article class="prose"><h1>擴充碼</h1>
+<p class="lead">RetroGenY 自己的金手指格式。一般代碼只是把一個值寫到一個位址；擴充碼是一段小程式：能跟隨指標、跑迴圈、判斷條件，還能做遊戲用來藏數字的那些算術。</p>
+
+<h2>一般代碼哪裡不夠</h2>
+<p>GameShark、Action Replay 和 CodeBreaker 是為 2000 年代初的卡匣設計的。它們很擅長「一直把 99 寫到這裡」，也就僅止於此。很多遊戲的資料不會固定在一個地方：</p>
+<ul>
+  <li><b>會移動的資料。</b>寶可夢和許多 RPG 把背包、隊伍和金錢放在指標後面，位址每次存檔、甚至每次打開選單都會變。固定位址的代碼今天有效，明天就默默失效。</li>
+  <li><b>加密的數值。</b>火紅和葉綠把金錢和一把每個存檔都不同的鑰匙做 XOR。直接寫 999999 只會得到一個亂數；必須先讀出鑰匙。</li>
+  <li><b>整個列表。</b>要把 42 格背包裡每樣道具都改成 99，需要 42 條代碼，而且一撿東西就全亂了。</li>
+  <li><b>條件。</b>「只在按住 L+R 時」「只對空格子」「只在戰鬥中」，大多做不到。</li>
+</ul>
+<p>擴充碼就是為這些情況做的。</p>
+
+<h2>能做什麼</h2>
+<ul>
+  <li><b>跟隨指標</b>，方式和遊戲自己一樣，所以代碼在任何存檔都有效。</li>
+  <li><b>跑迴圈</b>：走訪背包、隊伍或電腦箱子，用 <code>repeat 42 … end</code>。</li>
+  <li><b>判斷條件</b>：比較記憶體、測試位元、略過空格子，還能加 <code>else</code>。</li>
+  <li><b>回應按鍵</b>：只在按住某個按鍵組合時執行，像是「按 L+R 回血」。</li>
+  <li><b>計算</b>：八個暫存器，加、減、乘、AND、OR、XOR 和位移，足以把數值編碼成遊戲要的樣子。</li>
+  <li><b>複製</b>：從別處複製一個值或一整排格子。</li>
+  <li><b>修改遊戲本身</b>：用 <code>rom</code> 行做到光改數值做不到的事（商店只收 1 元、穿牆）。</li>
+  <li><b>提供選項。</b><code>option</code> 行會把數值變成金手指列表裡的下拉選單，玩家選「×2 / ×5 / ×10」就好，不用碰代碼。</li>
+</ul>
+
+<div class="fig pair"><a href="../img/en/m-hhcode-edit.webp" target="_blank"><img src="../img/en/m-hhcode-edit.webp" alt="新增擴充碼" loading="lazy"></a><a href="../img/en/m-hhcode-option.webp" target="_blank"><img src="../img/en/m-hhcode-option.webp" alt="在金手指列表裡選擇選項" loading="lazy"></a></div>
+<p class="cap">左：編輯器邊輸入邊檢查代碼。右：有選項的代碼直接在列表裡出現下拉選單。</p>
+
+<h2>實際例子</h2>
+<p>火紅（英文版 v1.0）金錢 999999。金錢放在指標後面，還用存檔的鑰匙加密，一般代碼都處理不了：</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # 存檔區塊 1：金錢和道具在這裡
+r1 = [0x0300500C]        # 存檔區塊 2：鑰匙在這裡
+r2 = [r1 + 0xF20]        # 讀出鑰匙
+r2 = r2 ^ 999999         # 用它加密 999999
+[r0 + 0x290].32 = r2     # 寫入金錢</code></pre>
+<p>背包裡每樣道具都改成 99，空格子略過：</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # 數量也是加密的
+r0 = r0 + 0x310          # 背包：42 格
+repeat 42
+  if [r0].16 != 0        # 空格子略過
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # 下一格
+end</code></pre>
+<p>按住 L+R 補滿 HP（位址僅為示範）：</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>玩家可以在金手指列表裡切換的選項：</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>怎麼使用</h2>
+<ol>
+  <li>在遊戲裡打開金手指面板，進入「我的金手指」，點 <b>+</b>。</li>
+  <li>取個名字，再輸入或貼上代碼。第一行必須是 <code>hhcode</code>（或 <code>hhcode 1</code>）。</li>
+  <li>編輯器會邊輸入邊檢查每一行。有錯會標出行號；正確的代碼會顯示「語法正確」。</li>
+  <li>不確定一條代碼在做什麼，例如別人傳給你的？點 <b>「查看這段代碼的說明」</b>，它會用白話唸給你聽。</li>
+  <li>不想從零開始？打開 <b>「擴充碼範本」</b>：鎖定數值、指標鏈、連續格子、複製數值、走訪表格、條件寫入、否則分支、按鍵觸發、位元開關等。選一個，改掉位址和數值就好。</li>
+  <li>點「新增」並打開開關。和所有金手指一樣，每個畫格執行一次。</li>
+</ol>
+<p class="aside">很多時候根本不用自己寫：<a href="memory.html">記憶體工具</a>能找到數值，並幫你寫出跟隨指標的擴充碼。</p>
+
+<h2>語法一覽</h2>
+<table>
+  <tr><th>代碼</th><th>作用</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>寫入（預設 32 位元）</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>指定寬度寫入：.8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>寫入一串位元組</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>寫入 30 格，每格相隔 4 位元組</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>複製一個值</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>讀出、修改、寫回：+= -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>把記憶體讀進暫存器（指標鏈的開頭）</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>沿指標再跳一層</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>相對暫存器寫入</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>算術：+ - * &amp; | ^ &lt;&lt; &gt;&gt; 和 ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>固定次數迴圈</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>條件：== != &lt; &gt; &lt;= &gt;=，無號 &lt;u &gt;u，位元測試 &amp; 和 !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>只在按住這些按鍵時</td></tr>
+  <tr><td><code>… else … end</code></td><td>否則</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>修改遊戲本身（重新開啟遊戲才會還原）</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>在金手指列表裡顯示的選項；用 <code>$name</code> 取用</td></tr>
+  <tr><td><code># text</code></td><td>註解</td></tr>
+</table>
+<p>完整的參考和所有規則都在 App 裡：金手指面板 › 「說明」 › RetroGenY 擴充碼。</p>
+
+<h2>設計得很安全</h2>
+<ul>
+  <li><b>不會讓遊戲卡死。</b>每次執行最多 200,000 條指令，寫錯的迴圈只會停下來。</li>
+  <li><b>寬度很寬容。</b>數值放不進你寫的寬度時，會自動加寬並提醒你，而不是默默截斷。</li>
+  <li><b>會提醒可能的錯誤</b>，例如看起來像其他格式偏移量的位址。</li>
+  <li><b>數值就是數值。</b>十進位和十六進位意思一樣，你寫的是數字，不是位元組順序。</li>
+</ul>
+
+<h2>整個資料庫都用它</h2>
+<p>內建資料庫裡 1700 多款遊戲的 9000 多條金手指都已轉成擴充碼，每一條都和原碼逐位元組核對過。有些遊戲還加了手寫的擴充碼，是舊格式寫不出來的，例如火紅的加密金錢和整個背包。GameShark、Action Replay 和 CodeBreaker 代碼也照舊可用。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何遊戲。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商標，本專案與任天堂沒有關係。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

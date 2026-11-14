@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>快速上手 · RetroGenY</title>
+
+<meta name="description" content="Android 上的 GBA、GB、GBC 模擬器">
+<link rel="alternate" hreflang="en" href="../guide.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/guide.html">
+<link rel="alternate" hreflang="ja" href="../ja/guide.html">
+<link rel="alternate" hreflang="ko" href="../ko/guide.html">
+<link rel="alternate" hreflang="es" href="../es/guide.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/guide.html">
+<link rel="alternate" hreflang="fr" href="../fr/guide.html">
+<link rel="alternate" hreflang="de" href="../de/guide.html">
+<link rel="alternate" hreflang="it" href="../it/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans TC","Noto Sans SC",sans-serif;--body:"Noto Sans TC","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">連線</a><a href="hhcode.html">擴充碼</a><a href="memory.html">記憶體工具</a><a href="guide.html" aria-current=page>使用說明</a></nav>
+  <details class="lang-menu"><summary class="lang">繁體中文</summary><ul><li><a href="../guide.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/guide.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/guide.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}" aria-current=true>繁體中文</a></li><li><a href="../ja/guide.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/guide.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/guide.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/guide.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/guide.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/guide.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/guide.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>快速上手</a></li><li><a href="link.html">連線</a></li><li><a href="hhcode.html">擴充碼</a></li><li><a href="memory.html">記憶體工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能與設定</a></li><li><a href="faq.html">常見問題</a></li><li><a href="privacy.html">隱私權政策</a></li></ol></nav><article class="prose"><h1>快速上手</h1>
+<p class="lead">從選資料夾到第一次存檔，幾分鐘就好。</p>
+
+<h2>準備遊戲檔案</h2>
+<p>RetroGenY 不附帶、也不下載任何遊戲。請使用你自己擁有的卡匣的備份。支援的檔案：</p>
+<ul>
+  <li><code>.gba</code>：Game Boy Advance</li>
+  <li><code>.gb</code>、<code>.gbc</code>：Game Boy、Game Boy Color</li>
+</ul>
+<p>放在手機的任何資料夾都可以，依系列或主機分子資料夾也沒問題。</p>
+
+<h2>選擇遊戲資料夾</h2>
+<ol>
+  <li>第一次開啟 App 時，會請你選擇遊戲資料夾。</li>
+  <li>在系統的檔案選擇器裡打開你的遊戲資料夾，點「使用這個資料夾」並允許存取。</li>
+  <li>回到 App，遊戲就列出來了。子資料夾會顯示成可以點開的資料夾。</li>
+</ol>
+<p class="aside">App 只會讀寫你選的那個資料夾。之後想換資料夾，在設定裡重新選擇即可。</p>
+
+<div class="fig phone"><a href="../img/en/library.webp" target="_blank"><img src="../img/en/library.webp" alt="遊戲列表。上次玩的遊戲在最上面，有「繼續遊戲」按鈕。" loading="lazy"></a></div>
+<p class="cap">遊戲列表。上次玩的遊戲在最上面，有「繼續遊戲」按鈕。</p>
+
+<h2>封面</h2>
+<p>遊戲的封面來自以下三個地方，依序檢查：</p>
+<ol>
+  <li>遊戲旁邊 <code>covers</code> 資料夾裡、和遊戲同名的圖片（png 或 jpg）。</li>
+  <li>用遊戲選單的「截圖」截的圖，或從遊戲卡片的 ⋮ 選單 › 封面 › 「從相簿選擇」選的圖。兩者也都存在 <code>covers</code> 裡。</li>
+  <li>自動封面：沒有封面的遊戲玩滿一分鐘後，會擷取一張畫面。它存在 App 內，不會寫進你的資料夾，可以在設定裡關掉。</li>
+</ol>
+
+<div class="fig phone"><a href="../img/en/covers.webp" target="_blank"><img src="../img/en/covers.webp" alt="遊戲卡片 ⋮ 選單 › 封面 › 「從相簿選擇」。" loading="lazy"></a></div>
+<p class="cap">遊戲卡片 ⋮ 選單 › 封面 › 「從相簿選擇」。</p>
+
+<h2>存檔</h2>
+<h3>遊戲內存檔</h3>
+<p>在遊戲裡存檔（例如寶可夢的「記錄」）會在遊戲旁邊寫一個和遊戲同名的 <code>.sav</code> 檔。把它和遊戲一起複製，就能在另一支手機上接著玩。</p>
+<h3>即時存檔</h3>
+<p>在遊戲選單裡隨時存、隨時讀。每個欄位都有縮圖，離開遊戲時還會寫一個自動存檔。讀錯了，點提示條上的「復原」就能回去。</p>
+
+<div class="fig pair"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="遊戲選單" loading="lazy"></a><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="即時存檔選單" loading="lazy"></a></div>
+<p class="cap">打開遊戲選單，再點「即時存檔」，可以新增存檔、讀檔或復原讀檔。</p>
+
+<h2>操作</h2>
+<ul>
+  <li><b>螢幕按鍵</b>：直向時在畫面下方，橫向時在兩側。</li>
+  <li><b>手把和鍵盤</b>：一連上就能用。在 設定 › 手把與鍵盤按鍵 重新對應；一個 GBA 鍵可以對應多個鍵。</li>
+  <li><b>螢幕方向</b>：在遊戲選單裡切換直向、橫向或跟隨系統。</li>
+</ul>
+
+<div class="fig wide"><a href="../img/en/tablet.webp" target="_blank"><img src="../img/en/tablet.webp" alt="橫向時，按鍵移到畫面兩側。" loading="lazy"></a></div>
+<p class="cap">橫向時，按鍵移到畫面兩側。</p>
+
+<h2>BIOS（選用）</h2>
+<p>App 內建替代 BIOS，所有遊戲都能執行。只有少數遊戲需要官方 BIOS，或者你想看開機動畫，這時在 設定 › GBA BIOS 匯入你自己的 16 KB BIOS 檔案即可。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何遊戲。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商標，本專案與任天堂沒有關係。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

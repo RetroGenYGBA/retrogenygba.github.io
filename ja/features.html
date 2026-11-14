@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機能と設定 · RetroGenY</title>
+
+<meta name="description" content="Android 向けの GBA・GB・GBC エミュレーター">
+<link rel="alternate" hreflang="en" href="../features.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/features.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/features.html">
+<link rel="alternate" hreflang="fr" href="../fr/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans JP","Noto Sans SC",sans-serif;--body:"Noto Sans JP","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">通信プレイ</a><a href="hhcode.html">拡張コード</a><a href="memory.html">メモリツール</a><a href="guide.html">使い方</a></nav>
+  <details class="lang-menu"><summary class="lang">日本語</summary><ul><li><a href="../features.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/features.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/features.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/features.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}" aria-current=true>日本語</a></li><li><a href="../ko/features.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/features.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/features.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/features.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/features.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/features.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">はじめに</a></li><li><a href="link.html">通信プレイ</a></li><li><a href="hhcode.html">拡張コード</a></li><li><a href="memory.html">メモリツール</a></li><li><a href="cheats.html">チート</a></li><li><a href="features.html" aria-current=page>機能と設定</a></li><li><a href="faq.html">よくある質問</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ol></nav><article class="prose"><h1>機能と設定</h1>
+<p class="lead">主な機能と、パフォーマンス設定が何をするのか。</p>
+
+<h2>無料機能とプレミアム機能</h2>
+<p>ゲームのプレイ、ゲーム内セーブ、即時セーブ、チート、コントローラー、画面のボタン、画面の向きはすべて無料です。次の機能はプレミアム機能です。</p>
+<ul>
+  <li><b>早送り</b>：1.5 倍、2 倍、4 倍（0.5 倍と 1 倍は無料）</li>
+  <li><b>巻き戻し</b>：巻き戻しボタンを押し続けるとゲームが戻ります</li>
+  <li><b>連射</b>：ボタンを押し続けると選んだ速さで連打します</li>
+  <li><b>フィルター</b>：LCD、スキャンライン、色補正、xBRZ、HQ4x、ScaleFX、FSR など</li>
+  <li><b>メモリサーチ</b>：自分で値を探してチートを作る</li>
+</ul>
+<p>アプリ内で一定時間無料でアンロックすることも、1 回の購入でずっと使えるようにすることもできます。</p>
+
+<h2>画面</h2>
+<ul>
+  <li><b>フィルター</b>：ゲームメニューから、ゲームごとに切り替えます。</li>
+  <li><b>LCD 残像</b>：元の液晶の反応の遅さを再現します。1 フレームおきにスプライトを点滅させて半透明に見せるゲームが、正しく見えるようになります。</li>
+  <li><b>高速描画</b>：1 ピクセルずつではなく、走査線 1 本ずつ描画します。ずっと速く、画面はまったく同じ。既定でオンです。</li>
+  <li><b>マルチスレッド描画</b>：エミュレーションと描画を 2 つの CPU コアで並行して実行します。高速描画が必要です。</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="ゲームメニュー" loading="lazy"></a></div>
+<p class="cap">ゲームメニュー：速度、描画方式、パフォーマンスのスイッチをゲーム中に変更できます。</p>
+<h2>パフォーマンスとバッテリー</h2>
+<ul>
+  <li><b>CPU 連続実行</b>：何も起きていないときは命令ごとのチェックを省きます。速くてバッテリーにもやさしく、結果はまったく同じです。通信中は自動でオフになります。</li>
+  <li><b>省電力</b>：同じフレームを描き直さないなどの節約で、スマホが熱くなりにくくなります。ゲームごとに設定できます。</li>
+</ul>
+<p>これらはゲームメニューの画面セクションから、ゲームを終了せずに切り替えられます。表示や動作がおかしいときは、まずこれらのスイッチをオフにしてください。</p>
+
+<div class="fig phone"><a href="../img/en/m-settings.webp" target="_blank"><img src="../img/en/m-settings.webp" alt="設定" loading="lazy"></a></div>
+<p class="cap">設定 › パフォーマンス。</p>
+
+<h2>サウンド</h2>
+<ul>
+  <li><b>高音質オーディオ</b>：より細かいリサンプリングで、ヘッドホンでもクリアに。</li>
+  <li><b>本体スピーカーの音</b>：モノラルで、内蔵スピーカーのように低音と高音を削り、当時の音を再現します。</li>
+</ul>
+
+<h2>コントローラーとカートリッジの機能</h2>
+<ul>
+  <li><b>ゲームパッドとキーボードのボタン</b>：何でも割り当て直せます。1 つの GBA ボタンに複数のキーを割り当て可能。</li>
+  <li><b>カートリッジ振動</b>：振動カートリッジのゲーム（ポケモンピンボール ルビー＆サファイアなど）では、スマホやコントローラーが振動します。</li>
+  <li><b>センサー付きカートリッジ</b>：傾き・ジャイロ・太陽センサーのゲームは、スマホのセンサーを使います。次の項目をご覧ください。</li>
+</ul>
+
+<h2>センサー付きカートリッジ</h2>
+<p>カートリッジにセンサーが内蔵されていて、日なたに出たり、本体を傾けたりひねったりして遊ぶゲームがあります。RetroGenY はこれらのゲームを認識し、設定なしで自動的にスマホのセンサーに置き換えます。ゲーム開始時に、どのセンサーを使うか、またはゲームに必要なセンサーがスマホにないことをお知らせします。</p>
+<ul>
+  <li><b>太陽光（ボクらの太陽 1・2・3）</b>：スマホの光センサーがカートリッジの太陽センサーの代わりになります。明るいほどゲーム内の日光が強くなります。外に出るか、画面の上部にライトを当てて、太陽ゲージがたまるのを見てください。光センサーはたいていフロントカメラの横にあるので、指でふさがないように。光センサーのないスマホでは、中くらいの日光になります。</li>
+  <li><b>傾き（ヨッシーの万有引力、コロコロパズル ハッピィパネッチュ！）</b>：スマホの加速度センサーを使うので、元のゲームと同じようにスマホを傾けてステージを回したりキャラを転がしたりします。ゲーム開始時の持ち方が水平になります。調整し直すには、ゲームを終了して起動し直してください。縦でも横でも、方向は画面に合わせて変わります。</li>
+  <li><b>ジャイロ（まわるメイドインワリオ）</b>：スマホのジャイロスコープを使います。ハンドルのように、画面の面に沿ってスマホを回してください。</li>
+  <li><b>GBC の傾きカートリッジ（コロコロカービィなど）</b>：こちらも加速度センサーで傾きを操作し、カートリッジのセーブデータも通常どおり保存されます。</li>
+</ul>
+<p class="aside">コントローラーをつないでいても、センサーはスマホ本体を読み取ります。傾きのゲームはスマホを持って遊ぶのがおすすめです。アプリがバックグラウンドになるとセンサーは停止し、戻ると再開するので、バッテリーを無駄に使いません。</p>
+
+<h2>RetroAchievements</h2>
+<p>設定 › RetroAchievements でオンにして、<a href="https://retroachievements.org">retroachievements.org</a> のアカウント（無料登録）でログインします。ゲームを始めると、アプリがゲームを認識し、実績の数を教えてくれます。遊んでいる途中で解除のポップアップが出て、ゲームメニューの「実績」で一覧と進み具合を確認できます。</p>
+<ul>
+  <li>RetroAchievements は登録されたバージョンのゲームしか認識しません（ゲームファイルのチェックサムを確認します）。そのため、翻訳パッチ版や改造 ROM には通常実績がありません。</li>
+  <li>オンの間は公平さのため、チートとメモリ編集が停止します。早送り、巻き戻し、即時セーブは使えます。</li>
+  <li>オフラインで解除した実績は保存され、オンラインに戻ったときに送信されます。</li>
+  <li>RetroAchievements は無料です。</li>
+</ul>
+
+<h2>即時セーブと巻き戻し</h2>
+<p>即時セーブの各スロットにサムネイルがあり、ロードは元に戻せます。巻き戻しにはメモリが必要で、足りない場合はオンにできなかったことをお知らせします。</p>
+<div class="fig phone"><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="即時セーブのメニュー：新しいスロット、オートセーブ、以前のスロット。" loading="lazy"></a></div>
+<p class="cap">即時セーブのメニュー：新しいスロット、オートセーブ、以前のスロット。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY にゲームは含まれておらず、配布もしていません。ゲームボーイ、ゲームボーイカラー、ゲームボーイアドバンスは任天堂の商標です。本プロジェクトは任天堂とは関係ありません。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

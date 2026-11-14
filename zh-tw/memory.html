@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>記憶體工具 · RetroGenY</title>
+
+<meta name="description" content="Android 上的 GBA、GB、GBC 模擬器">
+<link rel="alternate" hreflang="en" href="../memory.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/memory.html">
+<link rel="alternate" hreflang="ja" href="../ja/memory.html">
+<link rel="alternate" hreflang="ko" href="../ko/memory.html">
+<link rel="alternate" hreflang="es" href="../es/memory.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/memory.html">
+<link rel="alternate" hreflang="fr" href="../fr/memory.html">
+<link rel="alternate" hreflang="de" href="../de/memory.html">
+<link rel="alternate" hreflang="it" href="../it/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans TC","Noto Sans SC",sans-serif;--body:"Noto Sans TC","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">連線</a><a href="hhcode.html">擴充碼</a><a href="memory.html" aria-current=page>記憶體工具</a><a href="guide.html">使用說明</a></nav>
+  <details class="lang-menu"><summary class="lang">繁體中文</summary><ul><li><a href="../memory.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/memory.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/memory.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}" aria-current=true>繁體中文</a></li><li><a href="../ja/memory.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/memory.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/memory.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/memory.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/memory.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/memory.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/memory.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html">連線</a></li><li><a href="hhcode.html">擴充碼</a></li><li><a href="memory.html" aria-current=page>記憶體工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html">功能與設定</a></li><li><a href="faq.html">常見問題</a></li><li><a href="privacy.html">隱私權政策</a></li></ol></nav><article class="prose"><h1>記憶體工具</h1>
+<p class="lead">找到遊戲裡的任何數字、鎖住它，再變成任何存檔都有效的金手指，全程不用離開遊戲。還能更進一步：改變遊戲的行為，或左右它的運氣。</p>
+
+<h2>用來做什麼</h2>
+<p>金手指資料庫涵蓋很多，但不是全部：沒那麼有名的遊戲、漢化版、改版，或者你只在意的那一個數值。記憶體工具讓你自己做出那條金手指。大多數模擬器做到「搜尋並鎖定位址」就停了，RetroGenY 還會繼續：</p>
+<ul>
+  <li><b>在遊戲上方的浮動視窗裡執行。</b>移動、縮放它，讓你要找的數字一直看得到，邊搜邊玩。</li>
+  <li><b>換存檔也有效的金手指。</b>監看點會顯示遊戲自己從哪裡找到這個數值，金手指就照同樣的路徑寫成<a href="hhcode.html">擴充碼</a>。</li>
+  <li><b>改變遊戲的行為</b>，而不只是數字：讓計數器永遠不減少、略過某個檢查，全都從碰過這個數值的指令列表裡做。</li>
+  <li><b>控制隨機性。</b>找到隨機數種子、預知接下來的結果，或讓每次判定都是最好的結果。</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-mem-search.webp" target="_blank"><img src="../img/en/m-mem-search.webp" alt="遊戲上方的記憶體搜尋視窗" loading="lazy"></a></div>
+<p class="cap">記憶體工具視窗浮在遊戲上方。拖曳標題列移動，拖曳角落調整大小。</p>
+
+<h2>開啟方式</h2>
+<ol>
+  <li>在遊戲裡打開遊戲選單，在「工具」下開啟<b>記憶體搜尋</b>。</li>
+  <li>遊戲畫面下方會出現記憶體搜尋鍵。點它打開視窗，點 ✕ 關閉。搜尋進度會保留。</li>
+</ol>
+<p class="aside">記憶體搜尋是<a href="features.html">進階功能</a>。用它做出的金手指和其他金手指一樣會儲存，之後照樣有效。</p>
+
+<h2>找一個數值</h2>
+<p>假設你有 1,250 金幣，想要 999,999。</p>
+<ol>
+  <li>選寬度。金錢通常是 16 或 32 位元；生命數這類小計數器常是 8 位元。不確定就先試 32 位元。</li>
+  <li>輸入你看到的數值（1250），條件保持「=」，點<b>開始搜尋</b>。</li>
+  <li>在遊戲裡讓數值變化：買點東西、撿點錢。</li>
+  <li>輸入新數值，點<b>繼續篩選</b>。重複到只剩幾個位址。</li>
+  <li>在結果上點<b>金手指</b>，「鎖定為」設成 999999，點<b>儲存到金手指</b>。</li>
+</ol>
+<p><b>不知道數字？</b>血條、計時器和隱藏能力值都不顯示數字。改用條件搜尋：被打一下後用「已減少」篩選，補血後用「已增加」，站著不動用「未改變」。另外還有不等於、大於和小於。</p>
+
+<h2>一直有效的金手指</h2>
+<p>單純鎖住位址，遊戲一搬動資料就會失效，而很多遊戲每次存檔都會搬。記憶體工具能解決這個問題：</p>
+<ol>
+  <li>在找到的結果上點<b>監看</b>。</li>
+  <li>在遊戲裡讓數值變化一次。</li>
+  <li>模擬器會停在寫入它的那條指令，並記錄遊戲是怎麼找到那個位址的。</li>
+  <li>再點一次<b>金手指</b>。這次寫出的代碼會跟著遊戲自己的指標，並且註明：「透過遊戲自己用的指標定位，換存檔後依然有效。」</li>
+</ol>
+
+<div class="fig pair"><a href="../img/en/m-mem-cheat.webp" target="_blank"><img src="../img/en/m-mem-cheat.webp" alt="產生跟隨遊戲指標的金手指" loading="lazy"></a><a href="../img/en/m-mem-luck.webp" target="_blank"><img src="../img/en/m-mem-luck.webp" alt="種子分頁裡的運氣設定" loading="lazy"></a></div>
+<p class="cap">左：從監看點產生的金手指，是跟隨指標的擴充碼。右：運氣讓每次隨機判定都是最好（或最差）的結果。</p>
+
+<h2>改變遊戲的行為</h2>
+<p>有時候你要的不是鎖住數值，而是讓錢不會減少但還能賺，或者讓某個檢查一定通過。「監看」分頁會列出每一條<b>寫入</b>你這個位址的<b>指令</b>，並附上次數：</p>
+<ol>
+  <li>點<b>清空計數</b>，然後在遊戲裡做那件事（買東西、受傷）。「記錄寫入但不暫停遊戲」可以讓遊戲照常順暢。</li>
+  <li>回來找出次數增加的那一條。</li>
+  <li>點<b>修改</b>並選擇：替換成 NOP、加減互換、改常數、永遠跳轉、永不跳轉、寫死暫存器的值，或自己寫一行組合語言。</li>
+  <li>它會變成一條普通的金手指，名字由你取。</li>
+</ol>
+<p class="aside">遊戲程式常被共用：扣你錢的那段程式也可能負責發獎勵。可能有這種情況時 App 會提醒你；用中斷點確認那條指令只在你預期的時候執行。關掉指令類金手指要重新開啟遊戲才會生效。</p>
+
+<h2>隨機與運氣</h2>
+<p>大多數遊戲用一行算式擲骰子，存放種子的那 4 個位元組是記憶體裡唯一每次變化都符合那條式子的資料。「種子」分頁會幫你找到它們：</p>
+<ul>
+  <li><b>運氣</b>：「最好」或「最差」會把遊戲的每次擲骰壓到最小或最大值。爆擊、稀有掉寶、捕捉都算。如果「最好」反而什麼都失敗，表示這個遊戲是數字越大越好，改用「最差」。它對敵人也有效，用完記得關掉。</li>
+  <li><b>進階</b>：在遊戲閒置的地方掃描種子、看它接下來會產生的值，並鎖定種子。</li>
+</ul>
+
+<h2>給好奇的你</h2>
+<ul>
+  <li><b>記憶體</b>：任何位址的十六進位檢視，可以直接從搜尋結果打開。</li>
+  <li><b>中斷點</b>：在某條指令執行時停下，再一次一條指令單步執行並查看暫存器。</li>
+  <li>關掉視窗後監看點仍然有效。觸發時視窗會自己打開。</li>
+</ul>
+
+<h2>有什麼不同</h2>
+<ul>
+  <li>搜尋、鎖定、儲存都不用離開遊戲或切換 App。</li>
+  <li>自動產生指標金手指，下次存檔也不會失效。</li>
+  <li>指令類金手指直接來自真正寫入的指令列表，不需要反組譯器。</li>
+  <li>運氣控制適用於各種遊戲，因為它針對的是遊戲擲骰子的方式，而不是某個遊戲的位址。</li>
+  <li>你做出來的都是普通金手指：取個名字，像其他金手指一樣開關。</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何遊戲。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商標，本專案與任天堂沒有關係。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

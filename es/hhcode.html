@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Códigos extendidos · RetroGenY</title>
+
+<meta name="description" content="Emulador de GBA, GB y GBC para Android">
+<link rel="alternate" hreflang="en" href="../hhcode.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/hhcode.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/hhcode.html">
+<link rel="alternate" hreflang="ja" href="../ja/hhcode.html">
+<link rel="alternate" hreflang="ko" href="../ko/hhcode.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/hhcode.html">
+<link rel="alternate" hreflang="fr" href="../fr/hhcode.html">
+<link rel="alternate" hreflang="de" href="../de/hhcode.html">
+<link rel="alternate" hreflang="it" href="../it/hhcode.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Juego en red</a><a href="hhcode.html" aria-current=page>Códigos extendidos</a><a href="memory.html">Herramientas de memoria</a><a href="guide.html">Guía</a></nav>
+  <details class="lang-menu"><summary class="lang">Español</summary><ul><li><a href="../hhcode.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/hhcode.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/hhcode.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/hhcode.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/hhcode.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/hhcode.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}" aria-current=true>Español</a></li><li><a href="../pt-br/hhcode.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/hhcode.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/hhcode.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/hhcode.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Primeros pasos</a></li><li><a href="link.html">Juego en red</a></li><li><a href="hhcode.html" aria-current=page>Códigos extendidos</a></li><li><a href="memory.html">Herramientas de memoria</a></li><li><a href="cheats.html">Trucos</a></li><li><a href="features.html">Funciones y ajustes</a></li><li><a href="faq.html">Preguntas frecuentes</a></li><li><a href="privacy.html">Política de privacidad</a></li></ol></nav><article class="prose"><h1>Códigos extendidos</h1>
+<p class="lead">El formato de trucos propio de RetroGenY. Un código normal escribe un valor en una dirección. Un código extendido es un programa corto: puede seguir punteros, repetir, comprobar condiciones y hacer la aritmética que usa un juego para esconder sus números.</p>
+
+<h2>Por qué los códigos normales se quedan cortos</h2>
+<p>GameShark, Action Replay y CodeBreaker se diseñaron para cartuchos de principios de los 2000. Son buenos en «escribe siempre 99 aquí», y poco más. Muchos juegos no guardan sus datos en un solo sitio:</p>
+<ul>
+  <li><b>Datos que se mueven.</b> Pokémon y muchos RPG guardan la mochila, el equipo y el dinero detrás de un puntero, y la dirección cambia con cada partida guardada o incluso cada vez que abres un menú. Un código de dirección fija funciona hoy y deja de funcionar mañana sin avisar.</li>
+  <li><b>Valores cifrados.</b> Rojo Fuego y Verde Hoja guardan tu dinero aplicando XOR con una clave distinta en cada partida. Escribir 999999 directamente te da un número aleatorio; primero hay que leer la clave.</li>
+  <li><b>Listas enteras.</b> Poner a 99 cada objeto de una mochila de 42 huecos requiere 42 códigos distintos, y se descuadran en cuanto recoges algo.</li>
+  <li><b>Condiciones.</b> «Solo mientras pulso L+R», «solo en huecos vacíos», «solo durante el combate» están casi siempre fuera de alcance.</li>
+</ul>
+<p>Los códigos extendidos se crearon justo para estos casos.</p>
+
+<h2>Qué pueden hacer</h2>
+<ul>
+  <li><b>Seguir punteros</b> igual que lo hace el juego, así que un código sigue funcionando en cualquier partida.</li>
+  <li><b>Repetir</b> sobre una mochila, un equipo o una caja del PC, con <code>repeat 42 … end</code>.</li>
+  <li><b>Comprobar condiciones</b>: comparar memoria, probar bits, saltarse huecos vacíos y añadir un <code>else</code>.</li>
+  <li><b>Reaccionar a los botones</b>: ejecutarse solo mientras se mantiene una combinación, para «pulsa L+R para curar».</li>
+  <li><b>Calcular</b> con ocho registros: suma, resta, multiplicación, AND, OR, XOR y desplazamientos, suficiente para codificar un valor como espera el juego.</li>
+  <li><b>Copiar</b> un valor o una serie entera de huecos desde otro sitio.</li>
+  <li><b>Parchear el juego</b> con líneas <code>rom</code>, para cambios que los valores solos no consiguen (una tienda que cobra 1, atravesar paredes).</li>
+  <li><b>Ofrecer opciones.</b> Una línea <code>option</code> convierte un valor en un desplegable de la lista de trucos, para que el jugador elija «×2 / ×5 / ×10» sin tocar el código.</li>
+</ul>
+
+<div class="fig pair"><a href="../img/en/m-hhcode-edit.webp" target="_blank"><img src="../img/en/m-hhcode-edit.webp" alt="Añadir un código extendido" loading="lazy"></a><a href="../img/en/m-hhcode-option.webp" target="_blank"><img src="../img/en/m-hhcode-option.webp" alt="Elegir una opción en la lista de trucos" loading="lazy"></a></div>
+<p class="cap">Izquierda: el editor comprueba el código mientras escribes. Derecha: los códigos con opciones tienen un desplegable en la propia lista.</p>
+
+<h2>Un ejemplo real</h2>
+<p>Dinero 999999 en Rojo Fuego (inglés v1.0). El dinero está detrás de un puntero y cifrado con la clave de la partida, algo que ningún código normal puede manejar:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]        # bloque 1: dinero y objetos
+r1 = [0x0300500C]        # bloque 2: aquí está la clave
+r2 = [r1 + 0xF20]        # lee la clave
+r2 = r2 ^ 999999         # cifra 999999 con ella
+[r0 + 0x290].32 = r2     # escribe el dinero</code></pre>
+<p>Todos los objetos de la mochila a 99, saltando huecos vacíos:</p>
+<pre><code>hhcode 1
+r0 = [0x03005008]
+r1 = [0x0300500C]
+r2 = [r1 + 0xF20]
+r2 = r2 ^ 99             # las cantidades también van cifradas
+r0 = r0 + 0x310          # la mochila: 42 huecos
+repeat 42
+  if [r0].16 != 0        # salta huecos vacíos
+    [r0 + 2].16 = r2
+  end
+  r0 = r0 + 4            # siguiente hueco
+end</code></pre>
+<p>Mantén L+R para recuperar PS (dirección de ejemplo):</p>
+<pre><code>hhcode 1
+if button L + R
+  [0x02024330].16 = 999
+end</code></pre>
+<p>Una opción que el jugador puede cambiar desde la lista de trucos:</p>
+<pre><code>hhcode 1
+option Multiplier = 2 { 2 ×2; 5 ×5; 10 ×10 }
+[0x02001000].8 = $Multiplier</code></pre>
+
+<h2>Cómo usarlos</h2>
+<ol>
+  <li>En un juego, abre el panel de trucos y ve a «Mis trucos». Toca <b>+</b>.</li>
+  <li>Ponle un nombre y escribe o pega el código. La primera línea debe ser <code>hhcode</code> (o <code>hhcode 1</code>).</li>
+  <li>El editor comprueba cada línea mientras escribes. Un error se muestra con su número de línea; un código válido indica «sintaxis válida».</li>
+  <li>¿No sabes qué hace un código, por ejemplo uno que te enviaron? Toca <b>«Explicar este código»</b> y te lo describe en lenguaje sencillo.</li>
+  <li>¿No quieres empezar de cero? Abre <b>«Plantillas de código extendido»</b>: fijar un valor, cadena de punteros, huecos consecutivos, copiar un valor, recorrer una tabla, escritura condicional, rama else, activación con botones, interruptor de bit y más. Elige una y cambia la dirección y el valor.</li>
+  <li>Toca Añadir y actívalo. Como todos los trucos, se ejecuta en cada fotograma.</li>
+</ol>
+<p class="aside">Muchas veces ni siquiera tienes que escribirlo: las <a href="memory.html">herramientas de memoria</a> encuentran un valor y te escriben un código extendido con punteros.</p>
+
+<h2>Sintaxis de un vistazo</h2>
+<table>
+  <tr><th>Código</th><th>Qué hace</th></tr>
+  <tr><td><code>[addr] = v</code></td><td>Escribe (32 bits por defecto)</td></tr>
+  <tr><td><code>[addr].16 = v</code></td><td>Escribe con un ancho explícito: .8 / .16 / .32</td></tr>
+  <tr><td><code>[addr] = 40,42,0F</code></td><td>Escribe una serie de bytes</td></tr>
+  <tr><td><code>[addr].16 = 99 repeat 30 step 4</code></td><td>Escribe 30 huecos separados 4 bytes</td></tr>
+  <tr><td><code>[dst].16 = [src]</code></td><td>Copia un valor</td></tr>
+  <tr><td><code>[addr].16 += 5</code></td><td>Lee, cambia y vuelve a escribir: += -= &amp;= |=</td></tr>
+  <tr><td><code>r0 = [0x03005008]</code></td><td>Lee memoria en un registro (inicio de una cadena de punteros)</td></tr>
+  <tr><td><code>r0 = [r0 + 0x14]</code></td><td>Sigue el puntero un nivel más</td></tr>
+  <tr><td><code>[r0 + 4].8 = v</code></td><td>Escribe relativo a un registro</td></tr>
+  <tr><td><code>r0 = r0 + 4</code></td><td>Aritmética: + - * &amp; | ^ &lt;&lt; &gt;&gt; y ~</td></tr>
+  <tr><td><code>repeat 30 … end</code></td><td>Repite un número fijo de veces</td></tr>
+  <tr><td><code>if [addr] == v … end</code></td><td>Condición: == != &lt; &gt; &lt;= &gt;=, sin signo &lt;u &gt;u, prueba de bits &amp; y !&amp;</td></tr>
+  <tr><td><code>if button L + R … end</code></td><td>Solo mientras se mantienen esos botones</td></tr>
+  <tr><td><code>… else … end</code></td><td>Si no</td></tr>
+  <tr><td><code>rom [addr].16 = v</code></td><td>Parchea el propio juego (vuelve a abrir el juego para deshacerlo)</td></tr>
+  <tr><td><code>option name = v { v label; … }</code></td><td>Una opción en la lista de trucos; úsala como <code>$name</code></td></tr>
+  <tr><td><code># text</code></td><td>Comentario</td></tr>
+</table>
+<p>La referencia completa, con todas las reglas, está en la app: panel de trucos › «Guía» › Códigos extendidos de RetroGenY.</p>
+
+<h2>Pensados para ser seguros</h2>
+<ul>
+  <li><b>No pueden congelar el juego.</b> Cada pasada está limitada a 200.000 instrucciones, así que un bucle mal escrito simplemente se detiene.</li>
+  <li><b>Los anchos son flexibles.</b> Si un valor no cabe en el ancho que escribiste, se amplía y se te avisa, en vez de recortarse en silencio.</li>
+  <li><b>Avisan de errores probables</b>, como una dirección que parece un desplazamiento de otro formato.</li>
+  <li><b>Los valores son valores.</b> Decimal y hexadecimal significan lo mismo, y escribes el número, no su orden de bytes.</li>
+</ul>
+
+<h2>Toda la biblioteca lo habla</h2>
+<p>Los más de 9.000 trucos de la biblioteca integrada para más de 1.700 juegos se han convertido a códigos extendidos, y cada uno se comprobó byte a byte con el original. Algunos juegos recibieron códigos extendidos escritos a mano que los formatos antiguos no podían expresar, como el dinero cifrado y la mochila completa de Rojo Fuego. Los códigos GameShark, Action Replay y CodeBreaker siguen funcionando exactamente igual que antes.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY no incluye ni distribuye ningún juego. Game Boy, Game Boy Color y Game Boy Advance son marcas de Nintendo; este proyecto no está afiliado a Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Política de privacidad</a></div></footer>
+</body>
+</html>

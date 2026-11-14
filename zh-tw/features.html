@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>功能與設定 · RetroGenY</title>
+
+<meta name="description" content="Android 上的 GBA、GB、GBC 模擬器">
+<link rel="alternate" hreflang="en" href="../features.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/features.html">
+<link rel="alternate" hreflang="ja" href="../ja/features.html">
+<link rel="alternate" hreflang="ko" href="../ko/features.html">
+<link rel="alternate" hreflang="es" href="../es/features.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/features.html">
+<link rel="alternate" hreflang="fr" href="../fr/features.html">
+<link rel="alternate" hreflang="de" href="../de/features.html">
+<link rel="alternate" hreflang="it" href="../it/features.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans TC","Noto Sans SC",sans-serif;--body:"Noto Sans TC","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">連線</a><a href="hhcode.html">擴充碼</a><a href="memory.html">記憶體工具</a><a href="guide.html">使用說明</a></nav>
+  <details class="lang-menu"><summary class="lang">繁體中文</summary><ul><li><a href="../features.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/features.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/features.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}" aria-current=true>繁體中文</a></li><li><a href="../ja/features.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/features.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/features.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/features.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/features.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/features.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/features.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">快速上手</a></li><li><a href="link.html">連線</a></li><li><a href="hhcode.html">擴充碼</a></li><li><a href="memory.html">記憶體工具</a></li><li><a href="cheats.html">金手指</a></li><li><a href="features.html" aria-current=page>功能與設定</a></li><li><a href="faq.html">常見問題</a></li><li><a href="privacy.html">隱私權政策</a></li></ol></nav><article class="prose"><h1>功能與設定</h1>
+<p class="lead">主要功能，以及效能設定的作用。</p>
+
+<h2>免費與進階功能</h2>
+<p>玩遊戲、遊戲內存檔、即時存檔、金手指、手把、螢幕按鍵和螢幕方向全部免費。以下是進階功能：</p>
+<ul>
+  <li><b>快轉</b>：1.5 倍、2 倍和 4 倍（0.5 倍和 1 倍免費）</li>
+  <li><b>倒帶</b>：按住倒帶鍵，遊戲往回倒</li>
+  <li><b>連發</b>：按住按鍵就自動連按，速度可以選</li>
+  <li><b>濾鏡</b>：LCD、掃描線、色彩修正、xBRZ、HQ4x、ScaleFX、FSR 等</li>
+  <li><b>記憶體搜尋</b>：自己找數值、做金手指</li>
+</ul>
+<p>可以直接在 App 裡免費解鎖一段時間，也可以一次購買永久解鎖。</p>
+
+<h2>畫面</h2>
+<ul>
+  <li><b>濾鏡</b>：在遊戲選單裡切換，每個遊戲分開設定。</li>
+  <li><b>LCD 殘影</b>：模擬原機螢幕反應慢的特性。有些遊戲每隔一格閃爍精靈來假裝半透明，開了才會顯示正確。</li>
+  <li><b>快速渲染</b>：一次繪製一整條掃描線，而不是逐像素繪製。快很多，畫面完全相同。預設開啟。</li>
+  <li><b>多執行緒渲染</b>：把模擬和繪製分到兩個 CPU 核心同時處理。需要先開快速渲染。</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="遊戲選單" loading="lazy"></a></div>
+<p class="cap">遊戲選單：速度、渲染方式和效能開關都能在遊戲中直接改。</p>
+<h2>效能與電量</h2>
+<ul>
+  <li><b>CPU 連續執行</b>：沒有事情發生時，略過指令之間的檢查。更快、更省電，結果完全相同。連線時自動關閉。</li>
+  <li><b>省電</b>：不重複繪製相同的畫格等，讓手機不那麼燙。可以每個遊戲分開設定。</li>
+</ul>
+<p>這些都能在遊戲選單的畫面區切換，不用離開遊戲。如果畫面或執行有任何異常，先把這些開關關掉。</p>
+
+<div class="fig phone"><a href="../img/en/m-settings.webp" target="_blank"><img src="../img/en/m-settings.webp" alt="設定" loading="lazy"></a></div>
+<p class="cap">設定 › 效能。</p>
+
+<h2>聲音</h2>
+<ul>
+  <li><b>高品質音訊</b>：更細緻的重新取樣，戴耳機聽更乾淨。</li>
+  <li><b>模擬掌機喇叭</b>：單聲道，並像機身內建的喇叭一樣削掉低音和高音，還原當年的聲音。</li>
+</ul>
+
+<h2>手把和卡匣附加功能</h2>
+<ul>
+  <li><b>手把與鍵盤按鍵</b>：任何按鍵都能重新對應；一個 GBA 鍵可以對應多個鍵。</li>
+  <li><b>卡匣震動</b>：有震動卡匣的遊戲（例如寶可夢彈珠台 紅寶石＆藍寶石）會讓手機或手把震動。</li>
+  <li><b>感應器卡匣</b>：有傾斜、陀螺儀或太陽光感應器的遊戲，會使用手機自己的感應器。請看下一節。</li>
+</ul>
+
+<h2>感應器卡匣</h2>
+<p>有些卡匣內建感應器，玩的時候得走到陽光下、傾斜或轉動掌機。RetroGenY 會辨識這些遊戲，自動改用手機自己的感應器，不需要任何設定。遊戲開始時會告訴你用了哪個感應器，或者提醒你手機沒有遊戲需要的那一種。</p>
+<ul>
+  <li><b>太陽光（我們的太陽 1、2、3）</b>：用手機的光線感應器代替卡匣的太陽光感應器。光越亮，遊戲裡的陽光越多：走到戶外，或用燈照螢幕上方，看太陽計量表漲起來。光線感應器通常在前鏡頭旁邊，手指別擋住。沒有光線感應器的手機會得到中等的陽光。</li>
+  <li><b>傾斜（耀西的萬有引力、滾滾拼圖）</b>：使用手機的加速度計，像原機一樣傾斜手機來轉動關卡或讓角色滾動。遊戲開始時你拿手機的姿勢算作水平；要重新校正，離開遊戲再重新開始。直向、橫向都可以，方向會跟著螢幕走。</li>
+  <li><b>陀螺儀（轉轉瓦利歐製造）</b>：使用手機的陀螺儀。在螢幕所在的平面上轉動手機，就像轉方向盤。</li>
+  <li><b>GBC 傾斜卡匣（滾滾卡比等）</b>：同樣用加速度計控制傾斜，卡匣的存檔照常保留。</li>
+</ul>
+<p class="aside">接上手把時，感應器讀的仍然是手機本身，所以傾斜類遊戲最好拿著手機玩。App 切到背景時感應器會暫停，回來後再繼續，不會白白耗電。</p>
+
+<h2>RetroAchievements</h2>
+<p>在 設定 › RetroAchievements 開啟，並用你的 <a href="https://retroachievements.org">retroachievements.org</a> 帳號登入（免費註冊）。開始遊戲時，App 會辨識遊戲並告訴你它有多少成就。邊玩邊跳出解鎖提示，遊戲選單裡的「成就」能看完整列表和進度。</p>
+<ul>
+  <li>RetroAchievements 只認得它列出的遊戲版本（會檢查遊戲檔案的校驗碼），所以漢化版和改版通常沒有成就。</li>
+  <li>開啟時金手指和記憶體修改會暫停，讓成就保持公平。快轉、倒帶和即時存檔照樣能用。</li>
+  <li>離線時解鎖的成就會先記下，恢復連線後補送。</li>
+  <li>RetroAchievements 是免費的。</li>
+</ul>
+
+<h2>即時存檔和倒帶</h2>
+<p>每個即時存檔欄位都有縮圖，讀檔也能復原。倒帶需要一些記憶體，記憶體不夠時 App 會告訴你沒能開啟。</p>
+<div class="fig phone"><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="即時存檔選單：新欄位、自動存檔和之前的欄位。" loading="lazy"></a></div>
+<p class="cap">即時存檔選單：新欄位、自動存檔和之前的欄位。</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY 不包含、也不提供任何遊戲。Game Boy、Game Boy Color、Game Boy Advance 是任天堂的商標，本專案與任天堂沒有關係。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

@@ -4,8 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Getting started · RetroGenY</title>
+<script>(function(){var D={"en": "", "zh": "zh/", "zh-TW": "zh-tw/", "ja": "ja/", "ko": "ko/", "es": "es/", "pt-BR": "pt-br/", "fr": "fr/", "de": "de/", "it": "it/"},B={"ja": "ja/", "ko": "ko/", "es": "es/", "pt": "pt-br/", "fr": "fr/", "de": "de/", "it": "it/"},s="guide.html",d=null,k=null;function go(x){location.replace(x+s+location.search+location.hash)}try{k=localStorage.getItem('lang')}catch(e){}if(k){if(D[k])go(D[k]);return}var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<ls.length;i++){var l=(ls[i]||'').toLowerCase();if(l.indexOf('en')==0)return;if(l.indexOf('zh')==0){go(/hant|tw|hk|mo/.test(l)?D['zh-TW']:D['zh']);return}d=B[l.split('-')[0]];if(d){go(d);return}}})()</script>
+
 <meta name="description" content="GBA, GB and GBC emulator for Android">
 <link rel="alternate" hreflang="zh-Hans" href="zh/guide.html">
+<link rel="alternate" hreflang="zh-Hant" href="zh-tw/guide.html">
+<link rel="alternate" hreflang="ja" href="ja/guide.html">
+<link rel="alternate" hreflang="ko" href="ko/guide.html">
+<link rel="alternate" hreflang="es" href="es/guide.html">
+<link rel="alternate" hreflang="pt-BR" href="pt-br/guide.html">
+<link rel="alternate" hreflang="fr" href="fr/guide.html">
+<link rel="alternate" hreflang="de" href="de/guide.html">
+<link rel="alternate" hreflang="it" href="it/guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <link rel="icon" href="icon-64.png" type="image/png">
@@ -15,7 +25,7 @@
 <div class="top-wrap"><header class="top">
   <a class="brand" href="index.html"><img src="icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
   <nav><a href="link.html">Link play</a><a href="hhcode.html">Extended codes</a><a href="memory.html">Memory tools</a><a href="guide.html" aria-current=page>Guide</a></nav>
-  <a class="lang" href="zh/guide.html" hreflang="zh-Hans">中文</a>
+  <details class="lang-menu"><summary class="lang">English</summary><ul><li><a href="guide.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}" aria-current=true>English</a></li><li><a href="zh/guide.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="zh-tw/guide.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="ja/guide.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="ko/guide.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="es/guide.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="pt-br/guide.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="fr/guide.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="de/guide.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="it/guide.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
 </header></div>
 <main>
 <div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>Getting started</a></li><li><a href="link.html">Link play</a></li><li><a href="hhcode.html">Extended codes</a></li><li><a href="memory.html">Memory tools</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Features and settings</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ol></nav><article class="prose"><h1>Getting started</h1>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jogo em link · RetroGenY</title>
+
+<meta name="description" content="Emulador de GBA, GB e GBC para Android">
+<link rel="alternate" hreflang="en" href="../link.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/link.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/link.html">
+<link rel="alternate" hreflang="ja" href="../ja/link.html">
+<link rel="alternate" hreflang="ko" href="../ko/link.html">
+<link rel="alternate" hreflang="es" href="../es/link.html">
+<link rel="alternate" hreflang="fr" href="../fr/link.html">
+<link rel="alternate" hreflang="de" href="../de/link.html">
+<link rel="alternate" hreflang="it" href="../it/link.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html" aria-current=page>Jogo em link</a><a href="hhcode.html">Códigos estendidos</a><a href="memory.html">Ferramentas de memória</a><a href="guide.html">Guia</a></nav>
+  <details class="lang-menu"><summary class="lang">Português</summary><ul><li><a href="../link.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/link.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/link.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/link.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/link.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/link.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/link.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}" aria-current=true>Português</a></li><li><a href="../fr/link.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/link.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/link.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">Primeiros passos</a></li><li><a href="link.html" aria-current=page>Jogo em link</a></li><li><a href="hhcode.html">Códigos estendidos</a></li><li><a href="memory.html">Ferramentas de memória</a></li><li><a href="cheats.html">Cheats</a></li><li><a href="features.html">Recursos e configurações</a></li><li><a href="faq.html">Perguntas frequentes</a></li><li><a href="privacy.html">Política de privacidade</a></li></ol></nav><article class="prose"><h1>Jogo em link</h1>
+<p class="lead">Cada celular roda o próprio jogo e se conecta por Wi-Fi, Bluetooth ou cabo, então batalhas e trocas funcionam como no console original.</p>
+<div class="fig art"><svg class="cable" viewBox="0 0 560 230" role="img" aria-label="Dois portáteis ligados por um cabo link">
+  <path d="M 145 52 C 145 -10, 280 10, 280 60 S 415 130, 415 52"/>
+  <g transform="translate(30 60)">
+    <rect width="230" height="140" rx="38" fill="#0a1a8c" stroke="#050d4a" stroke-width="4"/>
+    <rect x="62" y="22" width="106" height="74" rx="8" fill="#050d4a"/>
+    <rect x="70" y="30" width="90" height="58" rx="3" fill="#f5efe2"/>
+    <text x="115" y="67" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0a1450">1P</text>
+    <rect x="20" y="52" width="30" height="10" rx="3" fill="#f5efe2"/><rect x="30" y="42" width="10" height="30" rx="3" fill="#f5efe2"/>
+    <circle cx="186" cy="48" r="11" fill="#ff5a14"/>
+    <circle cx="206" cy="72" r="11" fill="#ffb08a"/>
+    <rect x="100" y="-8" width="30" height="12" rx="3" fill="#050d4a"/>
+  </g>
+  <g transform="translate(300 60)">
+    <rect width="230" height="140" rx="38" fill="#0a1a8c" stroke="#050d4a" stroke-width="4"/>
+    <rect x="62" y="22" width="106" height="74" rx="8" fill="#050d4a"/>
+    <rect x="70" y="30" width="90" height="58" rx="3" fill="#f5efe2"/>
+    <text x="115" y="67" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0a1450">2P</text>
+    <rect x="20" y="52" width="30" height="10" rx="3" fill="#f5efe2"/><rect x="30" y="42" width="10" height="30" rx="3" fill="#f5efe2"/>
+    <circle cx="186" cy="48" r="11" fill="#ff5a14"/>
+    <circle cx="206" cy="72" r="11" fill="#ffb08a"/>
+    <rect x="100" y="-8" width="30" height="12" rx="3" fill="#050d4a"/>
+  </g>
+</svg></div>
+
+<h2>O que dá para jogar</h2>
+<table>
+  <tr><th>Jogos</th><th>Jogadores</th><th>Exemplos</th></tr>
+  <tr><td>Link de GB / GBC</td><td>2</td><td>Batalhas e trocas em Pokémon Red, Blue, Yellow, Gold, Silver e Crystal</td></tr>
+  <tr><td>Multiplayer de GBA</td><td>2–4</td><td>Batalhas e trocas em Pokémon Ruby, Sapphire, FireRed, LeafGreen e Emerald, Mario Kart e outros jogos multiplayer</td></tr>
+</table>
+<p>Os dois celulares não precisam do mesmo jogo, desde que os jogos consigam se conectar entre si, como trocar entre FireRed e LeafGreen.</p>
+
+<h2>Três formas de conectar</h2>
+<h3>Mesmo Wi-Fi ou hotspot de um celular</h3>
+<ol>
+  <li>Conecte todos os celulares ao mesmo Wi-Fi, ou ao hotspot de um deles.</li>
+  <li>Num celular, abra o painel de link e toque em “Criar sala”.</li>
+  <li>Nos outros, toque em “Entrar na sala” e escolha a sala. Se ela não aparecer, digite o endereço mostrado na tela do anfitrião.</li>
+</ol>
+<div class="fig pair"><a href="../img/en/m-link-panel.webp" target="_blank"><img src="../img/en/m-link-panel.webp" alt="O painel de link" loading="lazy"></a><a href="../img/en/m-link-rooms.webp" target="_blank"><img src="../img/en/m-link-rooms.webp" alt="A lista de salas" loading="lazy"></a></div>
+<p class="cap">Esquerda: o painel de link. Direita: depois de “Entrar na sala”, as salas do mesmo Wi-Fi aparecem, com um campo para digitar um endereço.</p>
+
+<h3>Bluetooth</h3>
+<ol>
+  <li>Num celular, toque em “Sala Bluetooth”.</li>
+  <li>No outro, toque em “Entrar por Bluetooth” e escolha o nome do primeiro celular. Na primeira vez, permita “Dispositivos próximos”.</li>
+</ol>
+<h3>Cabo</h3>
+<ol>
+  <li>Ligue os dois celulares com um cabo USB-C para USB-C.</li>
+  <li>Toque em “Cabo USB” nos dois e permita o acesso USB quando pedir.</li>
+  <li>Nada acontece? Ative o OTG nas configurações do sistema do celular anfitrião. Alguns celulares só carregam pelo cabo; nesse caso use Wi-Fi ou Bluetooth.</li>
+</ol>
+
+<h2>Conectando</h2>
+<p>Quando os celulares entram, o anfitrião vê um cabo de cor diferente para cada um. Toque num cabo para conectar aquele celular. Se houver só um, ele conecta sozinho.</p>
+<p>Depois de conectados, cada jogador abre um jogo e o link se estabelece sozinho. Voltar para a lista de jogos não desconecta, então você pode trocar de jogo e continuar ligado. Nos jogos de GBA, toque num cabo em espera para adicionar mais jogadores, até 4.</p>
+<p class="aside">Durante o link, a velocidade fica fixa em 1×, voltar no tempo e carregar save states ficam desativados e os cheats pausam, para os dois jogos andarem juntos.</p>
+
+<div class="fig pair"><a href="../img/en/m-link-pick.webp" target="_blank"><img src="../img/en/m-link-pick.webp" alt="O anfitrião escolhendo um cabo" loading="lazy"></a><a href="../img/en/m-link-linked.webp" target="_blank"><img src="../img/en/m-link-linked.webp" alt="Três celulares ligados" loading="lazy"></a></div>
+<p class="cap">Esquerda: o anfitrião toca num cabo para ligar com aquele celular. Direita: três celulares ligados; toque num cabo em espera para adicionar outro.</p>
+
+<h2>MirrorLink</h2>
+<p>Num link normal, uma rede lenta ou instável faz o jogo travar. O MirrorLink é outro modo de link feito para manter os jogos fluidos mesmo quando a conexão não é boa.</p>
+<ul>
+  <li><b>Vantagem</b>: uma taxa de quadros bem mais estável, mesmo por Bluetooth ou numa rede comum.</li>
+  <li><b>Contrapartida</b>: o anfitrião faz mais trabalho, então use seu celular mais rápido como anfitrião. Os outros jogadores podem notar um pouco mais de atraso nos comandos.</li>
+  <li><b>Como ativar</b>: só o anfitrião precisa ligar o “MirrorLink” no painel de link; os outros acompanham.</li>
+  <li><b>Primeira conexão</b>: na primeira vez, o MirrorLink pode levar um momento para se preparar antes de o jogo começar. É mais rápido por Wi-Fi do que por Bluetooth.</li>
+</ul>
+
+<h2>Quando algo dá errado</h2>
+<p>No fim do painel de link, “Exportar registro da ligação” salva um registro que você pode nos enviar para descobrirmos a causa. Veja as <a href="faq.html">perguntas frequentes</a> para os casos comuns.</p>
+</article></div>
+</main>
+<footer><div><span>O RetroGenY não inclui nem distribui nenhum jogo. Game Boy, Game Boy Color e Game Boy Advance são marcas da Nintendo; este projeto não é afiliado à Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Política de privacidade</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>メモリツール · RetroGenY</title>
+
+<meta name="description" content="Android 向けの GBA・GB・GBC エミュレーター">
+<link rel="alternate" hreflang="en" href="../memory.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/memory.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/memory.html">
+<link rel="alternate" hreflang="ko" href="../ko/memory.html">
+<link rel="alternate" hreflang="es" href="../es/memory.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/memory.html">
+<link rel="alternate" hreflang="fr" href="../fr/memory.html">
+<link rel="alternate" hreflang="de" href="../de/memory.html">
+<link rel="alternate" hreflang="it" href="../it/memory.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<style>:root{--display:"Space Grotesk","Noto Sans JP","Noto Sans SC",sans-serif;--body:"Noto Sans JP","Noto Sans SC",system-ui,sans-serif}</style>
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">通信プレイ</a><a href="hhcode.html">拡張コード</a><a href="memory.html" aria-current=page>メモリツール</a><a href="guide.html">使い方</a></nav>
+  <details class="lang-menu"><summary class="lang">日本語</summary><ul><li><a href="../memory.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/memory.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/memory.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/memory.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}" aria-current=true>日本語</a></li><li><a href="../ko/memory.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/memory.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/memory.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/memory.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}">Français</a></li><li><a href="../de/memory.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/memory.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html">はじめに</a></li><li><a href="link.html">通信プレイ</a></li><li><a href="hhcode.html">拡張コード</a></li><li><a href="memory.html" aria-current=page>メモリツール</a></li><li><a href="cheats.html">チート</a></li><li><a href="features.html">機能と設定</a></li><li><a href="faq.html">よくある質問</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ol></nav><article class="prose"><h1>メモリツール</h1>
+<p class="lead">ゲームの中の好きな数値を見つけて固定し、どのセーブデータでも効くチートにできます。ゲームを離れる必要はありません。さらに、ゲームの動きを変えたり、運を操ったりもできます。</p>
+
+<h2>何のため？</h2>
+<p>チートデータベースは幅広く対応していますが、すべてではありません。あまり有名でないゲーム、翻訳パッチ、改造 ROM、あるいはあなたが気にしている 1 つの値。メモリツールなら、そのチートを自分で作れます。たいていのエミュレーターは「検索してアドレスを固定する」までですが、RetroGenY はその先まで行きます。</p>
+<ul>
+  <li><b>ゲームの上に浮かぶウィンドウで動きます。</b>探している数値が見えるように移動・リサイズでき、遊びながら検索できます。</li>
+  <li><b>セーブし直しても効くチート。</b>監視ポイントで、ゲーム自身がどこから値を見つけているかがわかり、チートは同じ経路をたどる<a href="hhcode.html">拡張コード</a>として書かれます。</li>
+  <li><b>ゲームの動きを変える</b>：数値だけでなく、カウンターが減らないようにしたり、チェックを飛ばしたり。値に触れた命令の一覧から操作できます。</li>
+  <li><b>乱数を操る。</b>乱数のシードを見つけて次に何が出るかを知ったり、すべての判定を最高の結果にしたり。</li>
+</ul>
+
+<div class="fig phone"><a href="../img/en/m-mem-search.webp" target="_blank"><img src="../img/en/m-mem-search.webp" alt="ゲームの上に浮かぶメモリサーチのウィンドウ" loading="lazy"></a></div>
+<p class="cap">メモリツールのウィンドウはゲームの上に浮かびます。タイトルバーをドラッグで移動、角をドラッグでサイズ変更。</p>
+
+<h2>オンにする</h2>
+<ol>
+  <li>ゲーム中にゲームメニューを開き、「ツール」の<b>メモリサーチ</b>をオンにします。</li>
+  <li>ゲーム画面の下にメモリサーチのボタンが出ます。タップでウィンドウを開き、✕ で閉じます。検索の状態はそのまま残ります。</li>
+</ol>
+<p class="aside">メモリサーチは<a href="features.html">プレミアム機能</a>です。作ったチートはほかのチートと同じように保存され、そのあとも使えます。</p>
+
+<h2>値を見つける</h2>
+<p>たとえば、お金が 1,250 あって 999,999 にしたいとします。</p>
+<ol>
+  <li>幅を選びます。お金はたいてい 16 か 32 ビット、残機のような小さなカウンターは 8 ビットのことが多いです。わからなければ、まず 32 ビットを試してください。</li>
+  <li>見えている値（1250）を入力し、条件は「=」のまま<b>検索開始</b>をタップします。</li>
+  <li>ゲームの中で値を変えます。何か買う、拾うなど。</li>
+  <li>新しい値を入力して<b>絞り込む</b>をタップ。アドレスが数個になるまで繰り返します。</li>
+  <li>結果の<b>チート</b>をタップし、「固定する値」を 999999 にして<b>チートに保存</b>をタップします。</li>
+</ol>
+<p><b>数値がわからない？</b> HP バー、タイマー、隠しステータスには数字が出ません。代わりに条件で検索しましょう。攻撃を受けたら「減った」、回復したら「増えた」、じっとしていたら「変化なし」で絞り込みます。「等しくない」「より大きい」「より小さい」もあります。</p>
+
+<h2>効き続けるチート</h2>
+<p>アドレスを固定しただけのチートは、ゲームがデータを動かすと効かなくなります。セーブのたびに動かすゲームも多くあります。メモリツールはこれを解決します。</p>
+<ol>
+  <li>見つけた結果の<b>監視</b>をタップします。</li>
+  <li>ゲームの中で一度値を変えます。</li>
+  <li>エミュレーターは値を書き込んだ命令で止まり、ゲームがどうやってそのアドレスにたどり着いたかを記録します。</li>
+  <li>もう一度<b>チート</b>をタップ。今度のコードはゲーム自身のポインタをたどり、「ゲーム自身が使うポインタ経由で解決するため、別のセーブデータでも有効です。」と表示されます。</li>
+</ol>
+
+<div class="fig pair"><a href="../img/en/m-mem-cheat.webp" target="_blank"><img src="../img/en/m-mem-cheat.webp" alt="ゲームのポインタをたどるチートを作成" loading="lazy"></a><a href="../img/en/m-mem-luck.webp" target="_blank"><img src="../img/en/m-mem-luck.webp" alt="シードタブの運の設定" loading="lazy"></a></div>
+<p class="cap">左：監視ポイントから作ったチート。ポインタをたどる拡張コードです。右：運の設定で、すべての乱数判定を最高（または最低）の結果に。</p>
+
+<h2>ゲームの動きを変える</h2>
+<p>値を固定したいわけではないこともあります。お金が減らないようにしつつ稼げるようにしたい、チェックを必ず通したい。「監視」タブには、あなたのアドレスに<b>書き込んだ命令</b>が回数付きで並びます。</p>
+<ol>
+  <li><b>回数をクリア</b>をタップしてから、ゲームの中でその行動をします（買い物、ダメージを受けるなど）。「ゲームを止めずに記録」にすればプレイは止まりません。</li>
+  <li>戻って、回数が増えた項目を探します。</li>
+  <li><b>変更</b>をタップして選びます：NOP に置き換え、加算と減算を入れ替え、定数を変更、常に分岐、分岐しない、レジスタの値を固定、またはアセンブリを 1 行書く。</li>
+  <li>好きな名前のふつうのチートになります。</li>
+</ol>
+<p class="aside">ゲームのコードは共有されていることがよくあります。お金を減らす処理が報酬の支払いも担当しているかもしれません。その可能性があるときはアプリが警告します。ブレークポイントで、その命令が思ったときだけ動くか確認してください。命令のチートをオフにした効果は、ゲームを開き直すと反映されます。</p>
+
+<h2>乱数と運</h2>
+<p>ほとんどのゲームは 1 行の計算でサイコロを振っていて、そのシードを持つ 4 バイトは、変化がすべてその式に当てはまるメモリ上で唯一のデータです。「シード」タブがそれを見つけてくれます。</p>
+<ul>
+  <li><b>運</b>：「最高」または「最低」で、ゲームのすべての判定を最小値か最大値にします。会心の一撃、レアドロップ、捕獲など。「最高」で何もかも失敗するなら、そのゲームは大きい値が有利なので「最低」に切り替えてください。敵にも効くので、使い終わったらオフにしましょう。</li>
+  <li><b>詳細</b>：ゲームが待機している場面でシードをスキャンし、次に出る値を見たり、シードを固定したりできます。</li>
+</ul>
+
+<h2>もっと知りたい人へ</h2>
+<ul>
+  <li><b>メモリ</b>：任意のアドレスの 16 進ビュー。検索結果からそのまま開けます。</li>
+  <li><b>ブレークポイント</b>：ある命令が実行されたら止まり、1 命令ずつステップ実行してレジスタを読めます。</li>
+  <li>ウィンドウを閉じても監視ポイントは動き続けます。発動するとウィンドウが自動で開きます。</li>
+</ul>
+
+<h2>ここが違う</h2>
+<ul>
+  <li>ゲームを離れたりアプリを切り替えたりせずに、検索・固定・保存。</li>
+  <li>ポインタ型のチートを自動で作るので、次のセーブで壊れません。</li>
+  <li>実際に書き込んだ命令の一覧から命令チートを作れるので、逆アセンブラは不要。</li>
+  <li>運の操作はゲームを問わず使えます。特定のゲームのアドレスではなく、ゲームがサイコロを振るしくみを狙っているからです。</li>
+  <li>作ったものはすべてふつうのチート。名前を付けて、ほかと同じようにオン・オフできます。</li>
+</ul>
+</article></div>
+</main>
+<footer><div><span>RetroGenY にゲームは含まれておらず、配布もしていません。ゲームボーイ、ゲームボーイカラー、ゲームボーイアドバンスは任天堂の商標です。本プロジェクトは任天堂とは関係ありません。</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

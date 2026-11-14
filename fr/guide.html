@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bien démarrer · RetroGenY</title>
+
+<meta name="description" content="Émulateur GBA, GB et GBC pour Android">
+<link rel="alternate" hreflang="en" href="../guide.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/guide.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-tw/guide.html">
+<link rel="alternate" hreflang="ja" href="../ja/guide.html">
+<link rel="alternate" hreflang="ko" href="../ko/guide.html">
+<link rel="alternate" hreflang="es" href="../es/guide.html">
+<link rel="alternate" hreflang="pt-BR" href="../pt-br/guide.html">
+<link rel="alternate" hreflang="de" href="../de/guide.html">
+<link rel="alternate" hreflang="it" href="../it/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+</head>
+<body>
+<div class="top-wrap"><header class="top">
+  <a class="brand" href="index.html"><img src="../icon-64.png" alt="" width="34" height="34"><b>Retro<span>GenY</span></b></a>
+  <nav><a href="link.html">Jeu en link</a><a href="hhcode.html">Codes étendus</a><a href="memory.html">Outils mémoire</a><a href="guide.html" aria-current=page>Guide</a></nav>
+  <details class="lang-menu"><summary class="lang">Français</summary><ul><li><a href="../guide.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li><li><a href="../zh/guide.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try{localStorage.setItem('lang','zh')}catch(e){}">简体中文</a></li><li><a href="../zh-tw/guide.html" hreflang="zh-Hant" lang="zh-Hant" onclick="try{localStorage.setItem('lang','zh-TW')}catch(e){}">繁體中文</a></li><li><a href="../ja/guide.html" hreflang="ja" lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li><li><a href="../ko/guide.html" hreflang="ko" lang="ko" onclick="try{localStorage.setItem('lang','ko')}catch(e){}">한국어</a></li><li><a href="../es/guide.html" hreflang="es" lang="es" onclick="try{localStorage.setItem('lang','es')}catch(e){}">Español</a></li><li><a href="../pt-br/guide.html" hreflang="pt-BR" lang="pt-BR" onclick="try{localStorage.setItem('lang','pt-BR')}catch(e){}">Português</a></li><li><a href="../fr/guide.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('lang','fr')}catch(e){}" aria-current=true>Français</a></li><li><a href="../de/guide.html" hreflang="de" lang="de" onclick="try{localStorage.setItem('lang','de')}catch(e){}">Deutsch</a></li><li><a href="../it/guide.html" hreflang="it" lang="it" onclick="try{localStorage.setItem('lang','it')}catch(e){}">Italiano</a></li></ul></details>
+</header></div>
+<main>
+<div class="doc"><nav class="side"><ol><li><a href="guide.html" aria-current=page>Bien démarrer</a></li><li><a href="link.html">Jeu en link</a></li><li><a href="hhcode.html">Codes étendus</a></li><li><a href="memory.html">Outils mémoire</a></li><li><a href="cheats.html">Triches</a></li><li><a href="features.html">Fonctions et réglages</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Politique de confidentialité</a></li></ol></nav><article class="prose"><h1>Bien démarrer</h1>
+<p class="lead">Du choix du dossier à votre première sauvegarde, il suffit de quelques minutes.</p>
+
+<h2>Préparez vos fichiers de jeu</h2>
+<p>RetroGenY ne contient et ne télécharge aucun jeu. Utilisez des sauvegardes de cartouches que vous possédez. Fichiers pris en charge :</p>
+<ul>
+  <li><code>.gba</code> : Game Boy Advance</li>
+  <li><code>.gb</code>, <code>.gbc</code> : Game Boy, Game Boy Color</li>
+</ul>
+<p>Placez-les dans n'importe quel dossier du téléphone. Des sous-dossiers par série ou par console, aucun problème.</p>
+
+<h2>Choisissez votre dossier de jeux</h2>
+<ol>
+  <li>À la première ouverture, l'application vous demande de choisir un dossier de jeux.</li>
+  <li>Dans le sélecteur de fichiers du système, ouvrez votre dossier de jeux, touchez « Utiliser ce dossier » et autorisez l'accès.</li>
+  <li>De retour dans l'application, vos jeux sont listés. Les sous-dossiers apparaissent comme des dossiers que vous pouvez ouvrir.</li>
+</ol>
+<p class="aside">L'application ne lit et n'écrit que dans le dossier choisi. Pour utiliser un autre dossier plus tard, choisissez-le à nouveau dans les Paramètres.</p>
+
+<div class="fig phone"><a href="../img/en/library.webp" target="_blank"><img src="../img/en/library.webp" alt="La liste des jeux. Le dernier jeu joué est en haut avec un bouton Continuer." loading="lazy"></a></div>
+<p class="cap">La liste des jeux. Le dernier jeu joué est en haut avec un bouton Continuer.</p>
+
+<h2>Jaquettes</h2>
+<p>La jaquette d'un jeu provient de l'un de ces trois endroits, vérifiés dans cet ordre :</p>
+<ol>
+  <li>Une image (png ou jpg) portant le même nom que le jeu, dans un dossier <code>covers</code> à côté de lui.</li>
+  <li>Une capture faite avec « Capture d'écran » dans le menu du jeu, ou une image choisie via le menu ⋮ de la carte du jeu › Jaquette › « Choisir dans la galerie ». Les deux sont aussi enregistrées dans <code>covers</code>.</li>
+  <li>Une jaquette automatique : après une minute de jeu sur un jeu sans jaquette, une image est capturée. Elle est conservée dans l'application, jamais écrite dans votre dossier, et peut être désactivée dans les Paramètres.</li>
+</ol>
+
+<div class="fig phone"><a href="../img/en/covers.webp" target="_blank"><img src="../img/en/covers.webp" alt="Menu ⋮ de la carte du jeu › Jaquette › « Choisir dans la galerie »." loading="lazy"></a></div>
+<p class="cap">Menu ⋮ de la carte du jeu › Jaquette › « Choisir dans la galerie ».</p>
+
+<h2>Sauvegarder</h2>
+<h3>Sauvegardes en jeu</h3>
+<p>Sauvegarder dans le jeu (comme « Sauver » dans Pokémon) écrit un fichier <code>.sav</code> au nom du jeu, à côté du jeu. Copiez-le avec le jeu pour continuer sur un autre téléphone.</p>
+<h3>États sauvegardés</h3>
+<p>Sauvegardez et chargez n'importe où depuis le menu du jeu. Chaque emplacement a une miniature, et un emplacement de sauvegarde automatique est écrit quand vous quittez un jeu. Si vous chargez le mauvais, touchez « Annuler » dans le bandeau pour revenir.</p>
+
+<div class="fig pair"><a href="../img/en/m-game-menu.webp" target="_blank"><img src="../img/en/m-game-menu.webp" alt="Le menu du jeu" loading="lazy"></a><a href="../img/en/states.webp" target="_blank"><img src="../img/en/states.webp" alt="Le menu des états sauvegardés" loading="lazy"></a></div>
+<p class="cap">Ouvrez le menu du jeu, puis « États sauvegardés » pour créer un état, en charger un ou annuler un chargement.</p>
+
+<h2>Commandes</h2>
+<ul>
+  <li><b>Boutons à l'écran</b> : sous l'écran en portrait, de chaque côté en paysage.</li>
+  <li><b>Manettes et claviers</b> : fonctionnent dès qu'ils sont connectés. Réattribuez-les dans Paramètres › Boutons de manette et de clavier ; un bouton GBA peut avoir plusieurs touches.</li>
+  <li><b>Orientation de l'écran</b> : passez entre portrait, paysage et système depuis le menu du jeu.</li>
+</ul>
+
+<div class="fig wide"><a href="../img/en/tablet.webp" target="_blank"><img src="../img/en/tablet.webp" alt="En paysage, les commandes passent de chaque côté de l'écran." loading="lazy"></a></div>
+<p class="cap">En paysage, les commandes passent de chaque côté de l'écran.</p>
+
+<h2>BIOS (facultatif)</h2>
+<p>Un BIOS de remplacement est intégré et fait tourner tous les jeux. Seule une poignée de jeux a besoin du BIOS officiel, ou vous voudrez peut-être l'animation de démarrage. Dans ce cas, importez votre propre fichier BIOS de 16 Ko dans Paramètres › GBA BIOS.</p>
+</article></div>
+</main>
+<footer><div><span>RetroGenY n'inclut ni ne distribue aucun jeu. Game Boy, Game Boy Color et Game Boy Advance sont des marques de Nintendo ; ce projet n'est pas affilié à Nintendo.</span><a href="https://www.reddit.com/r/RetroGenY_Emulator" rel="noopener">Reddit</a><a href="https://discord.gg/z5SVpRcUN" rel="noopener">Discord</a><a href="https://t.me/RetroGenY" rel="noopener">Telegram</a><a href="privacy.html">Politique de confidentialité</a></div></footer>
+</body>
+</html>
